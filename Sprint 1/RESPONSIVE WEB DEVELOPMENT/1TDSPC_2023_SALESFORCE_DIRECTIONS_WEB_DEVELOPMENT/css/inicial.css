@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0;
+    font-family: 'Roboto', sans-serif;    
+}
+
+.body{
+    background-image: url(../image/Salesforce-emblem.jpg);
+    background-size: cover;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+.solucao{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+.texto_p{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    flex-direction: column;
+    border-bottom: 0;
+}
+.div_img{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    flex-direction: column;
+    border-top: 0;
+    align-items: center;
+}
+.navegacao{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    justify-content: center;
+    margin-bottom: 2%;
+    text-decoration: none;
+    justify-content: space-evenly;
+}
+a:link, a:visited {
+    background-color: #51a2ff;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 17%;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(44, 40, 255);
+  }
+.div_pos_imagem{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    flex-direction: column;
+    border-top: 0;
+
+}
+.div_img_portal{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.476);
+    border: solid;
+    border-color: black;
+    flex-direction: column;
+    border-top: 0;
+    border-bottom: 0;
+    align-items: center;
+
+}

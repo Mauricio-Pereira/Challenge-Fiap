@@ -1,4 +1,4 @@
-package Package;
+package PackagePrincipal;
 
 public class Login {
     private String usuario;
@@ -8,9 +8,7 @@ public class Login {
     public void FazerLogin(){}
     public void FazerLogout(){}
 
-
     public Login(){}
-
     public Login(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;

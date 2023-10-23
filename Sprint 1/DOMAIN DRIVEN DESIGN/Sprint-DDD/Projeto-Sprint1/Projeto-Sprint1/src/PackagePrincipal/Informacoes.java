@@ -1,9 +1,8 @@
-package Package;
+package PackagePrincipal;
 
 public class Informacoes {
     private String titulo;
     private String conteudo;
-
 
     public void ExibeConteudo(){}
 
@@ -18,6 +17,14 @@ public class Informacoes {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
 
     @Override

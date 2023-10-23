@@ -1,13 +1,15 @@
-package Package;
+package PackagePrincipal;
 
-public class Empresa extends Cliente{
-    private Cliente cliente;
+public class Empresa extends Cadastro{
+    private Cadastro cliente;
     private String nomeEmpresa;
     private String setor;
     private String contato;
     private String endereco;
 
-    public Empresa(Cliente cliente, String nomeEmpresa, String setor, String contato, String endereco) {
+
+    public Empresa(){}
+    public Empresa(Cadastro cliente, String nomeEmpresa, String setor, String contato, String endereco) {
         this.cliente = cliente;
         this.nomeEmpresa = nomeEmpresa;
         this.setor = setor;
@@ -15,11 +17,11 @@ public class Empresa extends Cliente{
         this.endereco = endereco;
     }
 
-    public Cliente getCliente() {
+    public Cadastro getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Cadastro cliente) {
         this.cliente = cliente;
     }
 

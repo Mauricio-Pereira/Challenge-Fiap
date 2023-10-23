@@ -1,6 +1,6 @@
-package Package;
+package PackagePrincipal;
 
-public class Cliente {
+public class Cadastro {
     private String nome;
     private int dataNascimento;
     private String genero;
@@ -9,13 +9,12 @@ public class Cliente {
     private String endereco;
     private boolean ativo;
 
+    public boolean PossuiCadastro(){return true;}
+    public void NovoCadastro(){}
 
-    public boolean PossuiCadastro(){ return true; }
-    public void RetornaCadastro(){}
 
-
-    public Cliente(){}
-    public Cliente(String nome, int dataNascimento, String genero, String telefone, String email, String endereco, Boolean ativo) {
+    public Cadastro(){}
+    public Cadastro(String nome, int dataNascimento, String genero, String telefone, String email, String endereco, boolean ativo) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.genero = genero;
@@ -73,17 +72,17 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public Boolean getAtivo() {
+    public boolean isAtivo() {
         return ativo;
     }
 
-    public void setAtivo(Boolean ativo) {
+    public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "PackagePrincipal.Cadastro{" +
                 "nome='" + nome + '\'' +
                 ", dataNascimento=" + dataNascimento +
                 ", genero='" + genero + '\'' +

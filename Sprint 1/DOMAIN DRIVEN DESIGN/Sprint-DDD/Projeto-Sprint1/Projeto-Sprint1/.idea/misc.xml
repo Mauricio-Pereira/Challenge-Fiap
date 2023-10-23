@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/../../../../fiap/Sprint1/Sprint1-DDD/Sprint1/out" />
+    <output url="file://$PROJECT_DIR$/../../../../../Sprint1-fiap/Challenge-Fiap/Sprint 1/DOMAIN DRIVEN DESIGN/Sprint-DDD/Projeto-Sprint1/Projeto-Sprint1/out" />
   </component>
 </project>

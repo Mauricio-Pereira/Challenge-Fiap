@@ -1,12 +1,26 @@
 package PackagePrincipal;
 
+import java.util.Scanner;
+
 public class Login {
     private String usuario;
     private String senha;
 
 
-    public void FazerLogin(){}
-    public void FazerLogout(){}
+    public void FazerLogin(){
+        var scanner = new Scanner(System.in);
+        System.out.println("Usuário: ");
+        setUsuario(scanner.nextLine());
+
+        System.out.println("Senha: ");
+        setSenha(scanner.nextLine());
+
+        System.out.println("Logado com Sucesso");
+
+    }
+    public void FazerLogout(){
+        System.out.println("Deslogado com sucesso");
+    }
 
     public Login(){}
     public Login(String usuario, String senha) {

@@ -1,7 +1,7 @@
 package PackagePrincipal;
 
-public class Empresa extends Cadastro{
-    private Cadastro cliente;
+public class Empresa extends Cliente {
+    private String cliente;
     private String nomeEmpresa;
     private String setor;
     private String contato;
@@ -9,7 +9,7 @@ public class Empresa extends Cadastro{
 
 
     public Empresa(){}
-    public Empresa(Cadastro cliente, String nomeEmpresa, String setor, String contato, String endereco) {
+    public Empresa(String cliente, String nomeEmpresa, String setor, String contato, String endereco) {
         this.cliente = cliente;
         this.nomeEmpresa = nomeEmpresa;
         this.setor = setor;
@@ -17,11 +17,11 @@ public class Empresa extends Cadastro{
         this.endereco = endereco;
     }
 
-    public Cadastro getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cadastro cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
@@ -61,12 +61,11 @@ public class Empresa extends Cadastro{
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "cliente=" + cliente +
-                ", nomeEmpresa='" + nomeEmpresa + '\'' +
-                ", setor='" + setor + '\'' +
-                ", contato='" + contato + '\'' +
-                ", endereco='" + endereco + '\'' +
-                '}';
+        return "Empresa:" +
+                "\r\nNome do cliente: " + cliente +
+                "\r\nNome da Empresa: " + nomeEmpresa +
+                "\r\nSetor: " + setor +
+                "\r\nContato: " + contato +
+                "\r\nEndereço: " + endereco;
     }
 }

@@ -1,21 +1,21 @@
 package PackagePrincipal;
 
-public class TesteGratis extends Cadastro{
-    private Cadastro cliente;
+public class TesteGratis extends Cliente {
+    private Cliente cliente;
 
     public void ValidaInformacoes(){}
     public void AtivarTesteGratis(){}
 
     public TesteGratis(){}
-    public TesteGratis(Cadastro cliente) {
+    public TesteGratis(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public Cadastro getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cadastro cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 

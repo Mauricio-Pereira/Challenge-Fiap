@@ -1,11 +1,18 @@
 import javax.swing.*;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.util.Date;
 import java.util.regex.Pattern;
 
 public class Usuario {
 
-    private static Pattern DATE_PATTERN = Pattern.compile(
+    private static final Pattern DATE_PATTERN = Pattern.compile(
             "^\\d{2}/\\d{2}/\\d{4}$");
     private static Pattern PhonePattern = Pattern.compile("^\\s*(\\d{2})[-. ]?(\\d{5}|\\d{4})[-. ]?(\\d{4})[-. ]?\\s*$");
 
@@ -38,8 +45,7 @@ public class Usuario {
 
         if (this.email.contains("@") && this.email.contains(".com")) {
             this.email = email;
-        }
-        else {
+        } else {
             this.email = "";
         }
     }
@@ -69,12 +75,11 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-            if (this.email.contains("@") && this.email.contains(".com")) {
-                this.email = email;
-            }
-            else {
-                this.email = "";
-            }
+        if (this.email.contains("@") && this.email.contains(".com")) {
+            this.email = email;
+        } else {
+            this.email = "";
+        }
 
     }
 
@@ -83,7 +88,7 @@ public class Usuario {
     }
 
     public void setNascimento(String nascimento) {
-        if(Pattern.matches(String.valueOf(DATE_PATTERN), nascimento)){
+        if (DATE_PATTERN.matcher(nascimento).matches() && isDateValid(nascimento)) {
             this.nascimento = nascimento;
         }
     }
@@ -93,7 +98,12 @@ public class Usuario {
     }
 
     public void setGenero(String genero) {
-        this.genero = genero;
+        String generoUpperCase = genero.toUpperCase();
+
+        if ("MASCULINO".equals(generoUpperCase) || "FEMININO".equals(generoUpperCase) || "OUTRO".equals(generoUpperCase)) {
+            this.genero = generoUpperCase;
+        }
+
     }
 
     public String getTelefone() {
@@ -101,7 +111,7 @@ public class Usuario {
     }
 
     public void setTelefone(String telefone) {
-        if(Pattern.matches(String.valueOf(PhonePattern),telefone)){
+        if (Pattern.matches(String.valueOf(PhonePattern), telefone)) {
             this.telefone = telefone;
         }
     }
@@ -135,7 +145,7 @@ public class Usuario {
     }
 
     public void setCep(String cep) {
-        if(Pattern.matches(String.valueOf(CepPattern),cep)){
+        if (Pattern.matches(String.valueOf(CepPattern), cep)) {
             this.cep = cep;
         }
     }
@@ -150,8 +160,8 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return  "\r\nNome: " + nome +
-                "\r\nSobrenome: " + sobrenome  +
+        return "\r\nNome: " + nome +
+                "\r\nSobrenome: " + sobrenome +
                 "\r\nEmail: " + email +
                 "\r\nNascimento: " + nascimento +
                 "\r\nGênero: " + genero +
@@ -164,7 +174,36 @@ public class Usuario {
                 ;
     }
 
+    public static boolean isDateValid(String strDate) {
+        String dateFormat = "dd/MM/uuuu";
 
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+                .ofPattern(dateFormat)
+                .withResolverStyle(ResolverStyle.STRICT);
+        try {
+            LocalDate date = LocalDate.parse(strDate, dateTimeFormatter);
+            return true;
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
+
+    public boolean isMaiorDeIdade() {
+        if (nascimento == null) {
+            return false;
+        }
+
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate birthDate = LocalDate.parse(nascimento, formatter);
+            LocalDate currentDate = LocalDate.now();
+            Period period = Period.between(birthDate, currentDate);
+
+            return period.getYears() >= 18;
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
 }
 
 

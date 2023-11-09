@@ -20,7 +20,13 @@ public class Main {
             int opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-                    usuarios.add(Cadastrar());
+                    Usuario novoUsuario = Cadastrar();
+                    if (novoUsuario.isMaiorDeIdade()) {
+                        usuarios.add(novoUsuario);
+                        System.out.println("Cadastro realizado com sucesso!");
+                    } else {
+                        System.out.println("Cadastro cancelado.");
+                    }
                     break;
 
                 case 2:
@@ -65,13 +71,23 @@ public class Main {
 
         System.out.println("Digite sua data de nascimento (digite nesse formato 'dd/mm/aaaa'): ");
         usuario.setNascimento(scanner.nextLine());
-        while(usuario.getNascimento()==null){
-            System.out.println("Data de nascimento inválida! Digite a data novamente: ");
-            usuario.setNascimento(scanner.nextLine());
+        while(usuario.getNascimento() == null || !usuario.isMaiorDeIdade()) {
+            if (usuario.getNascimento() == null) {
+                System.out.println("Data de nascimento inválida! Digite a data novamente: ");
+                usuario.setNascimento(scanner.nextLine());
+            } else {
+                System.out.println("Você precisa ter 18 anos ou mais para ter acesso à nossa plataforma.");
+                return usuario;
+            }
         }
 
-        System.out.println("Digite seu gênero: ");
+        System.out.println("Digite seu gênero: (masculino, feminino, outro): ");
         usuario.setGenero(scanner.nextLine());
+        while(usuario.getGenero() == null){
+            System.out.println("Gênero inválido! O gênero deve ser 'masculino', 'feminino' ou 'outro'.}\r\n" +
+                    "Digite o gênero novamente: ");
+            usuario.setGenero(scanner.nextLine());
+        }
 
         System.out.println("Digite seu telefone(use apenas numéros): ");
         usuario.setTelefone(scanner.nextLine());
@@ -79,7 +95,7 @@ public class Main {
             System.out.println("Número de telefone inválido! Digite o telefone novamente: ");
             usuario.setTelefone(scanner.nextLine());
         }
-        System.out.println("Digite o cep: ");
+        System.out.println("Digite o cep(utilize esse formato--> xxxxx-xxx): ");
         usuario.setCep(scanner.nextLine());
         while (usuario.getCep() == null){
             System.out.println("CEP inválido! Digite o CEP novamente: ");
@@ -90,7 +106,8 @@ public class Main {
         System.out.println("Digite o nome da rua do seu endereço: ");
         usuario.setRua(scanner.nextLine());
         System.out.println("Digite o número da sua residência: ");
-        usuario.setComplemento(scanner.nextLine());
+        usuario.setNumeroRua(scanner.nextInt());
+        scanner.nextLine();
         System.out.println("Digite o complemento (caso não tenha, digite nulo): ");
         usuario.setComplemento(scanner.nextLine());
         System.out.println("Digite a cidade: ");

@@ -34,13 +34,23 @@ public class Usuario {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
-        this.nascimento = nascimento;
-        this.genero = genero;
-        this.telefone = telefone;
+        if (DATE_PATTERN.matcher(nascimento).matches() && isDateValid(nascimento)) {
+            this.nascimento = nascimento;
+        }
+        String generoUpperCase = genero.toUpperCase();
+
+        if ("MASCULINO".equals(generoUpperCase) || "FEMININO".equals(generoUpperCase) || "OUTRO".equals(generoUpperCase)) {
+            this.genero = generoUpperCase;
+        }
+        if (Pattern.matches(String.valueOf(PhonePattern), telefone)) {
+            this.telefone = telefone;
+        }
         this.rua = rua;
         this.numeroRua = numeroRua;
         this.complemento = complemento;
-        this.cep = cep;
+        if (Pattern.matches(String.valueOf(CepPattern), cep)) {
+            this.cep = cep;
+        }
         this.cidade = cidade;
 
         if (this.email.contains("@") && this.email.contains(".com")) {

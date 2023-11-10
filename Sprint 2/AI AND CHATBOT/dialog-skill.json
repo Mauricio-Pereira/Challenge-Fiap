@@ -1,0 +1,918 @@
+{
+  "name": "Jhonny the Third",
+  "type": "dialog",
+  "valid": true,
+  "counts": {
+    "intents": 5,
+    "entities": 4,
+    "dialog_nodes": 16
+  },
+  "status": "Available",
+  "created": "2023-11-10T11:52:22.874Z",
+  "updated": "2023-11-10T11:52:22.874Z",
+  "language": "pt-br",
+  "skill_id": "a6678389-c71a-4ab0-ba28-3fc4e06d9ab2",
+  "snapshot": "1",
+  "workspace": {
+    "created": "2023-11-10T11:52:22.874Z",
+    "intents": [
+      {
+        "intent": "cadastrar_conta",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "examples": [
+          {
+            "text": "cadastrar",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "cadastrar conta no site",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como criar uma conta acessível?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "criar conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Dicas para criar uma conta de forma acessível",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "fazer meu cadastro",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "gostaria de saber como me cadastrar no site",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Passos para criar uma conta com acessibilidade.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais informações são necessárias para o cadastro?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero cadastrar uma conta com acessibilidade",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero me inscrever no site",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero ter minha conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "logar",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "examples": [
+          {
+            "text": "acessar conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Ajuda para entrar na minha conta.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como faço para fazer login?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Fazer login de forma acessível.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "gostaria de fazer login",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "logar na minha conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Preciso de ajuda para acessar minha conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais são as etapas para fazer login com acessibilidade?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero acessar minha conta",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero acessar o site logado",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero fazer login",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero logar",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "solicitar_comandos",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "examples": [
+          {
+            "text": "comandos de acessibilidade",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como posso melhorar a acessibilidade usando o teclado?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como posso personalizar os atalhos de teclado para minhas necessidades?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Dicas para navegar com teclado de forma eficaz.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Existe alguma maneira de configurar teclas de atalho específicas para a acessibilidade?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Explique como usar as teclas de seta.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Gostaria de saber quais atalhos de teclado estão disponíveis.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Navegação por teclado, como funciona?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Poderia me dizer como funciona a navegação por teclado?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Por favor, me explique como posso usar as teclas de seta para navegação.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Preciso de dicas sobre como navegar de forma eficaz com o teclado.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais são os comandos de teclado disponíveis?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais são os comandos que posso usar para melhorar a acessibilidade através do teclado?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "teclas de acessibilidade",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "teclas de comandos",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "solicitar_servico",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "examples": [
+          {
+            "text": "Como faço para receber ajuda com acessibilidade?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como faço para requisitar ajuda com acessibilidade?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como posso obter suporte adaptado às minhas necessidades específicas?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como solicitar um serviço de forma acessível?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Dicas para solicitar um serviço de forma acessível, por favor.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Estou buscando orientações sobre como solicitar um serviço acessível.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Passos para solicitar um serviço acessível.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Preciso de assistência, como posso pedir?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero pedir assistência com serviços acessíveis.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero solicitar serviço",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero solicitar um serviço acessível.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero um serviço",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "solicitar_teste",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "examples": [
+          {
+            "text": "como faço para ter acesso ao teste gratuito?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Como posso iniciar um teste gratuito da plataforma?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Duração e recursos disponíveis no teste gratuito.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Explique o processo para ativar a versão de avaliação, por favor.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais são os passos para experimentar a versão de avaliação?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quais são os requisitos para começar um teste gratuito da plataforma?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quanto tempo dura o teste gratuito e quais recursos estão incluídos?",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero experimentar o teste gratis",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "Quero saber mais sobre a oferta de teste grátis.",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "quero testar antes de comprar o produto",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "teste de 1 mes gratuito",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          },
+          {
+            "text": "teste gratis",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z"
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "updated": "2023-11-10T11:52:22.874Z",
+    "entities": [
+      {
+        "entity": "email",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "email",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "patterns": [
+              "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b"
+            ]
+          }
+        ],
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "servicos",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Customer 360",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "360",
+              "costumer 360",
+              "custumer 360",
+              "custumer total",
+              "salesforce 360"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "Marketing Cloud",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "cloud marketing",
+              "market",
+              "marketing",
+              "propaganda cloud"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "Sales Cloud",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "cloud vendas",
+              "sales",
+              "serviço de vendas cloud",
+              "vendas",
+              "vendas cloud"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "Service Cloud",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "atendimento",
+              "atendimento ao cliente",
+              "custumer service",
+              "custumer service cloud"
+            ]
+          }
+        ],
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sim_nao",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "não",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "don't",
+              "nao",
+              "não",
+              "nao nao",
+              "no",
+              "nono",
+              "nope",
+              "not"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "sim",
+            "created": "2023-11-10T11:52:24.075Z",
+            "updated": "2023-11-10T11:52:24.075Z",
+            "synonyms": [
+              "claro",
+              "ok",
+              "s",
+              "si",
+              "sim",
+              "yeah",
+              "yep",
+              "yes"
+            ]
+          }
+        ],
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-date",
+        "values": [],
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z"
+      }
+    ],
+    "language": "pt-br",
+    "metadata": {
+      "skill": {
+        "counts": {
+          "intents": 5,
+          "entities": 4,
+          "dialog_nodes": 16
+        }
+      },
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "dialog_nodes": [
+      {
+        "type": "standard",
+        "title": "Bem-vindo",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Olá. Como posso te ajudar?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "welcome",
+        "dialog_node": "Bem-vindo"
+      },
+      {
+        "type": "standard",
+        "title": "Em outros casos",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Eu não entendi. Você pode tentar reformular a frase."
+                },
+                {
+                  "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+                },
+                {
+                  "text": "Eu não entendi o sentido."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "anything_else",
+        "dialog_node": "Em outros casos",
+        "previous_sibling": "node_5_1699373287409",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "title": "Mostrar Teclas de Comandos",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Como você sabe, a Salesforce Directions foi feita para aprimorar o acesso ao site. \nAqui estão os comandos para utilização dos site:\n\nTeclas de setas: para movimentação entre os itens do site.\nTecla Enter: para confirmar uma ação ou formulário."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "Bem-vindo"
+        },
+        "conditions": "#solicitar_comandos",
+        "dialog_node": "node_1_1699207988783",
+        "previous_sibling": "Bem-vindo"
+      },
+      {
+        "type": "standard",
+        "title": "Fazer Login",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Vamos te ajudar a fazer o login. Mas antes, você ja possui cadastro?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "#logar",
+        "dialog_node": "node_1_1699371255748",
+        "previous_sibling": "node_3_1699208399070"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Certo, então precisamos fazer seu cadastro primeiro. Vou precisar do seu email para te enviar as informações de como realizar o cadastro.\nDigite seu email de contato: "
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "parent": "node_1_1699371255748",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "node_6_1699208549850"
+        },
+        "conditions": "@sim_nao:não",
+        "dialog_node": "node_1_1699371677949",
+        "previous_sibling": "node_6_1699371319088"
+      },
+      {
+        "type": "standard",
+        "title": "Teste Grátis",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Aqui na Salesforce Directions nós te proporcionamos a possibilidade de realizar o teste grátis por 1 semana, para você avaliar nossos produtos.\n\nPara ter acesso ao nosso teste grátis, você precisa estar cadastrado na nossa plataforma.\nJá possui cadastro?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "#solicitar_teste",
+        "dialog_node": "node_1_1699372362806",
+        "previous_sibling": "node_1_1699371255748"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Vou colocar o link aqui para você conhecer por completo o Customer 360, a integração de todos nossos serviços juntos!\n\nhttps://www.salesforce.com/br/products/"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_5_1699373287409",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "@servicos:(Customer 360)",
+        "dialog_node": "node_1_1699374447479"
+      },
+      {
+        "type": "standard",
+        "title": "@servicos:(Sales Cloud)",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Vou colocar o link aqui para você conhecer por completo o Sales Cloud, a automação da força de vendas impulsionada por IA.\n\nhttps://www.salesforce.com/br/products/sales-cloud/overview/"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_5_1699373287409",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "@servicos:(Sales Cloud)",
+        "dialog_node": "node_1_1699374601900",
+        "previous_sibling": "node_1_1699374447479"
+      },
+      {
+        "type": "standard",
+        "title": "@servicos:(Marketing Cloud)",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Vou colocar o link aqui para você conhecer por completo o Marketing Cloud, para que você atraia clientes, gere mais engajamento e construa relações duradouras utilizando o marketing digital baseado em dados.\n\nhttps://www.salesforce.com/br/products/marketing-cloud/overview/"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_5_1699373287409",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "@servicos:(Marketing Cloud)",
+        "dialog_node": "node_2_1699374603883",
+        "previous_sibling": "node_3_1699374605609"
+      },
+      {
+        "type": "standard",
+        "title": "Cadastrar",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Eu não consigo fazer seu cadastro por aqui, mas consigo te encaminhar o passo a passo. \nMe informe seu email:"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "context": {},
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "#cadastrar_conta",
+        "dialog_node": "node_3_1699208399070",
+        "previous_sibling": "node_1_1699207988783"
+      },
+      {
+        "type": "standard",
+        "title": "@servicos:(Service Cloud)",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Vou colocar o link aqui para você conhecer por completo o Service Cloud, onde o atendimento escalável encanta os clientes, maximiza o ROI e impulsiona a eficiência, desde a central de contatos ao atendimento externo.\n\nhttps://www.salesforce.com/br/products/service-cloud/overview/"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_5_1699373287409",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "@servicos:(Service Cloud)",
+        "dialog_node": "node_3_1699374605609",
+        "previous_sibling": "node_1_1699374601900"
+      },
+      {
+        "type": "standard",
+        "title": "Solicitar Serviço",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Nós da Salesforce Directions temos diversos serviços em nossa plataforma, sendo eles:\n\nCustomer 360: reúne as equipes de marketing, vendas, comércio, serviços e TI, todas em torno do cliente.\n\nSales Cloud: automação da força de vendas impulsionada por IA.\n\nService Cloud: atendimento escalável que encanta os clientes, maximizando o ROI e impulsionando a eficiência, desde a central de contatos ao atendimento externo.\n\nMarketing Cloud: atraia clientes. Gere mais engajamento. Construa relações duradouras. Tudo isso graças ao marketing digital baseado em dados.\n\nQual desses você gostaria de acessar?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "conditions": "#solicitar_servico",
+        "dialog_node": "node_5_1699373287409",
+        "previous_sibling": "node_1_1699372362806"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Certo, vou encaminhar um email com as instruções de cadastro para $email.\nPosso te ajudar de alguma outra forma?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "parent": "node_3_1699208399070",
+        "context": {
+          "email": "<?input.text.toUpperCase()?>"
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "Bem-vindo"
+        },
+        "conditions": "@email:email",
+        "dialog_node": "node_6_1699208549850"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Maravilha! No fim dessa mensagem vou colocar o link que você deve acessar para fazer seu login. \nQuando acessar a página, você deve colocar seu nome de  usuário escolhido, quando fez o cadastro, e a sua senha. Depois é só clicar no botão \"Fazer Login\" e pronto!\n\nPara fazer login, acesse essa página: https://login.salesforce.com/\n \nPosso te ajudar de alguma outra forma?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "parent": "node_1_1699371255748",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "Bem-vindo"
+        },
+        "conditions": "@sim_nao:sim",
+        "dialog_node": "node_6_1699371319088"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Maravilha! Vou te dar o passo a passo de como solicitar seu teste grátis.\nPrimeiro, faça login na plataforma pelo link: https://login.salesforce.com/\nDepois, na página inicial, tem um botão azul escrito \"Faça o teste grátis\"\nPra finalizar, você só precisa seguir as instruções que forem passadas e pronto! \nSeu período de teste está valendo!\n\nSe você iniciar seu teste grátis hoje $date, você terá 7 dias para utilizar nossos produtos!\n\nPosso te ajudar de alguma outra forma?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "parent": "node_1_1699372362806",
+        "context": {
+          "date": "<? now().reformatDateTime('dd-MM-yyyy') ?>"
+        },
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "Bem-vindo"
+        },
+        "conditions": "@sim_nao:sim",
+        "dialog_node": "node_8_1699372647469"
+      },
+      {
+        "type": "standard",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Certo, então a primeira etapa é realizar o cadastro. Quando terminar de fazer o cadastro, me chama aqui de novo e diga que quer fazer o teste grátis, que eu continuo te ajudando!\nVou precisar do seu email para te enviar as informações de como realizar o cadastro.\nDigite seu email de contato: "
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "multiline"
+            }
+          ]
+        },
+        "parent": "node_1_1699372362806",
+        "created": "2023-11-10T11:52:24.075Z",
+        "updated": "2023-11-10T11:52:24.075Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "node_6_1699208549850"
+        },
+        "conditions": "@sim_nao:não",
+        "dialog_node": "node_9_1699372981807",
+        "previous_sibling": "node_8_1699372647469"
+      }
+    ],
+    "counterexamples": [],
+    "learning_opt_out": false
+  },
+  "description": "CHATBOT FOR SPRINT 2\n",
+  "assistant_id": "706c148f-973f-46ff-936e-00b220b7db3b",
+  "dialog_settings": {
+    "source_assistant": "7ae95feb-2b94-47b3-bc70-d41b5d264964"
+  },
+  "assistant_references": []
+}

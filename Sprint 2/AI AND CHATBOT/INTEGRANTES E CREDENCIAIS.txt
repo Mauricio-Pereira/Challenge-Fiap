@@ -1,0 +1,18 @@
+#Mauricio Vieira Pereira    -   RM553748
+#Luiz Otávio Leitão Silva   -   RM553542
+#Pedro Donizete Fagundes    -   RM553391
+
+
+WATSON ASSISTANT
+ASSISTANT ID: 8d4e9fc1-e648-48c3-a092-618ba7d4103e
+API KEY: mr9W6sZi71IDOZa0VmC4MB9517LFoQnp54KzrXFZaDSW
+URL: https://api.us-south.assistant.watson.cloud.ibm.com/instances/39abecad-7ef8-4b54-84bc-08e6572d0b52
+
+TEXT-TO-SPEECH
+API KEY: kFJ5rb6dGDFsviUlwGoTREkecTIW-fEZjCsagOZ2AENb
+URL: https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/b2735d12-fcb4-4967-ae73-1e0466e42ade
+
+
+SPEECH-TO-TEXT
+API KEY: ZlFODsQKm16rMJ1V1jouEHznLMz5ShxVm5HTD0TK9F1G
+URL: https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/2d5b8d1c-70d1-41b8-b55e-db4d40574c53

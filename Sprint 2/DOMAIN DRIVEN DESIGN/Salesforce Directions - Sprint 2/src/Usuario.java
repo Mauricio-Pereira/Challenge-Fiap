@@ -15,7 +15,7 @@ public class Usuario {
     private static final Pattern DATE_PATTERN = Pattern.compile(
             "^\\d{2}/\\d{2}/\\d{4}$");
     private static Pattern PhonePattern = Pattern.compile("^\\s*(\\d{2})[-. ]?(\\d{5}|\\d{4})[-. ]?(\\d{4})[-. ]?\\s*$");
-
+    private static Pattern EmailPattern = Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
     private static Pattern CepPattern = Pattern.compile("^\\d{5}-\\d{3}");
     private String nome;
     private String sobrenome;
@@ -53,7 +53,7 @@ public class Usuario {
         }
         this.cidade = cidade;
 
-        if (this.email.contains("@") && this.email.contains(".com")) {
+        if(EmailPattern.matcher(email).matches()) {
             this.email = email;
         } else {
             this.email = "";
@@ -84,8 +84,7 @@ public class Usuario {
     }
 
     public void setEmail(String email) {
-        this.email = email;
-        if (this.email.contains("@") && this.email.contains(".com")) {
+        if(EmailPattern.matcher(email).matches()) {
             this.email = email;
         } else {
             this.email = "";
@@ -176,7 +175,7 @@ public class Usuario {
                 "\r\nNascimento: " + nascimento +
                 "\r\nGênero: " + genero +
                 "\r\nTelefone: " + telefone +
-                "\r\nRua: " + rua + '\'' +
+                "\r\nRua: " + rua +
                 "\r\nNumero da Residência: " + numeroRua +
                 "\r\nComplemento: " + complemento +
                 "\r\nCep: " + cep +

@@ -49,11 +49,12 @@ mouse, seja mais fluído e natural, dispensando o uso da tecla “Tab” e do at
  
 ## Prints Console em Execução
 ![Screenshot - menu.png](img%2FScreenshot%20-%20menu.png)
+
+
+## Fluxo de uso
 ![Fluxo de Uso - pt1.jpg](img%2FFluxo%20de%20Uso%20-%20pt1.jpg)
 ![Fluxo de Uso - pt2.jpg](img%2FFluxo%20de%20Uso%20-%20pt2.jpg)
 ![Fluxo de Uso - pt3.jpg](img%2FFluxo%20de%20Uso%20-%20pt3.jpg)
-
-## Fluxo de uso
 
 ## Desenvolvedores
 

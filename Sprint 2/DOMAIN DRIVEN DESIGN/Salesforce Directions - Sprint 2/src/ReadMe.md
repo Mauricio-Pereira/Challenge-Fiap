@@ -35,6 +35,17 @@ mouse, seja mais fluído e natural, dispensando o uso da tecla “Tab” e do at
 4. Os dados do endereço ainda não estão sendo validados em relação a sua existência, cuidado para nao inserir dados errados.
 
 
+## Planejamento da Funcionalidade de Cadastro - Steps
+1. Definir dos campos a serem cadastrados.
+2. Criar da classe Usuario
+3. Definir de atributos da classe Usuario
+4. Gerar Getters, Setters e Construtor (vazio e completo)
+5. Criar do Menu na classe Main
+6. Criar os metódodos utilizados no Menu
+7. Criar validação nos metódos da classe main e nos Setters
+8. Implementar a validação dos Setters no método Construtor(completo)
+9. Testar
+
 
 ## Prints Console em Execução
 ![Screenshot - menu.png](img%2FScreenshot%20-%20menu.png)

@@ -52,9 +52,7 @@ mouse, seja mais fluído e natural, dispensando o uso da tecla “Tab” e do at
 
 
 ## Fluxo de uso
-![Fluxo de Uso - pt1.jpg](img%2FFluxo%20de%20Uso%20-%20pt1.jpg)
-![Fluxo de Uso - pt2.jpg](img%2FFluxo%20de%20Uso%20-%20pt2.jpg)
-![Fluxo de Uso - pt3.jpg](img%2FFluxo%20de%20Uso%20-%20pt3.jpg)
+![Diagrama de Fluxo de Uso.png](img%2FDiagrama%20de%20Fluxo%20de%20Uso.png)
 
 ## Desenvolvedores
 

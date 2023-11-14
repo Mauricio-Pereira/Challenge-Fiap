@@ -37,18 +37,23 @@ mouse, seja mais fluído e natural, dispensando o uso da tecla “Tab” e do at
 
 ## Planejamento da Funcionalidade de Cadastro - Steps
 1. Definir dos campos a serem cadastrados.
-2. Criar da classe Usuario
-3. Definir de atributos da classe Usuario
-4. Gerar Getters, Setters e Construtor (vazio e completo)
-5. Criar do Menu na classe Main
-6. Criar os metódodos utilizados no Menu
-7. Criar validação nos metódos da classe main e nos Setters
-8. Implementar a validação dos Setters no método Construtor(completo)
-9. Testar
+2. Criar da classe Usuario.
+3. Definir de atributos da classe Usuario.
+4. Gerar Getters, Setters e Construtor (vazio e completo).
+5. Criar do Menu na classe Main e lista para armazenar usuários.
+6. Criar os metódodos utilizados no Menu.
+7. Criar validação nos metódos da classe main e nos Setters.
+8. Implementar a validação dos Setters no método Construtor(completo).
+9. Testar.
 
-
+ 
 ## Prints Console em Execução
 ![Screenshot - menu.png](img%2FScreenshot%20-%20menu.png)
+![Fluxo de Uso - pt1.jpg](img%2FFluxo%20de%20Uso%20-%20pt1.jpg)
+![Fluxo de Uso - pt2.jpg](img%2FFluxo%20de%20Uso%20-%20pt2.jpg)
+![Fluxo de Uso - pt3.jpg](img%2FFluxo%20de%20Uso%20-%20pt3.jpg)
+
+## Fluxo de uso
 
 ## Desenvolvedores
 

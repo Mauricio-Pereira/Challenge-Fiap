@@ -1,11 +1,14 @@
+package Main;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import Class.Usuario;
 
 public class Main {
     public static void main(String[] args) {
         boolean showcase = true;
         var usuarios = new ArrayList<Usuario>();
-        while (showcase == true){
+        while (showcase){
             Scanner scanner = new Scanner(System.in);
             System.out.print("\r\n##--Menu Salesforce Directions--##\n");
             System.out.print("|------------------------------------------|\n");
@@ -59,8 +62,19 @@ public class Main {
         System.out.println("Vamos começar seu cadastro!");
         System.out.println("Digite seu primeiro nome: ");
         usuario.setNome(scanner.nextLine());
+        while(usuario.getNome()==null){
+            System.out.println("O nome não é válido. Utilize apenas letras e letras acentuadas!\n" +
+                    "Digite novamente: ");
+            usuario.setNome(scanner.nextLine());
+        }
         System.out.println("Digite seu sobrenome: ");
         usuario.setSobrenome(scanner.nextLine());
+        while(usuario.getSobrenome()==null){
+            System.out.println("O nome não é válido. Utilize apenas letras e letras acentuadas!\n" +
+                    "Digite novamente: ");
+            usuario.setSobrenome(scanner.nextLine());
+        }
+
 
         System.out.println("Digite seu email: ");
         usuario.setEmail(scanner.nextLine());
@@ -106,7 +120,7 @@ public class Main {
         System.out.println("Digite o nome da rua do seu endereço: ");
         usuario.setRua(scanner.nextLine());
         System.out.println("Digite o número da sua residência: ");
-        usuario.setNumeroRua(scanner.nextInt());
+        usuario.setnumeroResidencia(scanner.nextInt());
         scanner.nextLine();
         System.out.println("Digite o complemento (caso não tenha, digite nulo): ");
         usuario.setComplemento(scanner.nextLine());
@@ -116,7 +130,7 @@ public class Main {
     }
 
     public static void Listar(ArrayList<Usuario> lista){
-        if (lista.size()==0){
+        if (lista.isEmpty()){
             System.out.println("Não existem usuários cadastrados!");
         }
         else {
@@ -129,7 +143,7 @@ public class Main {
 
     public static void MostrarDetalhesUsuario(ArrayList<Usuario> lista){
         Scanner scanner = new Scanner(System.in);
-        if (lista.size()==0){
+        if (lista.isEmpty()){
             System.out.println("Não existem usuários cadastrados!");
         }
         else {
@@ -144,7 +158,7 @@ public class Main {
 
     public static void DeletarUsuario(ArrayList<Usuario> lista){
         Scanner scanner = new Scanner(System.in);
-        if (lista.size()==0){
+        if (lista.isEmpty()){
             System.out.println("Não existem usuários cadastrados!");
         }
         else {

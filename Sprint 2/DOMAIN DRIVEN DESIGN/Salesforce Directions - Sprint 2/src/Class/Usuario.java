@@ -1,22 +1,19 @@
-import javax.swing.*;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+package Class;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class Usuario {
 
-    private static final Pattern DATE_PATTERN = Pattern.compile(
-            "^\\d{2}/\\d{2}/\\d{4}$");
-    private static Pattern PhonePattern = Pattern.compile("^\\s*(\\d{2})[-. ]?(\\d{5}|\\d{4})[-. ]?(\\d{4})[-. ]?\\s*$");
-    private static Pattern EmailPattern = Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
-    private static Pattern CepPattern = Pattern.compile("^\\d{5}-\\d{3}");
+    private static final Pattern Name_Pattern = Pattern.compile("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+$");
+    private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
+    private static final Pattern PhonePattern = Pattern.compile("^\\s*(\\d{2})[-. ]?(\\d{5}|\\d{4})[-. ]?(\\d{4})[-. ]?\\s*$");
+    private static final Pattern EmailPattern = Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
+    private static final Pattern CepPattern = Pattern.compile("^\\d{5}-\\d{3}");
     private String nome;
     private String sobrenome;
 
@@ -25,13 +22,15 @@ public class Usuario {
     private String genero;
     private String telefone;
     private String rua;
-    private int numeroRua;
+    private int numeroResidencia;
     private String complemento;
     private String cep;
     private String cidade;
 
-    public Usuario(String nome, String sobrenome, String email, String nascimento, String genero, String telefone, String rua, int numeroRua, String complemento, String cep, String cidade) {
-        this.nome = nome;
+    public Usuario(String nome, String sobrenome, String email, String nascimento, String genero, String telefone, String rua, int numeroResidencia, String complemento, String cep, String cidade) {
+        if (Name_Pattern.matcher(nome).matches()) {
+            this.nome = nome;
+        }
         this.sobrenome = sobrenome;
         this.email = email;
         if (DATE_PATTERN.matcher(nascimento).matches() && isDateValid(nascimento)) {
@@ -46,7 +45,7 @@ public class Usuario {
             this.telefone = telefone;
         }
         this.rua = rua;
-        this.numeroRua = numeroRua;
+        this.numeroResidencia = numeroResidencia;
         this.complemento = complemento;
         if (Pattern.matches(String.valueOf(CepPattern), cep)) {
             this.cep = cep;
@@ -68,15 +67,18 @@ public class Usuario {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (Name_Pattern.matcher(nome).matches()) {
+            this.nome = nome;
+        }
     }
 
     public String getSobrenome() {
         return sobrenome;
     }
 
-    public void setSobrenome(String sobrenome) {
+    public void setSobrenome(String sobrenome) {if (Name_Pattern.matcher(sobrenome).matches()) {
         this.sobrenome = sobrenome;
+    }
     }
 
     public String getEmail() {
@@ -133,12 +135,12 @@ public class Usuario {
         this.rua = rua;
     }
 
-    public int getNumeroRua() {
-        return numeroRua;
+    public int getnumeroResidencia() {
+        return numeroResidencia;
     }
 
-    public void setNumeroRua(int numeroRua) {
-        this.numeroRua = numeroRua;
+    public void setnumeroResidencia(int numeroResidencia) {
+        this.numeroResidencia = numeroResidencia;
     }
 
     public String getComplemento() {
@@ -176,7 +178,7 @@ public class Usuario {
                 "\r\nGênero: " + genero +
                 "\r\nTelefone: " + telefone +
                 "\r\nRua: " + rua +
-                "\r\nNumero da Residência: " + numeroRua +
+                "\r\nNumero da Residência: " + numeroResidencia +
                 "\r\nComplemento: " + complemento +
                 "\r\nCep: " + cep +
                 "\r\nCidade: " + cidade

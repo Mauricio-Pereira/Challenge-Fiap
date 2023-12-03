@@ -8,7 +8,7 @@ usuario_logado = False
 # Função para Login
 import os
 def login():
-    os.system('cls')  # Para sistemas Windows. Use 'clear' no lugar de 'cls' em sistemas Unix.
+    os.system('cls')
     global usuario_logado  # Indicar que estamos modificando a variável global
     print('Funcionalidade de Login:')
     username = input('Digite seu nome de usuário: ')
@@ -30,16 +30,21 @@ def login():
         print(f'Ocorreu um erro inesperado: {e}')
 
 
-# Função para Logout# Função para Logout
+# Função para Logout
 def logout():
     global usuario_logado
-    usuario_logado = False
-    os.system('cls')
-    print('Logout realizado com sucesso!')
+    if usuario_logado:
+        usuario_logado = False
+        os.system('cls')
+        print('Logout realizado com sucesso!')
+    else:
+        os.system('cls')
+        print('Você precisa estar logado para fazer logout. Faça o login primeiro.')
 
-#  Função para Cadastro de Conta
+
+
 import os
-
+#  Função para Cadastro de Conta
 def cadastrar_conta():
     os.system('cls')
     print('Funcionalidade de Cadastro de Conta:')
@@ -63,7 +68,6 @@ def cadastrar_conta():
             print(f'Erro: {error}')
 
 
-# Função para Solicitar Serviço
 # Função para Solicitar Serviço
 def solicitar_servico():
     while True: #Laço para voltar ao menu de opções de serviço caso um valor invalido seja digitado
@@ -147,6 +151,8 @@ def comandos_acessibilidade():
      print('Tecla ENTER: Confirma o acesso a um elemento do site, abre menus, submenus e aciona hiperlinks.')
 # Função principal
 def main():
+
+
     while True:
         print('\nMenu:')
         print('1. Login')
@@ -177,6 +183,7 @@ def main():
         except ValueError as error:
             os.system('cls')
             print(f'Erro: {error}')
+
 
 
 if __name__ == '__main__':

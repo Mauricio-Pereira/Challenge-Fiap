@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TB_CLIENTE" directorySegmentName="seg_0" id="7263BE5A-F212-3882-597F-8D4D8FB7D432">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DATA_NASCIMENTO" id="176AAC01-99C3-DB56-8327-B91513F794B1">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SENHA" id="20323423-6A60-5741-6C0D-1E9442A5C148">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TELEFONE" id="362014A3-4402-BDB0-D8D4-4FD9294085F8">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOME_USUARIO" id="8727A84E-0CC5-E3EB-016D-3F3D4631228B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TB_ENDERECO_ID" id="8834AFF8-5FB4-4EEB-0D72-58EF59EAC677">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SOBRENOME" id="9A1B3592-6CE8-7895-8BDE-D35414059306">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COD_CLIENTE" id="A2FD73D0-05B4-C458-2799-4742D3FA1A97">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOME" id="E35069BC-48E6-B26B-03D4-8283BC47B050">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL_CORPORATIVO" id="FDA6B9E8-C891-D164-FCA3-EB288C13475B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="TB_CLIENTE__IDX" id="040923EE-8F49-F0D0-1AF1-103584CCB7DE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="TB_CLIENTE_TB_ENDERECO_FK" id="4E334DF7-1844-B19C-3B82-39EFB8C6EAA2">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TB_CLIENTE_PK" id="A7103ACD-47B1-8725-9EE5-AB3AB23AA4C3">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

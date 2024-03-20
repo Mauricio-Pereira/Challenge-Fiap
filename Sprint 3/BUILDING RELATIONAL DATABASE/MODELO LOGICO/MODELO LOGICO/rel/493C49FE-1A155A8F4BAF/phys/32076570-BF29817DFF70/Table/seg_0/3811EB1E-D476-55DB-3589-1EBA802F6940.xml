@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TB_BAIRRO" directorySegmentName="seg_0" id="3811EB1E-D476-55DB-3589-1EBA802F6940">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOME" id="1F7873B3-27E6-3322-0A15-1D79C941327B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TB_CIDADE_ID" id="402BC8B3-64C4-53EF-5ACA-CD7BA13F9FD2">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COD_BAIRRO" id="52114F44-098B-CAA2-E453-0CF152F11B8F">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="TB_BAIRRO__IDX" id="92AD8752-1F24-6847-A5DE-A1F8D0F123ED">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="TB_BAIRRO_TB_CIDADE_FK" id="9F6E86DB-A840-A787-6C3F-4A4F01FDE79F">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TB_BAIRRO_PK" id="C8892F7C-F8F5-CCB2-F4B3-D5E7C8835C11">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:26:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

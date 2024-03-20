@@ -19,7 +19,7 @@ DROP TABLE tb_pais CASCADE CONSTRAINTS;
 DROP TABLE tb_produto CASCADE CONSTRAINTS;
 
 
--- CRIA플O DAS TABELAS E ADI플O DAS CONSTRAINTS
+-- CRIA플O DAS TABELAS E CONFIGURA플O DAS PRIMARY KEYS
 CREATE TABLE tb_bairro (
     cod_bairro   NUMBER NOT NULL,
     nome         VARCHAR2(50),
@@ -111,6 +111,7 @@ CREATE TABLE tb_produto (
 
 ALTER TABLE tb_produto ADD CONSTRAINT tb_produto_pk PRIMARY KEY ( cod_produto );
 
+-- ADI플O DAS CONSTRAINTS E FOREIGN KEYS
 ALTER TABLE tb_bairro
     ADD CONSTRAINT tb_bairro_tb_cidade_fk FOREIGN KEY ( tb_cidade_id )
         REFERENCES tb_cidade ( cod_cidade );

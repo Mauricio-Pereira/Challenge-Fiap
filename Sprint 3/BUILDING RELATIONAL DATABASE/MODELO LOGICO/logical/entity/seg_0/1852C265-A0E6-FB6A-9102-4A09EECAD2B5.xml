@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1852C265-A0E6-FB6A-9102-4A09EECAD2B5" name="TB_CIDADE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:37:26 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD_CIDADE" id="899A3C5B-3B24-7779-2979-10B36DCA4454">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:37:33 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOME" id="6115C201-9A34-6454-C8FC-58B76484AD8E">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:37:39 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_ESTADO" id="909395EB-35FB-872A-D8BB-2A21EFFC41B2">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:39:52 UTC</createdTime>
+<generatorID>30C4B7BD-5CBA-7F1A-53EA-93BC757E9EFC</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>E46027F7-8295-610E-C91B-79FF722CA4D9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5A2B9856-3B78-97F9-3319-C2B590CAD1EA" name="TB_BAIRRO PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:37:38 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>899A3C5B-3B24-7779-2979-10B36DCA4454</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

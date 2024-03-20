@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8DC0751-A291-AC5D-9CF2-D4AE6E0D05F5" name="TB_CIDADE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>1852C265-A0E6-FB6A-9102-4A09EECAD2B5</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_CIDADE" id="6FDC8BDE-5B56-B4EA-5260-ADDD69355179">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>899A3C5B-3B24-7779-2979-10B36DCA4454</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="AA57C57B-9288-C277-B5E2-7C6BAC0C9DC6">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>6115C201-9A34-6454-C8FC-58B76484AD8E</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_ESTADO_ID" id="80D07206-F10E-A614-F126-5623ADDBE456">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>909395EB-35FB-872A-D8BB-2A21EFFC41B2</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3603B99-D0B6-6AEB-C04A-C61DE52A6A5B" referredColumn="425EC673-D00D-43FD-7A7E-C4B2F422852B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA4E815B-41A2-1B65-B774-D243EF172E97" name="TB_CIDADE_PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>5A2B9856-3B78-97F9-3319-C2B590CAD1EA</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FDC8BDE-5B56-B4EA-5260-ADDD69355179"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2682175B-DC1C-5CF3-F5A3-C663FF3B73F3" name="TB_CIDADE__IDX">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>30C4B7BD-5CBA-7F1A-53EA-93BC757E9EFC</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="80D07206-F10E-A614-F126-5623ADDBE456"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44264227-5470-6B69-2505-B2DA2A82E515" name="TB_CIDADE_TB_ESTADO_FK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>30C4B7BD-5CBA-7F1A-53EA-93BC757E9EFC</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80D07206-F10E-A614-F126-5623ADDBE456"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

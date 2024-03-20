@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1B67CD0-A70E-854F-18D7-2ACFF0BA2D42" name="TB_PRODUTO">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>7A929281-A138-E4C2-FFC7-9F1CF5332DE8</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_PRODUTO" id="0C0922DA-6443-E6D4-69A9-452983E19562">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>DF378C03-2C94-F281-CB81-8D852B302515</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="CB3F59A6-9107-5BA8-2F5C-8D536E59CC75">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>2737510B-8630-B832-D03B-E23582B3886B</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="982E999E-71DC-51AB-AA25-5AAB3655D67A">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>326B4BA8-D464-7C09-D533-E6140FEA2BCA</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECO" id="3B6BA0A6-73B5-AFC2-AEAD-185055ABC060">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>1F355B07-F004-A4B5-867A-7805F6202A84</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_CLIENTE_ID" id="2FD54939-EEC5-8423-5DF6-812242438E57">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>495B080D-31EA-501C-F97C-358CA3BDBCBB</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59971AE8-8DE2-7DAC-B0CC-AEA0EBBC82EB" referredColumn="A2FD73D0-05B4-C458-2799-4742D3FA1A97"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3042BB4A-329C-808B-2B29-0B563D8A1857" name="TB_PRODUTO_PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>FE3B1E72-B915-5DED-9498-AE1496FE8635</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0C0922DA-6443-E6D4-69A9-452983E19562"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="568944EE-DF94-69A3-44F5-89539EFB474A" name="TB_PRODUTO_TB_CLIENTE_FK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>BA1E46C2-AA44-C7EF-B3A6-12FCE2C0B507</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FD54939-EEC5-8423-5DF6-812242438E57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

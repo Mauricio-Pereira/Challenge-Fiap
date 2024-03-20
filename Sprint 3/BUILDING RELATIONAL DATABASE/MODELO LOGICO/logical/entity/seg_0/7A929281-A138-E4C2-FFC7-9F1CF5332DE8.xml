@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7A929281-A138-E4C2-FFC7-9F1CF5332DE8" name="TB_PRODUTO">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:10 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD_PRODUTO" id="DF378C03-2C94-F281-CB81-8D852B302515">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:16 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOME" id="2737510B-8630-B832-D03B-E23582B3886B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:22 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESCRICAO" id="326B4BA8-D464-7C09-D533-E6140FEA2BCA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:38 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PRECO" id="1F355B07-F004-A4B5-867A-7805F6202A84">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:51 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CLIENTE" id="495B080D-31EA-501C-F97C-358CA3BDBCBB">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:09:38 UTC</createdTime>
+<generatorID>BA1E46C2-AA44-C7EF-B3A6-12FCE2C0B507</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>210E9919-A989-9E1B-50C1-C211B69AA94D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FE3B1E72-B915-5DED-9498-AE1496FE8635" name="TB_PRODUTO PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:46:21 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DF378C03-2C94-F281-CB81-8D852B302515</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

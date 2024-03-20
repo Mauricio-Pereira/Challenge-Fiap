@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D7F4050F-A480-0DE1-2D32-E0EE18BFC996" name="TB_ENDERECO">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:00 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD_ENDERECO" id="E57B4BAF-30C4-91FF-9638-F4F6E4D81206">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:10 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LOGRADOURO" id="E48E388E-9B83-CC05-4559-C39A336E198C">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:17 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO" id="3C41763B-A236-E934-8785-FC8B952525BD">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:42 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COMPLEMENTO" id="845D5944-21E7-8E71-C8E3-FB84D3224B1F">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:52 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_BAIRRO" id="96794EBD-331A-4669-1705-EAD839D24250">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:42:46 UTC</createdTime>
+<generatorID>1BE021A9-8A10-86C3-3B52-F3C5050ACDCD</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>EAAA3811-CA7E-CDAA-2620-1804095C1DC3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CEP" id="89FB4ED6-1CB7-EDC1-B052-DF459062EF0B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:04:30 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0F7C9DC8-0776-7035-6D2F-EB9FFB29E7A6" name="ENDEREÇO PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:41:16 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E57B4BAF-30C4-91FF-9638-F4F6E4D81206</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

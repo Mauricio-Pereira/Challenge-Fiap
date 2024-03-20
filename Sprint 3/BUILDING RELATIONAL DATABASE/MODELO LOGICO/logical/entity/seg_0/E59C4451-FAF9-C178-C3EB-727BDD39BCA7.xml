@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E59C4451-FAF9-C178-C3EB-727BDD39BCA7" name="TB_ESTADO">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:36:25 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD_ESTADO" id="E46027F7-8295-610E-C91B-79FF722CA4D9">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:36:36 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOME" id="35806A46-9AA6-FACB-479C-6DDDD1299239">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:36:44 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_PAIS" id="33176377-0C45-AA4A-69F3-379004E882DA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:39:49 UTC</createdTime>
+<generatorID>2E920179-2DBE-A313-E8B8-D2F0F1670650</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>114A2850-1C79-12C9-F89E-0925AAB92891</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4D9A47F9-5B3B-A332-F45E-7BCF5AD13173" name="TB_ESTADO PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 12:36:43 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E46027F7-8295-610E-C91B-79FF722CA4D9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

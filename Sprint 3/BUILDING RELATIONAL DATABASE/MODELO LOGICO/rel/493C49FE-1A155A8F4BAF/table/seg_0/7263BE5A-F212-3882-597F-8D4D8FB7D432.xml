@@ -1,0 +1,164 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7263BE5A-F212-3882-597F-8D4D8FB7D432" name="TB_CLIENTE">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>42FFF8FF-5DFB-0807-EFD8-A8FD202BBD0F</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_CLIENTE" id="A2FD73D0-05B4-C458-2799-4742D3FA1A97">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>210E9919-A989-9E1B-50C1-C211B69AA94D</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="E35069BC-48E6-B26B-03D4-8283BC47B050">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>9FC71589-28EE-3364-378F-104216EDCBF6</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SOBRENOME" id="9A1B3592-6CE8-7895-8BDE-D35414059306">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>ECADE2AD-4869-26E1-863C-006E62B7D4CC</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_NASCIMENTO" id="176AAC01-99C3-DB56-8327-B91513F794B1">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>91279C74-C6A7-B780-C477-09729D58A3EC</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONE" id="362014A3-4402-BDB0-D8D4-4FD9294085F8">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>0A753583-7942-1B48-930E-EAF2F87DB63F</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_CORPORATIVO" id="FDA6B9E8-C891-D164-FCA3-EB288C13475B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>CF6C8021-1859-EF30-9CC7-35199AC272DF</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME_USUARIO" id="8727A84E-0CC5-E3EB-016D-3F3D4631228B">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>D960B5B7-B07D-35D1-74EB-F5662786B4DE</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENHA" id="20323423-6A60-5741-6C0D-1E9442A5C148">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>B79B128B-4580-7168-E6C0-0D8EE100CE78</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_ENDERECO_ID" id="8834AFF8-5FB4-4EEB-0D72-58EF59EAC677">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>0887FAD7-C3EC-19A6-5945-3CD707C0E7EB</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="006559BC-2D7C-BBA2-0065-87C420153643" referredColumn="007EC8A4-DE33-0146-6512-9F31840BEF98"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7103ACD-47B1-8725-9EE5-AB3AB23AA4C3" name="TB_CLIENTE_PK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>BBDB5FA8-F657-A4F5-A8D8-639B0BE04ECD</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2FD73D0-05B4-C458-2799-4742D3FA1A97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="040923EE-8F49-F0D0-1AF1-103584CCB7DE" name="TB_CLIENTE__IDX">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A186FC15-3DEE-549A-40FE-902A1F17F1D8</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8834AFF8-5FB4-4EEB-0D72-58EF59EAC677"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E334DF7-1844-B19C-3B82-39EFB8C6EAA2" name="TB_CLIENTE_TB_ENDERECO_FK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>A186FC15-3DEE-549A-40FE-902A1F17F1D8</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8834AFF8-5FB4-4EEB-0D72-58EF59EAC677"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

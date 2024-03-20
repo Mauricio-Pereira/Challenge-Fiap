@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E582E261-FBB5-2246-CC1C-BA1CB9E5DD80" containerWithKeyObject="FD5E2EA0-2E44-A050-D6C6-0B53FD7199B7" localFKIndex="824B6237-62A9-324A-5E4F-23A6351E2A69" name="TB_ENDERECO_TB_BAIRRO_FK">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<generatorID>1BE021A9-8A10-86C3-3B52-F3C5050ACDCD</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<referredTableLongName>TB_BAIRRO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3811EB1E-D476-55DB-3589-1EBA802F6940</referredTableID>
+<keyObject>C8892F7C-F8F5-CCB2-F4B3-D5E7C8835C11</keyObject>
+<referredKeyID>C8892F7C-F8F5-CCB2-F4B3-D5E7C8835C11</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>COD_BAIRRO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

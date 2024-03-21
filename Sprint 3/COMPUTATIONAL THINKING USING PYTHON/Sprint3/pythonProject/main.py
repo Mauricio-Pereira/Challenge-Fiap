@@ -1,12 +1,14 @@
 import csv
 
 def read_id_name(file_name):
-    print("\n")
-    for line in open(file_name, mode ='r'):
-        if line.startswith('ID'):
-            print(line)x
-        if line.startswith('Name'):
-            print(line)
+    """Função o Id e o Nome do arquivo CSV."""
+    try:
+        with open(file_name, mode ='r')as file:
+            csvFile = csv.DictReader(file)
+            for lines in csvFile:
+                print(f"ID: {lines['ID']} - {lines['Username']}")
+    except Exception as e:
+        print("Erro ao ler o arquivo: ", e)
 
 def read_csv_file(file_name):
     """Função para ler o arquivo CSV e armazenar os dados em uma lista de dicionários"""
@@ -23,13 +25,29 @@ def read_csv_file(file_name):
 
 def create_record(data):
     """Função para criar um novo registro."""
-    new_record = {}
-    for field in data[0].keys():
-        if field == 'ID':
-            new_record[field] = str(int(data[-1][field]) + 1)
-        else:
-            new_record[field] = input(f"Digite {field}: ")
-    data.append(new_record)
+    try :
+        with open(file_name, mode='a') as file:
+            writer = csv.DictWriter(file, fieldnames=data[0].keys())
+            new_record = {}
+            for field in data[0].keys():
+                if field == 'ID':
+                    new_record[field] = str(int(data[-1][field]) + 1)
+                else:
+                    valor = input(f"Digite {field}: ")
+                    if valor == '':
+                        while valor == '':
+                            print("Campo obrigatório")
+                            valor = input(f"Digite {field}: ")
+                    new_record[field] = valor
+
+            if any (new_record['Username'] in record.values() for record in data):
+                print("Username já existe")
+                return
+
+            writer.writerow(new_record)
+            print("Registro criado com sucesso")
+    except Exception as e:
+        print("Erro ao criar o registro: ", e)
 
 
 def read_record_by_Id(data):
@@ -55,23 +73,24 @@ def read_all_records(data):
 
 # Função para atualizar um registro
 def update_record_by_id(data):
+    """Função para atualizar um registro pelo ID."""
+    read_id_name(file_name)
     id_to_search = input("Digite o ID que deseja atualizar: ")
     for record in data:
-        if record['ID'] == id_to_search:
+        if id_to_search in record.values():
             for field in record.keys():
+                if field == 'ID':
+                    continue
                 record[field] = input(f"Digite novo {field}: ")
+            print("Registro atualizado com sucesso")
             break
-        else :
+        elif record == data[-1]:
             print("ID não encontrado")
 
 # Função para deletar um registro
 def delete_record_by_Id(data):
     """Função para deletar um registro pelo ID."""
-    for record in data:
-        for field in record.keys():
-            if field == 'ID':
-                print(f"{field}: {record[field]} - {record['Username']}")
-
+    read_id_name(file_name)
 
     id_to_search = input("Digite o ID que deseja deletar: ")
     if id_to_search in [record['ID'] for record in data]:
@@ -79,6 +98,22 @@ def delete_record_by_Id(data):
         print("Registro deletado com sucesso")
 
 
+def exit_and_save(file_name, data):
+    """Função para sair e salvar os dados no arquivo CSV."""
+    with open(file_name, mode='w') as file:
+        print("Deseja salvar as alterações?")
+        save = input("Digite 's' para salvar, 'n' para sair sem salvar ou 'c' para cancelar: : ")
+        while True:
+            if save != 'n' and save != 's':
+                save = input("Opção inválida. Digite 's' para salvar, 'n' para sair sem salvar ou 'c' para cancelar: ")
+            elif save == 's':
+                writer = csv.DictWriter(file, fieldnames=data[0].keys())
+                writer.writeheader()
+                writer.writerows(data)
+                print("Alterações salvas com sucesso")
+                exit()
+            else:
+                print("Alterações não salvas")
 def display_menu():
     """Função para exibir o menu"""
     print("\nMenu:")
@@ -95,20 +130,21 @@ def handle_data(data):
     while True:
         display_menu()
         option = input("Digite a opção desejada: ")
-        if option == '1':
-            create_record(data)
-        elif option == '2':
-            read_record_by_Id(data)
-        elif option == '3':
-            read_all_records(data)
-        elif option == '4':
-            update_record_by_id(data)
-        elif option == '5':
-            delete_record_by_Id(data)
-        elif option == '0':
-            break
-        else:
-            print("Opção inválida")
+        match option:
+            case '1':
+                create_record(data)
+            case '2':
+                read_record_by_Id(data)
+            case '3':
+                read_all_records(data)
+            case '4':
+                update_record_by_id(data)
+            case '5':
+                delete_record_by_Id(data)
+            case '0':
+                exit_and_save(file_name, data)
+            case _:
+                print("Opção inválida")
 
 # Nome do arquivo CSV
 file_name = 'arquivo.csv'

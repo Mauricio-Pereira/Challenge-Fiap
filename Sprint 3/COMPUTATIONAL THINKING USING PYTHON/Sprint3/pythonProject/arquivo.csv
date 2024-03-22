@@ -1,27 +1,1 @@
-ID,Username,QtdClicks,TempoConectadoMinutos
-1,johndoe@example.com,102,320
-2,marysmith@example.com,75,240
-3,adamjones@example.com,145,390
-4,sarahbrown@example.com,90,270
-5,alexwilson@example.com,120,330
-6,emilychen@example.com,85,260
-7,matthewng@example.com,110,300
-8,laurajackson@example.com,130,350
-9,chrislee@example.com,95,280
-10,amandathomas@example.com,115,320
-11,ryanjohnson@example.com,100,290
-12,stephaniemiller@example.com,80,250
-14,sophiagarcia@example.com,70,220
-15,kevinmartinez@example.com,125,340
-16,oliviaadams@example.com,88,270
-17,williamwilson@example.com,105,310
-18,emmaroberts@example.com,150,400
-19,danielharris@example.com,92,280
-20,gracewalker@example.com,110,320
-21,asd,321,321
-22,aaaa,351,321
-24,1,,
-25,william,44,654
-26,aaaaaaaaaaaaaaa,445,321
-26,aaaaaaaaaaaa,654,321
-27,bbbbbbbbbbbbb,4444,5555
+ID,Username,QtdClicks,TempoConectadoMinutos1,johndoe@example.com,102,3202,marysmith@example.com,75,2403,adamjones@example.com,145,3904,sarahbrown@example.com,90,2705,alexwilson@example.com,120,3306,emilychen@example.com,85,2607,matthewng@example.com,110,3008,laurajackson@example.com,130,3509,chrislee@example.com,95,28010,amandathomas@example.com,115,32011,ryanjohnson@example.com,100,29012,stephaniemiller@example.com,80,25014,sophiagarcia@example.com,70,22015,kevinmartinez@example.com,125,34016,oliviaadams@example.com,88,27017,williamwilson@example.com,105,31018,emmaroberts@example.com,150,40019,danielharris@example.com,92,28020,gracewalker@example.com,110,32021,johnsmith@example.com,80,25022,amandajones@example.com,120,35023,alexwilliams@example.com,200,50024,sarahmiller@example.com,60,20025,ryanbrown@example.com,180,42026,laurawilson@example.com,95,30027,michaeltaylor@example.com,110,32028,emilythomas@example.com,75,24029,jamesdavis@example.com,140,38030,oliviascott@example.com,105,31031,jackevans@example.com,70,23032,sophiasmith@example.com,125,36033,charliejohnson@example.com,85,27034,elliebrown@example.com,155,41035,ethanjackson@example.com,115,33036,lucyanderson@example.com,65,22037,davidthompson@example.com,145,39038,isabellawhite@example.com,100,30039,matthewmartinez@example.com,90,28040,emilyhernandez@example.com,130,37041,williamtaylor@example.com,75,24042,sophiewilson@example.com,135,38043,jacobtaylor@example.com,95,29044,hannahmartinez@example.com,110,33045,samuelbrown@example.com,70,22046,chloehernandez@example.com,145,40047,ryanevans@example.com,105,32048,zoewilliams@example.com,125,35049,noahthomas@example.com,80,25050,olivialopez@example.com,140,39051,alexandergarcia@example.com,100,30052,gracejones@example.com,115,33053,oliverdavis@example.com,65,21054,rileymartinez@example.com,150,40055,ameliasmith@example.com,90,28056,elijahrodriguez@example.com,120,36057,sophiabrown@example.com,105,32058,aidenwilson@example.com,85,26059,miajohnson@example.com,130,37060,benjamintaylor@example.com,110,33061,john.smith@example.com,85,26062,amanda.jones@example.com,125,37063,alexander.williams@example.com,195,49064,sarahm@example.com,55,18065,ryan.brown@example.com,175,42066,laura.wilson@example.com,100,31067,michael.taylor@example.com,105,32068,emily.thomas@example.com,80,24069,james.davis@example.com,135,38070,olivia.scott@example.com,110,33071,jack.evans@example.com,65,22072,sophia.smith@example.com,120,36073,charlie.johnson@example.com,80,27074,ellie.brown@example.com,160,42075,ethan.jackson@example.com,120,35076,lucy.anderson@example.com,60,21077,david.thompson@example.com,150,40078,isabella.white@example.com,95,29079,matthew.martinez@example.com,85,28080,emilyhern@example.com,125,37081,william.taylor@example.com,70,23082,sophia.wilson@example.com,130,38083,jacob.taylor@example.com,100,30084,hannah.martinez@example.com,115,34085,samuel.brown@example.com,75,23086,chloe.hernandez@example.com,140,39087,ryan.evans@example.com,100,31088,zoe.williams@example.com,120,35089,noah.thomas@example.com,85,26090,olivia.lopez@example.com,135,38091,alex.garcia@example.com,95,29092,grace.jones@example.com,110,33093,oliver.davis@example.com,60,21094,riley.martinez@example.com,155,40095,amelia.smith@example.com,80,28096,elijah.rodriguez@example.com,115,36097,sophie.brown@example.com,110,33098,aiden.wilson@example.com,90,26099,mia.johnson@example.com,125,370100,benjamin.taylor@example.com,105,320

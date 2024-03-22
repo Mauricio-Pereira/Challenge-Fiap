@@ -22,6 +22,7 @@ header > nav > div {
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    font-family: 'Montserrat'; /* Talvez mudar*/
     color: #2B3C75;
     font-weight: bold;
     font-size: 0.8rem; 

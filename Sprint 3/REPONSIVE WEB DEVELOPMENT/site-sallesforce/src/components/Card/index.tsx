@@ -4,11 +4,13 @@ import './styles.css'
 const Card = (props: Props) => {
     return(
         <>
-        <div className={props.style}>
+        <section>
             <h1>{props.title}</h1>
-            <p>{props.text}</p>
-            <img src={props.img} alt={props.img} title={props.description}/>
-        </div>
+            <div className={props.style}>
+             <p>{props.text}</p>
+             <img src={props.img} alt={props.img} title={props.description}/>
+            </div>
+        </section>
         </>
     );
 };

@@ -43,59 +43,72 @@ def create_record(data):
             if any (new_record['Username'] in record.values() for record in data):
                 print("Username já existe")
                 return
-
             writer.writerow(new_record)
+            data.append(new_record)
+
             print("Registro criado com sucesso")
     except Exception as e:
         print("Erro ao criar o registro: ", e)
 
 
-def read_record_by_Id(data):
-    """Função para ler um registro pelo ID."""
-    id_to_search = input("Digite o ID que deseja ver as informações: ")
-    for record in data:
-        if record['ID'] == id_to_search:
-            for field in record.keys():
-                print(f"{field}: {record[field]}")
-            break
-        elif record == data[-1]:
-            print("ID não encontrado")
+def read_record_by_name(data):
+    """Função para ler um registro pelo nome."""
+    try:
+        name_to_search = input("Digite o nome que deseja buscar: ")
+        for record in data:
+            if name_to_search.casefold() in str(record.values()).casefold():
+                print("\n")
+                for field in record.keys():
+                    print(f"{field}: {record[field]}")
+
+        if name_to_search.casefold() not in str(record.values()).casefold():
+            print("Nome não encontrado")
+    except Exception as e:
+        print("Erro ao buscar o nome: ", e)
 
 
 
 def read_all_records(data):
     """Função para ler todos os registros."""
-    for record in data:
-        for field in record.keys():
-            print(f"{field}: {record[field]}")
-        print("\n")
+    try:
+        for record in data:
+            for field in record.keys():
+                print(f"{field}: {record[field]}")
+            print("\n")
+    except Exception as e:
+        print("Erro ao imprimir os registros: ", e)
 
 
 # Função para atualizar um registro
 def update_record_by_id(data):
     """Função para atualizar um registro pelo ID."""
-    read_id_name(file_name)
-    id_to_search = input("Digite o ID que deseja atualizar: ")
-    for record in data:
-        if id_to_search in record.values():
-            for field in record.keys():
-                if field == 'ID':
-                    continue
-                record[field] = input(f"Digite novo {field}: ")
-            print("Registro atualizado com sucesso")
-            break
-        elif record == data[-1]:
-            print("ID não encontrado")
+    try:
+        read_id_name(file_name)
+        id_to_search = input("Digite o ID que deseja atualizar: ")
+        for record in data:
+            if id_to_search in record.values():
+                for field in record.keys():
+                    if field == 'ID':
+                        continue
+                    record[field] = input(f"Digite novo {field}: ")
+                print("Registro atualizado com sucesso")
+                break
+            elif record == data[-1]:
+                print("ID não encontrado")
+    except Exception as e:
+        print("Erro ao atualizar o registro: ", e)
 
 # Função para deletar um registro
 def delete_record_by_Id(data):
     """Função para deletar um registro pelo ID."""
-    read_id_name(file_name)
-
-    id_to_search = input("Digite o ID que deseja deletar: ")
-    if id_to_search in [record['ID'] for record in data]:
-        data[:] = [record for record in data if record['ID'] != id_to_search]
-        print("Registro deletado com sucesso")
+    try:
+        read_id_name(file_name)
+        id_to_search = input("Digite o ID que deseja deletar: ")
+        if id_to_search in [record['ID'] for record in data]:
+            data[:] = [record for record in data if record['ID'] != id_to_search]
+            print("Registro deletado com sucesso")
+    except Exception as e:
+        print("Erro ao deletar o registro: ", e)
 
 
 def exit_and_save(file_name, data):
@@ -134,7 +147,7 @@ def handle_data(data):
             case '1':
                 create_record(data)
             case '2':
-                read_record_by_Id(data)
+                read_record_by_name(data)
             case '3':
                 read_all_records(data)
             case '4':

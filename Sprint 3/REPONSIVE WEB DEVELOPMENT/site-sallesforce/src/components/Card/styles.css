@@ -1,0 +1,7 @@
+.default > *{
+    background-color: red;
+}
+
+.reverse > *{
+    background-color: blue;
+}

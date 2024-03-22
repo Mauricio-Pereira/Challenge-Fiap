@@ -22,6 +22,7 @@ header > nav > div {
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    font-family: 'Montserrat'; /* Talvez mudar*/
     color: #2B3C75;
     font-weight: bold;
     font-size: 0.8rem; 
@@ -46,16 +47,18 @@ header nav button{
     width: 5rem;
 }
 
-header nav ul li a {
-    padding: 2px 5px;
+header nav ul li .links {
+    padding: 1rem 0.5rem;
     margin: 0 5px;
+    border-radius: 1rem;
 }
 
-header a:hover {
-    color: #2A71B5;
+header .links:hover {
+    color: #4591d8;
+    background-color: #1818180a;
 }
 
-header nav div.login a {
+header nav div.login .links {
     color: #2B3C75;
     font-size: 1rem;
     font-weight: bold;

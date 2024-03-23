@@ -9,6 +9,12 @@ footer{
     font-size: 0.8rem;
 }
 
-.imagem-footer{
+footer > .copy{
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 0;
+}
+
+footer > .logo-footer{
     width: 6rem;
 }

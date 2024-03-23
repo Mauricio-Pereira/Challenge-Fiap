@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="42FFF8FF-5DFB-0807-EFD8-A8FD202BBD0F" name="TB_CLIENTE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="42FFF8FF-5DFB-0807-EFD8-A8FD202BBD0F" name="CH_CLIENTE">
 <createdBy>Mauricio</createdBy>
 <createdTime>2024-03-20 12:42:49 UTC</createdTime>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
@@ -123,20 +123,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="COD_ENDERECO" id="0887FAD7-C3EC-19A6-5945-3CD707C0E7EB">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:08:45 UTC</createdTime>
-<generatorID>A186FC15-3DEE-549A-40FE-902A1F17F1D8</generatorID>
-<ownerDesignName>MODELO LOGICO</ownerDesignName>
-<engineerTo>
-<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
-</engineerTo>
-<referedAttribute>E57B4BAF-30C4-91FF-9638-F4F6E4D81206</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

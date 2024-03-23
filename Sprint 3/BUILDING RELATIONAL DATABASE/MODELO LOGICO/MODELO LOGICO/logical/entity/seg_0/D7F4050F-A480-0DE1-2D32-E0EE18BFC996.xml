@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D7F4050F-A480-0DE1-2D32-E0EE18BFC996" name="TB_ENDERECO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D7F4050F-A480-0DE1-2D32-E0EE18BFC996" name="CH_ENDERECO">
 <createdBy>Mauricio</createdBy>
 <createdTime>2024-03-20 12:41:00 UTC</createdTime>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
@@ -68,20 +68,6 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="COD_BAIRRO" id="96794EBD-331A-4669-1705-EAD839D24250">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 12:42:46 UTC</createdTime>
-<generatorID>1BE021A9-8A10-86C3-3B52-F3C5050ACDCD</generatorID>
-<ownerDesignName>MODELO LOGICO</ownerDesignName>
-<engineerTo>
-<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
-</engineerTo>
-<referedAttribute>EAAA3811-CA7E-CDAA-2620-1804095C1DC3</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="CEP" id="89FB4ED6-1CB7-EDC1-B052-DF459062EF0B">
 <createdBy>Mauricio</createdBy>
 <createdTime>2024-03-20 13:04:30 UTC</createdTime>
@@ -90,6 +76,34 @@
 <item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CLIENTE" id="C8EC6093-D8B5-33CD-A2D1-3D534FD1FCDA">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-23 19:56:50 UTC</createdTime>
+<generatorID>E4E5501A-D9EC-C430-6F59-77D4C3AFDFE1</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>210E9919-A989-9E1B-50C1-C211B69AA94D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_BAIRRO" id="8FDF193C-6E21-7C03-8A12-7DE0D872C904">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-23 19:57:29 UTC</createdTime>
+<generatorID>E511D9CE-9A4D-8DBE-08B8-E6F7B310BC9F</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>EAAA3811-CA7E-CDAA-2620-1804095C1DC3</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7A929281-A138-E4C2-FFC7-9F1CF5332DE8" name="TB_PRODUTO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7A929281-A138-E4C2-FFC7-9F1CF5332DE8" name="CH_PRODUTO">
 <createdBy>Mauricio</createdBy>
 <createdTime>2024-03-20 12:46:10 UTC</createdTime>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
@@ -68,10 +68,23 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="COD_CLIENTE" id="495B080D-31EA-501C-F97C-358CA3BDBCBB">
+<Attribute name="ESTOQUE" id="50783310-3F1D-8AF8-F990-11B233739591">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:09:38 UTC</createdTime>
-<generatorID>BA1E46C2-AA44-C7EF-B3A6-12FCE2C0B507</generatorID>
+<createdTime>2024-03-23 19:36:37 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CLIENTE" id="4C7C261B-4451-5528-C32C-186FA99E462C">
+<createdBy>Mauricio</createdBy>
+<createdTime>2024-03-23 19:57:37 UTC</createdTime>
+<generatorID>9D0C93F4-FE12-722A-9563-D9353B4602D5</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <engineerTo>
 <item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>

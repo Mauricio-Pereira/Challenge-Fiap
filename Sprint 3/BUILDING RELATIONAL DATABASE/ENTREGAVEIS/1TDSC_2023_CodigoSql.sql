@@ -4,49 +4,39 @@
 
 
 -- DROP TABLES PARA ELIMINAR POSSIVEIS TABELAS JA EXISTENTES
-DROP TABLE tb_bairro CASCADE CONSTRAINTS;
+DROP TABLE ch_bairro CASCADE CONSTRAINTS;
 
-DROP TABLE tb_cidade CASCADE CONSTRAINTS;
+DROP TABLE ch_cidade CASCADE CONSTRAINTS;
 
-DROP TABLE tb_cliente CASCADE CONSTRAINTS;
+DROP TABLE ch_cliente CASCADE CONSTRAINTS;
 
-DROP TABLE tb_endereco CASCADE CONSTRAINTS;
+DROP TABLE ch_endereco CASCADE CONSTRAINTS;
 
-DROP TABLE tb_estado CASCADE CONSTRAINTS;
+DROP TABLE ch_estado CASCADE CONSTRAINTS;
 
-DROP TABLE tb_pais CASCADE CONSTRAINTS;
+DROP TABLE ch_pais CASCADE CONSTRAINTS;
 
-DROP TABLE tb_produto CASCADE CONSTRAINTS;
+DROP TABLE ch_produto CASCADE CONSTRAINTS;
 
 
 -- CRIAÇÃO DAS TABELAS E CONFIGURAÇÃO DAS PRIMARY KEYS
-CREATE TABLE tb_bairro (
-    cod_bairro   NUMBER NOT NULL,
-    nome         VARCHAR2(50),
-    tb_cidade_id NUMBER NOT NULL
+CREATE TABLE ch_bairro (
+    cod_bairro           NUMBER NOT NULL,
+    nome                 VARCHAR2(50),
+    ch_cidade_cod_cidade NUMBER NOT NULL
 );
 
-CREATE UNIQUE INDEX tb_bairro__idx ON
-    tb_bairro (
-        tb_cidade_id
-    ASC );
+ALTER TABLE ch_bairro ADD CONSTRAINT ch_bairro_pk PRIMARY KEY ( cod_bairro );
 
-ALTER TABLE tb_bairro ADD CONSTRAINT tb_bairro_pk PRIMARY KEY ( cod_bairro );
-
-CREATE TABLE tb_cidade (
-    cod_cidade   NUMBER NOT NULL,
-    nome         VARCHAR2(50),
-    tb_estado_id NUMBER NOT NULL
+CREATE TABLE ch_cidade (
+    cod_cidade           NUMBER NOT NULL,
+    nome                 VARCHAR2(50),
+    ch_estado_cod_estado NUMBER NOT NULL
 );
 
-CREATE UNIQUE INDEX tb_cidade__idx ON
-    tb_cidade (
-        tb_estado_id
-    ASC );
+ALTER TABLE ch_cidade ADD CONSTRAINT ch_cidade_pk PRIMARY KEY ( cod_cidade );
 
-ALTER TABLE tb_cidade ADD CONSTRAINT tb_cidade_pk PRIMARY KEY ( cod_cidade );
-
-CREATE TABLE tb_cliente (
+CREATE TABLE ch_cliente (
     cod_cliente       NUMBER NOT NULL,
     nome              VARCHAR2(50),
     sobrenome         VARCHAR2(80),
@@ -54,87 +44,78 @@ CREATE TABLE tb_cliente (
     telefone          VARCHAR2(14),
     email_corporativo VARCHAR2(50),
     nome_usuario      VARCHAR2(20),
-    senha             VARCHAR2(50),
-    tb_endereco_id    NUMBER NOT NULL
+    senha             VARCHAR2(50)
 );
 
-CREATE UNIQUE INDEX tb_cliente__idx ON
-    tb_cliente (
-        tb_endereco_id
-    ASC );
+ALTER TABLE ch_cliente ADD CONSTRAINT ch_cliente_pk PRIMARY KEY ( cod_cliente );
 
-ALTER TABLE tb_cliente ADD CONSTRAINT tb_cliente_pk PRIMARY KEY ( cod_cliente );
-
-CREATE TABLE tb_endereco (
-    cod_endereco NUMBER NOT NULL,
-    logradouro   VARCHAR2(250),
-    numero       NUMBER,
-    complemento  VARCHAR2(50),
-    tb_bairro_id NUMBER NOT NULL,
-    cep          NUMBER
+CREATE TABLE ch_endereco (
+    cod_endereco           NUMBER NOT NULL,
+    logradouro             VARCHAR2(250),
+    numero                 NUMBER,
+    complemento            VARCHAR2(50),
+    cep                    NUMBER,
+    ch_cliente_cod_cliente NUMBER NOT NULL,
+    ch_bairro_cod_bairro   NUMBER NOT NULL
 );
 
-CREATE UNIQUE INDEX tb_endereco__idx ON
-    tb_endereco (
-        tb_bairro_id
+CREATE UNIQUE INDEX ch_endereco__idx ON
+    ch_endereco (
+        ch_cliente_cod_cliente
     ASC );
 
-ALTER TABLE tb_endereco ADD CONSTRAINT tb_endereco_pk PRIMARY KEY ( cod_endereco );
+ALTER TABLE ch_endereco ADD CONSTRAINT ch_endereco_pk PRIMARY KEY ( cod_endereco );
 
-CREATE TABLE tb_estado (
-    cod_estado NUMBER NOT NULL,
-    nome       VARCHAR2(50),
-    tb_pais_id NUMBER NOT NULL
+CREATE TABLE ch_estado (
+    cod_estado       NUMBER NOT NULL,
+    nome             VARCHAR2(50),
+    ch_pais_cod_pais NUMBER NOT NULL
 );
 
-CREATE UNIQUE INDEX tb_estado__idx ON
-    tb_estado (
-        tb_pais_id
-    ASC );
+ALTER TABLE ch_estado ADD CONSTRAINT ch_estado_pk PRIMARY KEY ( cod_estado );
 
-ALTER TABLE tb_estado ADD CONSTRAINT tb_estado_pk PRIMARY KEY ( cod_estado );
-
-CREATE TABLE tb_pais (
+CREATE TABLE ch_pais (
     cod_pais NUMBER NOT NULL,
     nome     VARCHAR2(50)
 );
 
-ALTER TABLE tb_pais ADD CONSTRAINT tb_pais_pk PRIMARY KEY ( cod_pais );
+ALTER TABLE ch_pais ADD CONSTRAINT ch_pais_pk PRIMARY KEY ( cod_pais );
 
-CREATE TABLE tb_produto (
-    cod_produto   NUMBER NOT NULL,
-    nome          VARCHAR2(100),
-    descricao     VARCHAR2(250),
-    preco         NUMBER,
-    tb_cliente_id NUMBER NOT NULL
+CREATE TABLE ch_produto (
+    cod_produto            NUMBER NOT NULL,
+    nome                   VARCHAR2(100),
+    descricao              VARCHAR2(250),
+    preco                  NUMBER,
+    estoque                NUMBER,
+    ch_cliente_cod_cliente NUMBER NOT NULL
 );
 
-ALTER TABLE tb_produto ADD CONSTRAINT tb_produto_pk PRIMARY KEY ( cod_produto );
+ALTER TABLE ch_produto ADD CONSTRAINT ch_produto_pk PRIMARY KEY ( cod_produto );
 
 -- ADIÇÃO DAS CONSTRAINTS E FOREIGN KEYS
-ALTER TABLE tb_bairro
-    ADD CONSTRAINT tb_bairro_tb_cidade_fk FOREIGN KEY ( tb_cidade_id )
-        REFERENCES tb_cidade ( cod_cidade );
+ALTER TABLE ch_bairro
+    ADD CONSTRAINT ch_bairro_ch_cidade_fk FOREIGN KEY ( ch_cidade_cod_cidade )
+        REFERENCES ch_cidade ( cod_cidade );
 
-ALTER TABLE tb_cidade
-    ADD CONSTRAINT tb_cidade_tb_estado_fk FOREIGN KEY ( tb_estado_id )
-        REFERENCES tb_estado ( cod_estado );
+ALTER TABLE ch_cidade
+    ADD CONSTRAINT ch_cidade_ch_estado_fk FOREIGN KEY ( ch_estado_cod_estado )
+        REFERENCES ch_estado ( cod_estado );
 
-ALTER TABLE tb_cliente
-    ADD CONSTRAINT tb_cliente_tb_endereco_fk FOREIGN KEY ( tb_endereco_id )
-        REFERENCES tb_endereco ( cod_endereco );
+ALTER TABLE ch_endereco
+    ADD CONSTRAINT ch_endereco_ch_bairro_fk FOREIGN KEY ( ch_bairro_cod_bairro )
+        REFERENCES ch_bairro ( cod_bairro );
 
-ALTER TABLE tb_endereco
-    ADD CONSTRAINT tb_endereco_tb_bairro_fk FOREIGN KEY ( tb_bairro_id )
-        REFERENCES tb_bairro ( cod_bairro );
+ALTER TABLE ch_endereco
+    ADD CONSTRAINT ch_endereco_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
+        REFERENCES ch_cliente ( cod_cliente );
 
-ALTER TABLE tb_estado
-    ADD CONSTRAINT tb_estado_tb_pais_fk FOREIGN KEY ( tb_pais_id )
-        REFERENCES tb_pais ( cod_pais );
+ALTER TABLE ch_estado
+    ADD CONSTRAINT ch_estado_ch_pais_fk FOREIGN KEY ( ch_pais_cod_pais )
+        REFERENCES ch_pais ( cod_pais );
 
-ALTER TABLE tb_produto
-    ADD CONSTRAINT tb_produto_tb_cliente_fk FOREIGN KEY ( tb_cliente_id )
-        REFERENCES tb_cliente ( cod_cliente );
+ALTER TABLE ch_produto
+    ADD CONSTRAINT ch_produto_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
+        REFERENCES ch_cliente ( cod_cliente );
 
 
 

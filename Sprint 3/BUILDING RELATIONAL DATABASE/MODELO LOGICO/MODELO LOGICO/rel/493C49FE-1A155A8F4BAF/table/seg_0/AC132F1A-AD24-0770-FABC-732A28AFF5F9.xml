@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04121AC1-C9C5-498A-95F8-94A144C222DD" name="TB_ESTADO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AC132F1A-AD24-0770-FABC-732A28AFF5F9" name="CH_ESTADO">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>E59C4451-FAF9-C178-C3EB-727BDD39BCA7</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="COD_ESTADO" id="425EC673-D00D-43FD-7A7E-C4B2F422852B">
+<Column name="COD_ESTADO" id="0F9ABEA4-0A00-5FC9-C013-0D71DC165BDB">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>E46027F7-8295-610E-C91B-79FF722CA4D9</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NOME" id="2E2579CE-E3FF-6B2F-505E-1041D667244B">
+<Column name="NOME" id="90D1C4A8-DBD4-0283-44DC-033EEFDF812C">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>35806A46-9AA6-FACB-479C-6DDDD1299239</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -32,10 +32,10 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TB_PAIS_ID" id="9BBA006F-2E14-9116-4B33-718E8858DB6B">
+<Column name="CH_PAIS_COD_PAIS" id="0319EED5-96C9-C38B-6491-56A853F2E9DE">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<generatorID>33176377-0C45-AA4A-69F3-379004E882DA</generatorID>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
+<generatorID>982A1B1E-1F11-168B-299B-85A14C5E8899</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,43 +44,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A80A48C7-0ECE-0344-8C37-C4D1B2C6C7FD" referredColumn="524333FF-273D-7AB0-7248-EB155E2E229B"/>
+<colAssociation fkAssociation="2B2BC6DC-9C6C-F695-8FED-4248F8CDF331" referredColumn="655DDE42-780B-1D9D-02A6-7FA81B078467"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="85051D04-7D52-32F7-6608-360D3EA72F77" name="TB_ESTADO_PK">
+<ind_PK_UK id="39D058E1-7668-FD33-C701-3C604770B639" name="CH_ESTADO_PK">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>4D9A47F9-5B3B-A332-F45E-7BCF5AD13173</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="425EC673-D00D-43FD-7A7E-C4B2F422852B"/>
+<colUsage columnID="0F9ABEA4-0A00-5FC9-C013-0D71DC165BDB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6D36CC0A-36A7-A8B2-ED16-6D4022667B9B" name="TB_ESTADO__IDX">
+<ind_PK_UK id="DCA399E2-C145-8142-681D-960543CD772B" name="CH_ESTADO_CH_PAIS_FK">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<ownerDesignName>MODELO LOGICO</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>2E920179-2DBE-A313-E8B8-D2F0F1670650</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="9BBA006F-2E14-9116-4B33-718E8858DB6B"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="ECB6839D-433B-5D04-4044-EEB7A5131DEA" name="TB_ESTADO_TB_PAIS_FK">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<generatorID>2E920179-2DBE-A313-E8B8-D2F0F1670650</generatorID>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
+<generatorID>094EEC29-EA5D-54BA-649D-8B075B51E700</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9BBA006F-2E14-9116-4B33-718E8858DB6B"/>
+<colUsage columnID="0319EED5-96C9-C38B-6491-56A853F2E9DE"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

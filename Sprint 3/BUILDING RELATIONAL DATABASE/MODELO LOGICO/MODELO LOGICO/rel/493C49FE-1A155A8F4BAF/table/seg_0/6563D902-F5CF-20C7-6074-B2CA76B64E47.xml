@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3811EB1E-D476-55DB-3589-1EBA802F6940" name="TB_BAIRRO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6563D902-F5CF-20C7-6074-B2CA76B64E47" name="CH_BAIRRO">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>E80BDFA7-E97B-C4ED-60C0-6A9D7CE94588</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="COD_BAIRRO" id="52114F44-098B-CAA2-E453-0CF152F11B8F">
+<Column name="COD_BAIRRO" id="664A1FFF-C015-7816-F877-69FDD70FAE06">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>EAAA3811-CA7E-CDAA-2620-1804095C1DC3</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NOME" id="1F7873B3-27E6-3322-0A15-1D79C941327B">
+<Column name="NOME" id="E65E9548-797A-C75B-D426-FF6DB4AECE6C">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>622BE7FF-114E-1CF4-BF6F-0CA965B524F3</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -32,10 +32,10 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TB_CIDADE_ID" id="402BC8B3-64C4-53EF-5ACA-CD7BA13F9FD2">
+<Column name="CH_CIDADE_COD_CIDADE" id="45D37129-CE32-74DB-B4CC-E5BE58F60A5F">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<generatorID>FE3AE2E1-4B8E-9C2F-14F1-22662D8A1C1B</generatorID>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
+<generatorID>5D1AB71C-9B69-B617-03F1-A947DF5CBAAA</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,43 +44,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F2EED66F-598F-342F-DA82-9D6878E41270" referredColumn="6FDC8BDE-5B56-B4EA-5260-ADDD69355179"/>
+<colAssociation fkAssociation="86AA7792-F672-350F-1D9E-557BC14A69A9" referredColumn="5F009064-C4FB-4480-3AED-9AE56AD9601B"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C8892F7C-F8F5-CCB2-F4B3-D5E7C8835C11" name="TB_BAIRRO_PK">
+<ind_PK_UK id="30468056-31A4-7764-D26F-71FED278F9A1" name="CH_BAIRRO_PK">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
 <generatorID>516D10B6-CEB9-B7EB-7204-73308FEB6C41</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="52114F44-098B-CAA2-E453-0CF152F11B8F"/>
+<colUsage columnID="664A1FFF-C015-7816-F877-69FDD70FAE06"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="92AD8752-1F24-6847-A5DE-A1F8D0F123ED" name="TB_BAIRRO__IDX">
+<ind_PK_UK id="DCF3A717-9FCA-78DC-97BA-E7D26CDE8B87" name="CH_BAIRRO_CH_CIDADE_FK">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<ownerDesignName>MODELO LOGICO</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>BE2FE200-73D5-186B-7B9D-0830810A7BB4</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="402BC8B3-64C4-53EF-5ACA-CD7BA13F9FD2"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9F6E86DB-A840-A787-6C3F-4A4F01FDE79F" name="TB_BAIRRO_TB_CIDADE_FK">
-<createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 13:17:23 UTC</createdTime>
-<generatorID>BE2FE200-73D5-186B-7B9D-0830810A7BB4</generatorID>
+<createdTime>2024-03-23 19:58:52 UTC</createdTime>
+<generatorID>C7A71DAA-4A36-92CF-0213-9EC6847FEF8C</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="402BC8B3-64C4-53EF-5ACA-CD7BA13F9FD2"/>
+<colUsage columnID="45D37129-CE32-74DB-B4CC-E5BE58F60A5F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

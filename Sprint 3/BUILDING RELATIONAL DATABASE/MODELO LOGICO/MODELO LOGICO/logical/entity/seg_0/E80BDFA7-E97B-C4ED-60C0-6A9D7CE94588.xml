@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E80BDFA7-E97B-C4ED-60C0-6A9D7CE94588" name="TB_BAIRRO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E80BDFA7-E97B-C4ED-60C0-6A9D7CE94588" name="CH_BAIRRO">
 <createdBy>Mauricio</createdBy>
 <createdTime>2024-03-20 12:38:12 UTC</createdTime>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
@@ -41,10 +41,10 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="COD_CIDADE" id="FE3AE2E1-4B8E-9C2F-14F1-22662D8A1C1B">
+<Attribute name="COD_CIDADE" id="5D1AB71C-9B69-B617-03F1-A947DF5CBAAA">
 <createdBy>Mauricio</createdBy>
-<createdTime>2024-03-20 12:39:55 UTC</createdTime>
-<generatorID>BE2FE200-73D5-186B-7B9D-0830810A7BB4</generatorID>
+<createdTime>2024-03-23 19:57:27 UTC</createdTime>
+<generatorID>C7A71DAA-4A36-92CF-0213-9EC6847FEF8C</generatorID>
 <ownerDesignName>MODELO LOGICO</ownerDesignName>
 <engineerTo>
 <item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>

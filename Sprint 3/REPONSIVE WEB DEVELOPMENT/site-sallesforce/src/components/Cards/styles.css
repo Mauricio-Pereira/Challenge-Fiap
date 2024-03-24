@@ -7,10 +7,18 @@ section{
 }
 
 section > h1{
+    text-align: center;
     font-weight: bold;
     font-size: 2.5rem;
     margin-bottom: 1.1rem;
     color: #032D60;
+}
+
+section > div > h1{
+    width: 0;
+    padding: 0;
+    flex: 0;
+    font-size: 0;
 }
 
 section > div{
@@ -32,4 +40,19 @@ section > div > p{
 
 .reverse{
     flex-direction: row-reverse;
+}
+
+section > .true{
+    width: 0;
+    padding: 0;
+    flex: 0;
+    font-size: 0;
+}
+
+section > div > .true{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #032D60;
 }

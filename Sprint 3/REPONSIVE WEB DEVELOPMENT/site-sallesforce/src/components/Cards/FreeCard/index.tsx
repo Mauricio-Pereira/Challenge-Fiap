@@ -1,18 +1,19 @@
-import { Props } from "./interface";
-import './styles.css'
+import { Props } from "../interface";
+import Forms from "../../Forms";
+import '../styles.css'
 
-const Card = (props: Props) => {
+const FreeCard = (props: Props) => {
     return(
         <>
         <section className="flex">
-            <h1>{props.title}</h1>
             <div className={props.style}>
-             <p>{props.text}</p>
              <img src={props.img} alt={props.img} title={props.description}/>
+             <p>{props.text}</p>
+             <Forms/>
             </div>
         </section>
         </>
     );
 };
 
-export default Card;
+export default FreeCard;

@@ -1,4 +1,4 @@
-import Card from "../../components/Card";
+import Card from "../../components/Cards/Card";
 
 export default function Salesforce() {
     return (
@@ -11,7 +11,8 @@ export default function Salesforce() {
           pessoas. É uma plataforma de CRM integrada 
           que oferece a todos os departamentos uma 
           visão única e compartilhada de cada cliente."
-          img="/cardImg1.png"
+          img="/cardImg3.png"
+          intitle="true"
         />
         <Card
           title="O que é um CRM?"
@@ -24,7 +25,8 @@ export default function Salesforce() {
           e integra dados valiosos para preparar e atualizar suas 
           equipes com informações pessoais dos clientes, 
           histórico e preferência de compras."
-          img="/cardImg1.png"
+          img="/cardImg4.png"
+          intitle="true"
           style="reverse"
         />
       </main>

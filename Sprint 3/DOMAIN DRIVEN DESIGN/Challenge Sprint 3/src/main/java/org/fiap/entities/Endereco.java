@@ -2,7 +2,7 @@ package org.fiap.entities;
 
 import java.util.regex.Pattern;
 
-public abstract class Endereco {
+public class Endereco {
     private static final Pattern CepPattern = Pattern.compile("^\\d{5}-\\d{3}");
     private String cep;
     private String logradouro;
@@ -17,7 +17,11 @@ public abstract class Endereco {
     }
 
     public Endereco(String cep, String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String pais) {
-        this.cep = cep;
+        try {
+            setCep(cep);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("CEP inválido");
+        }
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -32,7 +36,14 @@ public abstract class Endereco {
     }
 
     public void setCep(String cep) {
-        this.cep = cep;
+        try {
+            if (!Pattern.matches(String.valueOf(CepPattern), cep)) {
+                throw new IllegalArgumentException("CEP inválido");
+            }
+            this.cep = cep;
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("CEP inválido");
+        }
     }
 
     public String getLogradouro() {

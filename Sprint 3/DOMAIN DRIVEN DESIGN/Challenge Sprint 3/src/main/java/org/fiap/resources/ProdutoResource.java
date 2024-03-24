@@ -26,7 +26,7 @@ public class ProdutoResource {
     @Path("produto")
     @Produces(MediaType.APPLICATION_JSON)
     public Produto getProduto() {
-        return new Produto(1, "Produto 1", 10.0, 100);
+        return new Produto(1, "Produto 1", "Produto para vacinar", 10.0, 100);
     }
 
     @POST

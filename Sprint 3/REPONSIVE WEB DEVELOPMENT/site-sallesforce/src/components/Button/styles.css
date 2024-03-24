@@ -3,16 +3,15 @@
     font-size: 1.1rem;
 }
 
-.send-btn {
+.submit{
     text-align: center;
     text-decoration: none;
     border-radius: 0.5rem;
     color: #f1f1f1;
     background: #2346A0;
     font-weight: bold;
-    max-width: 20rem;
     min-width: 5rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 30.8%;
     font-size: 0.8rem;
     border: 2px solid #2346A0;
 }
@@ -37,7 +36,7 @@
     border: 2px solid #43b416;
 }
 
-.send-btn:hover {
+.submit:hover {
     color: #162eb4;
     background: #ffffff;
     border: 2px solid #162eb4;

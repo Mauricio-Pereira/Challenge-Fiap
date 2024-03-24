@@ -130,11 +130,11 @@ def exit_and_save(file_name, data):
 def display_menu():
     """Função para exibir o menu"""
     print("\nMenu:")
-    print("1. Create")
-    print("2. Read")
-    print("3. Read All")
-    print("4. Update")
-    print("5. Delete")
+    print("1. Criar novo registro")
+    print("2. Ler por nome")
+    print("3. Ler todos os registros")
+    print("4. Atualizar registro por ID")
+    print("5. Deletar registro por ID")
     print("0. Exit")
 
 # Função para manipular os dados

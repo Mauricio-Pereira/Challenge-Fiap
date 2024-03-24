@@ -21,7 +21,7 @@ public class EnderecoRepository <T extends _BaseEntity> implements _BaseReposito
     }
 
     @Override
-    public boolean Update(T entity) {
+    public boolean UpdateById(T entity, int id) {
         return false;
     }
 

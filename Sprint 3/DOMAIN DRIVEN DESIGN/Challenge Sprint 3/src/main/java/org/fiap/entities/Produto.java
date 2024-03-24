@@ -3,6 +3,7 @@ package org.fiap.entities;
 import java.util.List;
 
 public class Produto extends _BaseEntity{
+    private Cliente cliente;
     private String nome;
     private String descricao;
     private double preco;
@@ -11,12 +12,21 @@ public class Produto extends _BaseEntity{
     public Produto() {
     }
 
-    public Produto(int id, String nome, String descricao, double preco, int estoque) {
+    public Produto(int id, Cliente cliente, String nome, String descricao, double preco, int estoque) {
         super(id);
+        this.cliente = cliente;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.estoque = estoque;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public String getNome() {
@@ -54,6 +64,8 @@ public class Produto extends _BaseEntity{
     @Override
     public String toString() {
         return "Produto {\n" +
+                "\tCliente: " + cliente.getNome() + ",\n"+
+                "\tCliente ID: " + cliente.getId() + ",\n" +
                 "\tNome: '" + nome + "',\n" +
                 "\tDescrição: '" + descricao + "',\n" +
                 "\tPreço: " + preco + ",\n" +

@@ -1,0 +1,16 @@
+13:59:45.487 [grizzly-http-server-0] INFO  org.fiap.entities.Produto - ReadAll: 
+14:03:39.573 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - ReadAll: 
+14:04:13.916 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Read: 
+14:08:56.707 [grizzly-http-server-0] INFO  org.fiap.entities.Produto - ReadAll: 
+14:13:15.246 [grizzly-http-server-0] INFO  org.fiap.entities.Produto - Update: Produto {
+	Cliente: Lara,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Picanha',
+	Preço: 47.5,
+	Estoque: 500,
+	_BaseEntity{id=6}
+}
+14:14:16.218 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - ReadAll: 
+14:14:34.706 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Delete: null
+14:14:40.687 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - ReadAll: 

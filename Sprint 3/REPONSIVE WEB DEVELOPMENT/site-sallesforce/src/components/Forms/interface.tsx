@@ -4,7 +4,7 @@ export interface Props {
     description?: string;
 };
 
-export interface ICadastroState {
+/*export interface ICadastroState {
     nome: string;
     sobrenome: string;
     dataNascimento: string;
@@ -20,4 +20,4 @@ export interface ICadastroState {
     pais: string;
     nomeUsuario: string;
     senha: string;
-}
+}*/

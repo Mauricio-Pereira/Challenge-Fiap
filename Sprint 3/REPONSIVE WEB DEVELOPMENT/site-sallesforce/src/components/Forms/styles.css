@@ -1,9 +1,26 @@
 .form{
     background-color: #8bbaff;
-    display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
     padding: 1rem;
     width: 30rem;
-    height: 30rem;
+    min-height: 70rem;
 }
+
+.form > p{
+    margin-bottom: 0.5rem;
+}
+
+.form > form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form > form input{
+    margin-bottom: 1rem;
+}
+
+.form > form > div input{
+    margin-left: 1rem;
+}
+

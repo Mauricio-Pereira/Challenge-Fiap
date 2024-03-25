@@ -22,6 +22,7 @@ export default function FreeTrial() {
         text="Inscreva-se para começar sua avaliação gratuita.
         Preencha o formulário abaixo e em breve entraremos em contato sobre seu teste gratuito."
         img="/cardImg6.png"
+        style="freeforms"
         />
       </main>
     );

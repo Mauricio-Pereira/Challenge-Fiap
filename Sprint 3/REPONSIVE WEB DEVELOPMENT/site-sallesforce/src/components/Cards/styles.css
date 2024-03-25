@@ -56,3 +56,7 @@ section > div > .true{
     font-size: 2.5rem;
     color: #032D60;
 }
+
+section > .freeforms > img{
+    margin-bottom: 45%;
+}

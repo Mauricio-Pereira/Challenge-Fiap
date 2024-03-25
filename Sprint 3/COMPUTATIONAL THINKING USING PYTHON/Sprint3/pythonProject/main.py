@@ -1,7 +1,7 @@
 import csv
 
 def read_id_name(file_name):
-    """Função o Id e o Nome do arquivo CSV."""
+    """Função que lê o Id e o Nome do arquivo CSV."""
     try:
         with open(file_name, mode ='r')as file:
             csvFile = csv.DictReader(file)
@@ -23,7 +23,7 @@ def read_csv_file(file_name):
     finally:
         return data
 
-def create_record(data):
+def create_data(data):
     """Função para criar um novo registro."""
     try :
         with open(file_name, mode='a') as file:
@@ -51,7 +51,7 @@ def create_record(data):
         print("Erro ao criar o registro: ", e)
 
 
-def read_record_by_name(data):
+def find_data_by_name(data):
     """Função para ler um registro pelo nome."""
     try:
         name_to_search = input("Digite o nome que deseja buscar: ")
@@ -68,7 +68,7 @@ def read_record_by_name(data):
 
 
 
-def read_all_records(data):
+def read_all_data(data):
     """Função para ler todos os registros."""
     try:
         for record in data:
@@ -80,7 +80,7 @@ def read_all_records(data):
 
 
 # Função para atualizar um registro
-def update_record_by_id(data):
+def update_data_by_id(data):
     """Função para atualizar um registro pelo ID."""
     try:
         read_id_name(file_name)
@@ -99,7 +99,7 @@ def update_record_by_id(data):
         print("Erro ao atualizar o registro: ", e)
 
 # Função para deletar um registro
-def delete_record_by_Id(data):
+def delete_data_by_id(data):
     """Função para deletar um registro pelo ID."""
     try:
         read_id_name(file_name)
@@ -145,15 +145,15 @@ def handle_data(data):
         option = input("Digite a opção desejada: ")
         match option:
             case '1':
-                create_record(data)
+                create_data(data)
             case '2':
-                read_record_by_name(data)
+                find_data_by_name(data)
             case '3':
-                read_all_records(data)
+                read_all_data(data)
             case '4':
-                update_record_by_id(data)
+                update_data_by_id(data)
             case '5':
-                delete_record_by_Id(data)
+                delete_data_by_id(data)
             case '0':
                 exit_and_save(file_name, data)
             case _:

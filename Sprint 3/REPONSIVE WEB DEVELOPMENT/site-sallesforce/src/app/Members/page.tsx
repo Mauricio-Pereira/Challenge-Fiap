@@ -1,7 +1,12 @@
+import MembersCard from "../../components/Cards/MembersCard";
+
 export default function Members() {
     return (
       <main className="flex-auto">
-        Integrantes
+        <MembersCard
+        title=""
+        text=""
+        />
       </main>
     );
   }

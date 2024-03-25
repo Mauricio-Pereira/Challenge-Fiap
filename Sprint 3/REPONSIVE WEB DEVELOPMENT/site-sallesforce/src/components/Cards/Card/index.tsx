@@ -5,9 +5,9 @@ const Card = (props: Props) => {
     return(
         <>
         <section className="flex">
-            <h1 className={props.intitle}>{props.title}</h1>
+            <h1>{props.title}</h1>
             <div className={props.style}>
-             <h1 className={props.intitle}>{props.title}</h1>
+             <h1>{props.in_title}</h1>
              <p>{props.text}</p>
              <img src={props.img} alt={props.img} title={props.description}/>
             </div>

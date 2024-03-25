@@ -4,7 +4,7 @@ export default function Salesforce() {
     return (
       <main className="flex-auto">
         <Card
-          title="Quem somos nós?"
+          in_title="Quem somos nós?"
           text="A Salesforce é uma empresa de softwares 
           que foca na solução de gerenciamento de 
           relacionamento para aproximar empresas e 
@@ -12,10 +12,9 @@ export default function Salesforce() {
           que oferece a todos os departamentos uma 
           visão única e compartilhada de cada cliente."
           img="/cardImg3.png"
-          intitle="true"
         />
         <Card
-          title="O que é um CRM?"
+          in_title="O que é um CRM?"
           text="O CRM armazena informações de clientes atuais e 
           potenciais – nome, endereço, número de telefone, e 
           suas atividades e pontos de contato com a empresa, 
@@ -26,7 +25,6 @@ export default function Salesforce() {
           equipes com informações pessoais dos clientes, 
           histórico e preferência de compras."
           img="/cardImg4.png"
-          intitle="true"
           style="reverse"
         />
       </main>

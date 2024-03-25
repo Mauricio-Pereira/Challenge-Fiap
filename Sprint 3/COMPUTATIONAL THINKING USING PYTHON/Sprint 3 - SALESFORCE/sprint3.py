@@ -56,12 +56,12 @@ def find_data_by_name(data):
     try:
         name_to_search = input("Digite o nome que deseja buscar: ")
         for record in data:
-            if name_to_search.casefold() in str(record.values()).casefold():
+            if name_to_search.casefold() == record['Username'].casefold():
                 print("\n")
                 for field in record.keys():
                     print(f"{field}: {record[field]}")
 
-        if name_to_search.casefold() not in str(record.values()).casefold():
+        if name_to_search.casefold() != record['Username'].casefold():
             print("Nome não encontrado")
     except Exception as e:
         print("Erro ao buscar o nome: ", e)

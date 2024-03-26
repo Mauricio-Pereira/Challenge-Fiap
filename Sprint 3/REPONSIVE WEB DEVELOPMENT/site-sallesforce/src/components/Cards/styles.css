@@ -45,3 +45,27 @@ section > div > p{
 .reverse{
     flex-direction: row-reverse;
 }
+
+
+.member_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.member_section > div{
+    flex-direction: column;
+}
+
+.member_section > :last-child{
+    flex: 2;
+}
+
+.member_section > div > p{
+    text-align: center;
+    margin: 0;
+}
+
+.member_section > div > .member_profile_img{
+    height: 10rem;
+    border-radius: 0.5rem;
+}

@@ -6,3 +6,10 @@ export interface Props {
     style?: string;
     description?: string;
 };
+
+export interface Member{
+    name: string;
+    git_link: string;
+    lin_link: string;
+    img: string;
+};

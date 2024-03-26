@@ -92,6 +92,7 @@ public class ClienteRepository extends _BaseRepositoryImpl<Cliente> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        entity.setId(ReadAll().getLast().getId());
     }
 
     public List<Cliente> ReadAll() {

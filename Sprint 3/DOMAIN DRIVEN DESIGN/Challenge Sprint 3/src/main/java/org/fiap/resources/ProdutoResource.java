@@ -44,7 +44,7 @@ public class ProdutoResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createProduto(@PathParam("clienteId") int clienteId, Produto produto) {
         produtoRepository.Create(produto, clienteId);
-        logger.logCreate(produtoRepository.ReadById(produto.getId());
+        logger.logCreate(produtoRepository.ReadById(produto.getId()));
         return Response.status(Response.Status.CREATED).entity(produto).build();
     }
 
@@ -65,8 +65,9 @@ public class ProdutoResource {
     @DELETE
     @Path("produto/{id}")
     public Response deleteProduto(@PathParam("id") int id) {
-        if (produtoRepository.DeleteById(id)){
+        if (produtoRepository.ReadById(id) != null){
             logger.logDeleteById(produtoRepository.ReadById(id));
+            produtoRepository.DeleteById(id);
             return Response.status(Response.Status.OK).build();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();

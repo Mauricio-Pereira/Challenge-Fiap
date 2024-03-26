@@ -14,3 +14,132 @@
 14:14:16.218 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - ReadAll: 
 14:14:34.706 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Delete: null
 14:14:40.687 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - ReadAll: 
+14:34:24.288 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - ReadAll: 
+14:34:56.504 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: null
+14:35:15.555 [grizzly-http-server-0] INFO  org.fiap.entities.Produto - Read: 
+14:35:39.288 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - Update: Produto {
+	Cliente: Lara,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Picanha',
+	Preço: 47.5,
+	Estoque: 500,
+	_BaseEntity{id=6}
+}
+14:35:46.040 [grizzly-http-server-5] INFO  org.fiap.entities.Produto - Read: 
+14:36:05.937 [grizzly-http-server-4] INFO  org.fiap.entities.Produto - Read: 
+14:36:21.239 [grizzly-http-server-6] INFO  org.fiap.entities.Produto - Delete: null
+14:38:24.224 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Delete: Produto {
+	Cliente: Lara,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Maminha',
+	Preço: 30.3,
+	Estoque: 150,
+	_BaseEntity{id=10}
+}
+14:40:44.318 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: null
+14:43:15.756 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: Produto {
+	Cliente: Cliente 2,
+	Cliente ID: 4,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 20.3,
+	Estoque: 150,
+	_BaseEntity{id=15}
+}
+14:43:34.150 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Create: Produto {
+	Cliente: Cliente 2,
+	Cliente ID: 4,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 25.3,
+	Estoque: 150,
+	_BaseEntity{id=16}
+}
+08:15:49.069 [grizzly-http-server-2] INFO  org.fiap.entities.Cliente - ReadAll: 
+08:15:56.628 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - ReadAll: 
+11:02:49.393 [grizzly-http-server-0] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:03:59.732 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - Read: 
+11:06:28.204 [grizzly-http-server-3] INFO  org.fiap.entities.Cliente - ReadAll: 
+11:06:43.330 [grizzly-http-server-4] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:16:44.021 [grizzly-http-server-4] INFO  org.fiap.entities.Cliente - Create: Cliente {
+	Nome: 'Luiz Teste45',
+	Sobrenome: 'Luiz Teste',
+	Data de Nascimento: 2000-01-01,
+	Telefone: '11999999999',
+	Email: 'Luiz_teste@email.com',
+	Endereço: null,
+	Usuário: 'usuario_teste',
+	Senha: 'Senha@123',
+	_BaseEntity{id=3}
+}
+11:18:37.075 [grizzly-http-server-6] INFO  org.fiap.entities.Cliente - Create: Cliente {
+	Nome: 'Luiz Teste45',
+	Sobrenome: 'Luiz Teste',
+	Data de Nascimento: 2000-01-01,
+	Telefone: '11999999999',
+	Email: 'Luiz_teste@email.com',
+	Endereço: null,
+	Usuário: 'usuario_teste',
+	Senha: 'Senha@123',
+	_BaseEntity{id=4}
+}
+11:19:02.400 [grizzly-http-server-8] INFO  org.fiap.entities.Cliente - Create: Cliente {
+	Nome: 'Luiz Teste45',
+	Sobrenome: 'Luiz Teste',
+	Data de Nascimento: 2000-01-01,
+	Telefone: '11999999999',
+	Email: 'Luiz_teste@email.com',
+	Endereço: null,
+	Usuário: 'usuario_teste',
+	Senha: 'Senha@123',
+	_BaseEntity{id=5}
+}
+11:19:05.101 [grizzly-http-server-9] INFO  org.fiap.entities.Cliente - ReadAll: 
+11:19:27.964 [grizzly-http-server-11] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:28:25.866 [grizzly-http-server-0] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:28:40.573 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - Read: 
+11:29:25.831 [grizzly-http-server-2] INFO  org.fiap.entities.Endereco - Delete: Endereco {
+	COD_ENDERECO: '6,
+	CEP: '12345678',
+	Logradouro: 'Rua 1',
+	Número: '123',
+	Complemento: 'Complemento 1',
+	Bairro: 'Vila Mariana',
+	Cidade: 'São Paulo',
+	Estado: 'São Paulo',
+	País: 'Brasil'
+}
+11:29:30.694 [grizzly-http-server-3] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:32:24.565 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:33:56.634 [grizzly-http-server-0] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:45:04.702 [grizzly-http-server-6] INFO  org.fiap.entities.Endereco - Create: null
+11:45:27.837 [grizzly-http-server-7] INFO  org.fiap.entities.Endereco - Create: null
+11:47:25.915 [grizzly-http-server-8] INFO  org.fiap.entities.Endereco - Create: null
+11:51:01.026 [grizzly-http-server-0] INFO  org.fiap.entities.Endereco - Create: null
+11:52:06.482 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - Create: null
+11:52:22.983 [grizzly-http-server-2] INFO  org.fiap.entities.Endereco - ReadAll: 
+11:52:41.909 [grizzly-http-server-3] INFO  org.fiap.entities.Endereco - Update: Endereco {
+	COD_ENDERECO: '8,
+	CEP: '22233123',
+	Logradouro: 'Rua Nova',
+	Número: '789',
+	Complemento: 'Apto Novo',
+	Bairro: 'Casa Verde',
+	Cidade: 'São Paulo',
+	Estado: 'São Paulo',
+	País: 'Brasil'
+}
+11:59:44.027 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - Update: Endereco {
+	COD_ENDERECO: '8,
+	CEP: '11121111',
+	Logradouro: 'Rua Atualizada',
+	Número: '456',
+	Complemento: 'Apto Atualizado',
+	Bairro: 'Casa Verde',
+	Cidade: 'São Paulo',
+	Estado: 'São Paulo',
+	País: 'Brasil'
+}
+12:14:13.623 [grizzly-http-server-1] INFO  org.fiap.entities.Endereco - ReadAll: 

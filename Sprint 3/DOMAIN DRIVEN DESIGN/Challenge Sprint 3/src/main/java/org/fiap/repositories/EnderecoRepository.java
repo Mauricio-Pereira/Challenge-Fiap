@@ -5,6 +5,7 @@ import org.fiap.entities.Endereco;
 import org.fiap.entities._BaseEntity;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public class EnderecoRepository extends _BaseRepositoryImpl<Endereco>{
             "COMPLEMENTO", "COMPLEMENTO",
             "CEP", "CEP",
             "CH_CLIENTE_COD_CLIENTE", "CH_CLIENTE_COD_CLIENTE",
-            "CH_CIDADE_COD_BAIRRO", "CH_CIDADE_COD_BAIRRO"
+            "CH_BAIRRO_COD_BAIRRO", "CH_BAIRRO_COD_BAIRRO"
     );
 
     public static final Map<String, String> TB_COLUMNS_BAIRRO = Map.of(
@@ -29,35 +30,19 @@ public class EnderecoRepository extends _BaseRepositoryImpl<Endereco>{
             "CH_CIDADE_COD_CIDADE", "CH_CIDADE_COD_CIDADE"
     );
 
-    public static final Map<String, String> TB_COLUMNS_CIDADE = Map.of(
-            "COD_CIDADE", "COD_CIDADE",
-            "NOME", "NOME",
-            "CH_ESTADO_COD_ESTADO", "CH_ESTADO_COD_ESTADO"
-    );
 
-    public static final Map<String, String> TB_COLUMNS_ESTADO = Map.of(
-            "COD_ESTADO", "COD_ESTADO",
-            "NOME", "NOME",
-            "CH_PAIS_COD_PAIS", "CH_PAIS_COD_PAIS"
-    );
-
-    public static final Map<String, String> TB_COLUMNS_PAIS = Map.of(
-            "COD_PAIS", "COD_PAIS",
-            "NOME", "NOME"
-    );
 
     public EnderecoRepository() {
         Initialize();
     }
 
-private void Initialize() {
+    private void Initialize() {
         String sql = "CREATE TABLE %s (" +
                 "%s NUMBER generated as idendereco constraint %s_PK PRIMARY KEY, " +
                 "%s VARCHAR2(50) NOT NULL, " +
                 "%s VARCHAR2(10) NOT NULL, " +
                 "%s VARCHAR2(50) NOT NULL, " +
                 "%s VARCHAR2(8) NOT NULL, " +
-                "%s NUMBER NOT NULL, " +
                 "%s NUMBER NOT NULL, " +
                 "%s NUMBER NOT NULL)"
                         .formatted(TB_NAME,
@@ -85,64 +70,23 @@ private void Initialize() {
 
     @Override
     public void Create(Endereco endereco) {
-        String sqlEndereco = "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?, ?)"
-                .formatted(TB_NAME,
-                        TB_COLUMNS_ENDERECO.get("LOGRADOURO"),
-                        TB_COLUMNS_ENDERECO.get("NUMERO"),
-                        TB_COLUMNS_ENDERECO.get("COMPLEMENTO"),
-                        TB_COLUMNS_ENDERECO.get("CEP"),
-                        TB_COLUMNS_ENDERECO.get("CH_CLIENTE_COD_CLIENTE"),
-                        TB_COLUMNS_ENDERECO.get("CH_CIDADE_COD_BAIRRO")
-                );
-        String sqlBairro = "INSERT INTO %s (%s, %s) VALUES (?, ?)"
-                .formatted("CH_BAIRRO",
-                        TB_COLUMNS_BAIRRO.get("NOME"),
-                        TB_COLUMNS_BAIRRO.get("CH_CIDADE_COD_CIDADE")
-                );
-        String sqlCidade = "INSERT INTO %s (%s, %s) VALUES (?, ?)"
-                .formatted("CH_CIDADE",
-                        TB_COLUMNS_CIDADE.get("NOME"),
-                        TB_COLUMNS_CIDADE.get("CH_ESTADO_COD_ESTADO")
-                );
-        String sqlEstado = "INSERT INTO %s (%s, %s) VALUES (?, ?)"
-                .formatted("CH_ESTADO",
-                        TB_COLUMNS_ESTADO.get("NOME"),
-                        TB_COLUMNS_ESTADO.get("CH_PAIS_COD_PAIS")
-                );
-        String sqlPais = "INSERT INTO %s (%s) VALUES (?)"
-                .formatted("CH_PAIS",
-                        TB_COLUMNS_PAIS.get("NOME")
-                );
+        String sql = "INSERT INTO "+ TB_NAME + " (" +
+                TB_COLUMNS_ENDERECO.get("LOGRADOURO") + ", " +
+                TB_COLUMNS_ENDERECO.get("NUMERO") + ", " +
+                TB_COLUMNS_ENDERECO.get("COMPLEMENTO") + ", " +
+                TB_COLUMNS_ENDERECO.get("CEP") + ", " +
+                TB_COLUMNS_ENDERECO.get("CH_CLIENTE_COD_CLIENTE") + ", " +
+                TB_COLUMNS_ENDERECO.get("CH_BAIRRO_COD_BAIRRO") + ") " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
 
-        try (var conn = connection.getConnection()) {
-            try (var stmt = conn.prepareStatement(sqlPais)) {
-                stmt.setString(1, endereco.getPais());
-                stmt.execute();
-            }
-            try (var stmt = conn.prepareStatement(sqlEstado)) {
-                stmt.setString(1, endereco.getEstado());
-                stmt.setInt(2, Integer.parseInt(TB_COLUMNS_ESTADO.get("CH_PAIS_COD_PAIS")));
-                stmt.execute();
-            }
-            try (var stmt = conn.prepareStatement(sqlCidade)) {
-                stmt.setString(1, endereco.getCidade());
-                stmt.setInt(2, Integer.parseInt(TB_COLUMNS_CIDADE.get("CH_ESTADO_COD_ESTADO")));
-                stmt.execute();
-            }
-            try (var stmt = conn.prepareStatement(sqlBairro)) {
-                stmt.setString(1, endereco.getBairro());
-                stmt.setInt(2, Integer.parseInt(TB_COLUMNS_BAIRRO.get("CH_CIDADE_COD_CIDADE")));
-                stmt.execute();
-            }
-            try (var stmt = conn.prepareStatement(sqlEndereco)) {
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
                 stmt.setString(1, endereco.getLogradouro());
-                stmt.setString(2, endereco.getNumero());
+                stmt.setInt(2, Integer.valueOf(endereco.getNumero()));
                 stmt.setString(3, endereco.getComplemento());
-                stmt.setString(4, endereco.getCep());
+                stmt.setInt(4, Integer.valueOf(endereco.getCep()));
                 stmt.setInt(5, endereco.getCliente().getId());
-                stmt.setInt(6, Integer.parseInt(TB_COLUMNS_ENDERECO.get("CH_CIDADE_COD_BAIRRO")));
-                stmt.execute();
-            }
+                stmt.setInt(6, FindBairroId(endereco.getBairro()));
+                var result = stmt.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -153,21 +97,130 @@ private void Initialize() {
 
     @Override
     public List<Endereco> ReadAll() {
-        return null;
+        List<Endereco> enderecos = new ArrayList<>();
+        var sql = "SELECT e.COD_ENDERECO, e.LOGRADOURO, e.NUMERO, e.COMPLEMENTO, e.CEP, " +
+                "b.nome AS bairro, c.nome AS cidade, est.nome AS estado, p.nome AS pais " +
+                "FROM ch_endereco e " +
+                "JOIN ch_bairro b ON e.ch_bairro_cod_bairro = b.cod_bairro " +
+                "JOIN ch_cidade c ON b.ch_cidade_cod_cidade = c.cod_cidade " +
+                "JOIN ch_estado est ON c.ch_estado_cod_estado = est.cod_estado " +
+                "JOIN ch_pais p ON est.ch_pais_cod_pais = p.cod_pais";
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
+                var rs = stmt.executeQuery();
+                while (rs.next()) {
+                    var endereco = new Endereco();
+                    endereco.setId(rs.getInt("COD_ENDERECO"));
+                    endereco.setLogradouro(rs.getString("LOGRADOURO"));
+                    endereco.setNumero(rs.getString("NUMERO"));
+                    endereco.setComplemento(rs.getString("COMPLEMENTO"));
+                    endereco.setCep(rs.getString("CEP"));
+
+                    // Adicionando informações de bairro, cidade, estado e país
+                    endereco.setBairro(rs.getString("bairro"));
+                    endereco.setCidade(rs.getString("cidade"));
+                    endereco.setEstado(rs.getString("estado"));
+                    endereco.setPais(rs.getString("pais"));
+
+                    enderecos.add(endereco);
+            }
+            return enderecos;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    @Override
+    public boolean UpdateById(Endereco endereco, int id) {
+        String sql = "UPDATE " + TB_NAME + " SET " +
+                TB_COLUMNS_ENDERECO.get("LOGRADOURO") + " = ?, " +
+                TB_COLUMNS_ENDERECO.get("NUMERO") + " = ?, " +
+                TB_COLUMNS_ENDERECO.get("COMPLEMENTO") + " = ?, " +
+                TB_COLUMNS_ENDERECO.get("CEP") + " = ?, " +
+                TB_COLUMNS_ENDERECO.get("CH_CLIENTE_COD_CLIENTE") + " = ?, " +
+                TB_COLUMNS_ENDERECO.get("CH_BAIRRO_COD_BAIRRO") + " = ? " +
+                "WHERE " + TB_COLUMNS_ENDERECO.get("COD_ENDERECO") + " = ?";
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, endereco.getLogradouro());
+            stmt.setInt(2,  Integer.valueOf(endereco.getNumero()));
+            stmt.setString(3, endereco.getComplemento());
+            stmt.setInt(4, Integer.valueOf(endereco.getCep()));
+            stmt.setInt(5, endereco.getCliente().getId());
+            stmt.setInt(6, FindBairroId(endereco.getBairro()));
+            stmt.setInt(7, id);
+            var result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public boolean DeleteById(int id) {
-        return false;
-    }
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement("DELETE FROM " + TB_NAME + " WHERE " + TB_COLUMNS_ENDERECO.get("COD_ENDERECO") + " = ?")) {
+            stmt.setInt(1, id);
+            var result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
 
-    @Override
-    public boolean UpdateById(Endereco endereco, int id) {
-        return false;
-    }
+        }
+}
+
 
     @Override
     public Endereco ReadById(int id) {
-        return null;
+        Endereco endereco = null;
+        var sql = "SELECT e.*, b.nome AS bairro, c.nome AS cidade, est.nome AS estado, p.nome AS pais " +
+                "FROM ch_endereco e " +
+                "JOIN ch_bairro b ON e.ch_bairro_cod_bairro = b.cod_bairro " +
+                "JOIN ch_cidade c ON b.ch_cidade_cod_cidade = c.cod_cidade " +
+                "JOIN ch_estado est ON c.ch_estado_cod_estado = est.cod_estado " +
+                "JOIN ch_pais p ON est.ch_pais_cod_pais = p.cod_pais " +
+                "WHERE e.COD_ENDERECO = ?";
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            var rs = stmt.executeQuery();
+            if (rs.next()) {
+                endereco = new Endereco();
+                endereco.setId(rs.getInt("COD_ENDERECO"));
+                endereco.setLogradouro(rs.getString("LOGRADOURO"));
+                endereco.setNumero(rs.getString("NUMERO"));
+                endereco.setComplemento(rs.getString("COMPLEMENTO"));
+                endereco.setCep(rs.getString("CEP"));
+
+                // Adicionando informações de bairro, cidade, estado e país
+                endereco.setBairro(rs.getString("bairro"));
+                endereco.setCidade(rs.getString("cidade"));
+                endereco.setEstado(rs.getString("estado"));
+                endereco.setPais(rs.getString("pais"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return endereco;
+    }
+
+    public int FindBairroId(String bairro) throws SQLException {
+        int codEstado;
+        String sql = "SELECT * FROM %s WHERE %s = ?"
+                .formatted("CH_BAIRRO", TB_COLUMNS_BAIRRO.get("NOME"));
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, bairro);
+            var rs = stmt.executeQuery();
+            if (rs.next()) {
+                codEstado = rs.getInt(TB_COLUMNS_BAIRRO.get("COD_BAIRRO"));
+                return codEstado;
+            } else {
+                throw new SQLException("Bairro not found in the database");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 }

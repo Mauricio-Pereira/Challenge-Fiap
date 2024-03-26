@@ -3,7 +3,7 @@ package org.fiap.entities;
 import java.util.regex.Pattern;
 
 public class Endereco extends _BaseEntity{
-    private static final Pattern CepPattern = Pattern.compile("^\\d{5}-\\d{3}");
+    private static final Pattern CepPattern = Pattern.compile("^\\d{8}");
     private String cep;
     private String logradouro;
     private String numero;
@@ -17,7 +17,8 @@ public class Endereco extends _BaseEntity{
     public Endereco() {
     }
 
-    public Endereco(String cep, String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String pais, Cliente cliente) {
+    public Endereco(int id, String cep, String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String pais, Cliente cliente) {
+        super(id);
         try {
             setCep(cep);
         } catch (IllegalArgumentException e) {
@@ -115,6 +116,7 @@ public class Endereco extends _BaseEntity{
     @Override
     public String toString() {
         return "Endereco {\n" +
+                "\tCOD_ENDERECO: '" + getId() +",\n" +
                 "\tCEP: '" + cep + "',\n" +
                 "\tLogradouro: '" + logradouro + "',\n" +
                 "\tNúmero: '" + numero + "',\n" +

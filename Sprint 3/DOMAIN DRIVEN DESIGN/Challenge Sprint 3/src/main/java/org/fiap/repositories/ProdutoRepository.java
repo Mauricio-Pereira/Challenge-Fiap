@@ -87,6 +87,7 @@ public class ProdutoRepository extends _BaseRepositoryImpl<Produto>{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        produto.setId(ReadAll().getLast().getId());
     }
 
     @Override

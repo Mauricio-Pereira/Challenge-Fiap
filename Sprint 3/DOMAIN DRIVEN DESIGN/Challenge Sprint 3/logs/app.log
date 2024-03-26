@@ -14,3 +14,46 @@
 14:14:16.218 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - ReadAll: 
 14:14:34.706 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Delete: null
 14:14:40.687 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - ReadAll: 
+14:34:24.288 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - ReadAll: 
+14:34:56.504 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: null
+14:35:15.555 [grizzly-http-server-0] INFO  org.fiap.entities.Produto - Read: 
+14:35:39.288 [grizzly-http-server-3] INFO  org.fiap.entities.Produto - Update: Produto {
+	Cliente: Lara,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Picanha',
+	Preço: 47.5,
+	Estoque: 500,
+	_BaseEntity{id=6}
+}
+14:35:46.040 [grizzly-http-server-5] INFO  org.fiap.entities.Produto - Read: 
+14:36:05.937 [grizzly-http-server-4] INFO  org.fiap.entities.Produto - Read: 
+14:36:21.239 [grizzly-http-server-6] INFO  org.fiap.entities.Produto - Delete: null
+14:38:24.224 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Delete: Produto {
+	Cliente: Lara,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Maminha',
+	Preço: 30.3,
+	Estoque: 150,
+	_BaseEntity{id=10}
+}
+14:40:44.318 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: null
+14:43:15.756 [grizzly-http-server-1] INFO  org.fiap.entities.Produto - Create: Produto {
+	Cliente: Cliente 2,
+	Cliente ID: 4,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 20.3,
+	Estoque: 150,
+	_BaseEntity{id=15}
+}
+14:43:34.150 [grizzly-http-server-2] INFO  org.fiap.entities.Produto - Create: Produto {
+	Cliente: Cliente 2,
+	Cliente ID: 4,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 25.3,
+	Estoque: 150,
+	_BaseEntity{id=16}
+}

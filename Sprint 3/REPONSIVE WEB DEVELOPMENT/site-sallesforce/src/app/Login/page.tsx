@@ -1,10 +1,9 @@
-import Link from "next/link";
+import Login from "@/components/Login";
 
-export default function Login() {
-    return (
-      <main className="flex-auto">
-        Login
-        <Link className="links" href="/Products">CLick</Link>
-      </main>
-    );
-  }
+export default function LoginPage() {
+  return (
+    <main className="flex-auto">
+      <Login />
+    </main>
+  );
+}

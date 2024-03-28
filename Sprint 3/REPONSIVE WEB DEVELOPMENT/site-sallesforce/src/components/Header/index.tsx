@@ -15,7 +15,7 @@ const Header = () => {
               <li><Link className="links" href="/Members">Integrantes</Link></li>
             </ul>
 
-            <Button type="free-trial-btn" link="/Free-Trial" text="Teste Grátis"/>
+            <Button style="free-trial-btn" link="/Free-Trial" text="Teste Grátis"/>
           </nav>
         </header>
         </>

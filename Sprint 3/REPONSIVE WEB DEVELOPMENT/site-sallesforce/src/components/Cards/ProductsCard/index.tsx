@@ -1,20 +1,19 @@
 import { Props } from "../interface";
-import FreeForms from "../../Forms/FreeForms";
+import ProductForms from "../../Forms/ProductForms";
 import '../styles.css'
 
-const FreeCard = (props: Props) => {
+const ProductsCard = (props: Props) => {
     return(
         <>
         <section className="flex">
             <div className={props.style}>
+             <h1>{props.title}</h1>
+             <ProductForms/>   
              <img src={props.img} alt={props.img} title={props.description}/>
-             <FreeForms
-             text={props.text}
-             />
             </div>
         </section>
         </>
     );
 };
 
-export default FreeCard;
+export default ProductsCard;

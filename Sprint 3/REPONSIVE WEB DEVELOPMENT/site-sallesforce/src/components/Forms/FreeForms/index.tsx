@@ -2,7 +2,7 @@ import { Props } from "../interface";
 import Button from "../../Button";
 import '../styles.css';
 
-const Forms = (props: Props) => {
+const FreeForms = (props: Props) => {
     return (
        <>
          <div className="flex form">
@@ -58,11 +58,11 @@ const Forms = (props: Props) => {
              <label htmlFor="senha"></label>
              <input type="password" id="senha" name="senha" placeholder="Senha"/>
    
-             <Button type="submit" link="/Free-Trial" text="INICIAR TESTE GRATUITO" />
+             <Button type="submit" style="submit-btn" link="/Free-Trial" text="INICIAR TESTE GRATUITO" />
            </form>
          </div>
        </>
     );
    };
 
-export default Forms;
+export default FreeForms;

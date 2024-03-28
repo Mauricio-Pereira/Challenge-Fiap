@@ -1,9 +1,12 @@
-import Login from "@/components/Login";
+import LoginCard from "../../components/Cards/LoginCard";
 
 export default function LoginPage() {
   return (
     <main className="flex-auto">
-      <Login />
+      <LoginCard
+      img="/logoSalesforce.png"
+      style="login_card"
+      />
     </main>
   );
 }

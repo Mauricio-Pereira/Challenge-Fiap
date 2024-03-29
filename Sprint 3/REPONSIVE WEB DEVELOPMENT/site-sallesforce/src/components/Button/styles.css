@@ -3,7 +3,7 @@
     font-size: 1.1rem;
 }
 
-.submit{
+.submit-btn{
     text-align: center;
     text-decoration: none;
     border-radius: 0.5rem;
@@ -14,6 +14,19 @@
     padding: 0.5rem 30.8%;
     font-size: 0.8rem;
     border: 2px solid #2346A0;
+}
+
+.login-btn{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    color: #f1f1f1;
+    background: #0070D2;
+    font-weight: bold;
+    min-width: 10rem;
+    padding: 0.7rem 45%;
+    font-size: 0.8rem;
+    border: 2px solid #0070D2;
 }
 
 .free-trial-btn {
@@ -36,7 +49,13 @@
     border: 2px solid #43b416;
 }
 
-.submit:hover {
+.login-btn:hover{
+    color: #0180f0;
+    background: #ffffff;
+    border: 2px solid #0180f0;
+}
+
+.submit-btn:hover {
     color: #162eb4;
     background: #ffffff;
     border: 2px solid #162eb4;

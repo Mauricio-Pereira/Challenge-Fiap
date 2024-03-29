@@ -69,3 +69,32 @@ section > div > p{
     height: 10rem;
     border-radius: 0.5rem;
 }
+
+
+.login_card{
+    flex-direction: column;
+}
+
+.login_card > img{
+    height: 15rem;
+    margin-bottom: 4rem;
+}
+
+.login_card > :last-child{
+    min-height: 20rem;
+    min-width: 30rem;
+}
+
+.login_card > :last-child input{
+    padding: 1rem 0 1rem 0.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.product_card{
+    flex-direction: column;
+}
+
+.product_card > h1{
+    display: block;
+}

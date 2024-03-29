@@ -2,7 +2,7 @@ import { Props } from "../interface";
 import Button from "../../Button";
 import '../styles.css';
 
-const Forms = (props: Props) => {
+const FreeForms = (props: Props) => {
     return (
        <>
          <div className="flex form">
@@ -10,10 +10,10 @@ const Forms = (props: Props) => {
    
            <form>
              <div>
-               <label htmlFor="nome"></label>
+               <label className="none" htmlFor="nome"></label>
                <input type="text" id="nome" name="nome" placeholder="Nome"/>
    
-               <label htmlFor="sobrenome"></label>
+               <label className="none" htmlFor="sobrenome"></label>
                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome"/>
              </div>
    
@@ -33,10 +33,10 @@ const Forms = (props: Props) => {
              <input type="text" id="rua" name="rua" placeholder="Rua"/>
              
              <div>
-               <label htmlFor="numero"></label>
+               <label className="none" htmlFor="numero"></label>
                <input type="number" id="numero" name="numero" placeholder="Número"/>
    
-               <label htmlFor="complemento"></label>
+               <label className="none" htmlFor="complemento"></label>
                <input type="text" id="complemento" name="complemento" placeholder="Complemento"/>
              </div>
 
@@ -58,11 +58,11 @@ const Forms = (props: Props) => {
              <label htmlFor="senha"></label>
              <input type="password" id="senha" name="senha" placeholder="Senha"/>
    
-             <Button type="submit" link="/Free-Trial" text="INICIAR TESTE GRATUITO" />
+             <Button type="submit" style="submit-btn" link="/Free-Trial" text="INICIAR TESTE GRATUITO" />
            </form>
          </div>
        </>
     );
    };
 
-export default Forms;
+export default FreeForms;

@@ -10,10 +10,10 @@ const FreeForms = (props: Props) => {
    
            <form>
              <div>
-               <label htmlFor="nome"></label>
+               <label className="none" htmlFor="nome"></label>
                <input type="text" id="nome" name="nome" placeholder="Nome"/>
    
-               <label htmlFor="sobrenome"></label>
+               <label className="none" htmlFor="sobrenome"></label>
                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome"/>
              </div>
    
@@ -33,10 +33,10 @@ const FreeForms = (props: Props) => {
              <input type="text" id="rua" name="rua" placeholder="Rua"/>
              
              <div>
-               <label htmlFor="numero"></label>
+               <label className="none" htmlFor="numero"></label>
                <input type="number" id="numero" name="numero" placeholder="Número"/>
    
-               <label htmlFor="complemento"></label>
+               <label className="none" htmlFor="complemento"></label>
                <input type="text" id="complemento" name="complemento" placeholder="Complemento"/>
              </div>
 

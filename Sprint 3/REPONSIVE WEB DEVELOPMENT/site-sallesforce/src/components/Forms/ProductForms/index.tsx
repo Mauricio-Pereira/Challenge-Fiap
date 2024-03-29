@@ -5,14 +5,26 @@ const ProductForms = () => {
     return(
         <>
         <div className='flex form'>
-            <form className="form-login">
-                <label htmlFor='nome'>Nome do usuário</label>
-                <input className="input" type="text" placeholder=" email@email.com" />
+            <form className='product-form'>
+                <label htmlFor='nome'>Nome do Produto</label>
+                <input className="input" type="text"/>
                 
-                <label htmlFor='senha'>Senha</label>
-                <input className="input" type="password" placeholder=" Digite sua senha aqui" />
+                <div>
+                    <div>
+                        <label htmlFor='preco'>Preço do Produto</label>
+                        <input className="input" type="text"/>
+                    </div>
+
+                    <div>
+                        <label htmlFor='quantidade'>Quantidade em Estoque</label>
+                        <input className="input" type="number"/>
+                    </div>
+                </div>
                 
-                <Button type="submit" style="login-btn" link="/Products" text="Login" />
+                <label htmlFor='descricao'>Descrição do Produto</label>
+                <input className="input description" type="text"/>
+                
+                <Button type="submit" style="submit-btn" link="/Products" text="Adicionar Produtos" />
             </form>
         </div>
         </>

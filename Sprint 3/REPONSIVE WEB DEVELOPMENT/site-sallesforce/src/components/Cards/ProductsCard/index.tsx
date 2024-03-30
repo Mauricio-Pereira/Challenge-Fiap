@@ -8,7 +8,9 @@ const ProductsCard = (props: Props) => {
         <section className="flex">
             <div className={props.style}>
              <h1>{props.title}</h1>
-             <ProductForms/>   
+             <ProductForms
+             text={props.text}
+             />   
              <img src={props.img} alt={props.img} title={props.description}/>
             </div>
         </section>

@@ -1,10 +1,13 @@
+import { Props } from "../interface";
 import Button from '../../Button';
 import '../styles.css';
 
-const ProductForms = () => {
+const ProductForms = (props: Props) => {
     return(
         <>
         <div className='flex form'>
+            <p>{props.text}</p>
+
             <form className='product-form'>
                 <label htmlFor='nome'>Nome do Produto</label>
                 <input className="input" type="text"/>

@@ -1,3 +1,5 @@
+import ClickerCounter from "../components/ClickerCounter";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";
@@ -22,6 +24,7 @@ export default function RootLayout({
         <Header/>
         {children}
         <Footer/>
+        <ClickerCounter/>
       </body>
     </html>
   );

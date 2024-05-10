@@ -1,4 +1,6 @@
-import ClickerCounter from "../components/ClickerCounter";
+//import ClickerCounter from "../components/ClickerCounter";
+import KeyboardNav from "@/components/KeyboardNav";
+
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -21,10 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col h-screen">
+        <KeyboardNav>
         <Header/>
         {children}
         <Footer/>
-        <ClickerCounter/>
+        </KeyboardNav>
       </body>
     </html>
   );

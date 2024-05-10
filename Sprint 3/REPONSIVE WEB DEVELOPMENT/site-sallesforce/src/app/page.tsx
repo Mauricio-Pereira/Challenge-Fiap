@@ -1,5 +1,4 @@
 import Card from "../components/Cards/Card"
-import Image from "next/image";
 
 export default function Home() {
   return (

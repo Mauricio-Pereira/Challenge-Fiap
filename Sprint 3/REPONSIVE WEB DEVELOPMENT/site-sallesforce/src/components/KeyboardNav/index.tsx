@@ -12,47 +12,23 @@ const KeyboardNav: React.FC<NavigationProps> = ({ children }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const activeElement = document.activeElement;
-      const elements = Array.from(refContainer.current?.querySelectorAll('a') || []);
-      const offset = (el: HTMLElement) => ({
-        left: el.getBoundingClientRect().left + window.scrollX,
-        top: el.getBoundingClientRect().top + window.scrollY,
-      });
+      const elements = Array.from(refContainer.current?.querySelectorAll('a, button, input') || []);
+      const focusableElements = elements.filter(el => el.focus!== undefined);
+      const currentIndex = focusableElements.indexOf(activeElement);
 
-      switch (event.keyCode) {
-        case 37: // Seta esquerda
-        const previousElement = elements.find((el) => el === activeElement);
-        if (previousElement && previousElement.previousElementSibling) {
-          (previousElement.previousElementSibling as HTMLElement).focus();
-        }
-        break;
-        case 38: // Seta cima
-        let nextAboveElement = elements.find((el) => el === activeElement);
-        elements.forEach((el) => {
-          if (!nextAboveElement || offset(el).top < offset(nextAboveElement).top) {
-            nextAboveElement = el;
+      switch (event.key) {
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          if (currentIndex > 0) {
+            focusableElements[currentIndex - 1].focus();
           }
-        });
-        if (nextAboveElement) {
-          (nextAboveElement as HTMLElement).focus();
-        }
-        break;
-      case 39: // Seta direita
-        const nextElement = elements.find((el) => el === activeElement);
-        if (nextElement && nextElement.nextElementSibling) {
-          (nextElement.nextElementSibling as HTMLElement).focus();
-        }
-        break;
-      case 40: // Seta baixo
-        let nextBelowElement = elements.find((el) => el === activeElement);
-        elements.forEach((el) => {
-          if (!nextBelowElement || offset(el).top > offset(nextBelowElement).top) {
-            nextBelowElement = el;
+          break;
+        case 'ArrowRight':
+        case 'ArrowDown':
+          if (currentIndex < focusableElements.length - 1) {
+            focusableElements[currentIndex + 1].focus();
           }
-        });
-        if (nextBelowElement) {
-          (nextBelowElement as HTMLElement).focus();
-        }
-        break;
+          break;
       }
     };
 

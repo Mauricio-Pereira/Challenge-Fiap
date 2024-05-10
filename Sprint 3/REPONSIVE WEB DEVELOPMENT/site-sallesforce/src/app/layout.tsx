@@ -1,7 +1,6 @@
 //import ClickerCounter from "../components/ClickerCounter";
 import KeyboardNav from "@/components/KeyboardNav";
 
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";

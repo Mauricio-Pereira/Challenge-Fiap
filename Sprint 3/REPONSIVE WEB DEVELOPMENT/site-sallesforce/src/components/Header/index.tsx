@@ -14,7 +14,6 @@ const Header = () => {
               <li><Link className="links" href="/Login">Login</Link></li>
               <li><Link className="links" href="/Members">Integrantes</Link></li>
             </ul>
-
             <Button style="free-trial-btn" link="/Free-Trial" text="Teste Grátis"/>
           </nav>
         </header>

@@ -19,18 +19,6 @@ section > div{
     justify-content: space-evenly;
 }
 
-section > div > h1{
-    display: none;
-}
-
-section > div > .in_title{
-    display: flex;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #032D60;
-}
-
 section > div > p{
     flex: 0.9;
     width: 10rem;
@@ -38,14 +26,15 @@ section > div > p{
     margin: 3rem;
 }
 
-.flex div > img{
+section div > img{
     max-width: 30rem;
 }
 
-.reverse{
-    flex-direction: row-reverse;
+@media (max-width: 675px){
+    .home-page h1{
+        font-size: 5vw;
+    }
 }
-
 
 .member_section{
     display: flex;
@@ -69,7 +58,6 @@ section > div > p{
     height: 10rem;
     border-radius: 0.5rem;
 }
-
 
 .login_card{
     flex-direction: column;
@@ -97,4 +85,8 @@ section > div > p{
 
 .product_card > h1{
     display: block;
+}
+
+.reverse{
+    flex-direction: row-reverse;
 }

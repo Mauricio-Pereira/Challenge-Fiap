@@ -35,7 +35,6 @@ public class ClienteResource {
     public List<Cliente> getAllClientes() {
         logger.logReadAll(null);
         return clienteRepository.ReadAll();
-
     }
 
     @POST

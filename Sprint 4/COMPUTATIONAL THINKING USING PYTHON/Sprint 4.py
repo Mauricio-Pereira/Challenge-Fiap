@@ -175,6 +175,7 @@ def menu():
         print("6. Consultas com Filtros e Exportação para JSON")
         print("7. Sair")
         escolha = input("Escolha uma opção: ")
+        print("")
         if escolha == '1':
             create_cliente()
         elif escolha == '2':

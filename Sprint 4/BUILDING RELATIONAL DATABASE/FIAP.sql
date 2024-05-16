@@ -1,3 +1,139 @@
+-- Mauricio Vieira Pereira    RM553748
+-- Vitor Onofre Ramos         RM553241
+-- Luiz Otávio Leitão         RM553542
+
+
+-- DROP TABLES PARA ELIMINAR POSSIVEIS TABELAS JA EXISTENTES
+DROP TABLE ch_bairro CASCADE CONSTRAINTS;
+
+DROP TABLE ch_cidade CASCADE CONSTRAINTS;
+
+DROP TABLE ch_cliente CASCADE CONSTRAINTS;
+
+DROP TABLE ch_endereco CASCADE CONSTRAINTS;
+
+DROP TABLE ch_estado CASCADE CONSTRAINTS;
+
+DROP TABLE ch_pais CASCADE CONSTRAINTS;
+
+DROP TABLE ch_produto CASCADE CONSTRAINTS;
+DROP TABLE ch_estoque CASCADE CONSTRAINTS;
+
+
+-- CRIAÇÃO DAS TABELAS E CONFIGURAÇÃO DAS PRIMARY KEYS
+CREATE TABLE ch_bairro (
+    cod_bairro           NUMBER GENERATED AS IDENTITY,
+    nome                 VARCHAR2(50),
+    ch_cidade_cod_cidade NUMBER NOT NULL
+);
+
+ALTER TABLE ch_bairro ADD CONSTRAINT ch_bairro_pk PRIMARY KEY ( cod_bairro );
+
+CREATE TABLE ch_cidade (
+    cod_cidade           NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome                 VARCHAR2(50),
+    ch_estado_cod_estado NUMBER NOT NULL
+);
+
+ALTER TABLE ch_cidade ADD CONSTRAINT ch_cidade_pk PRIMARY KEY ( cod_cidade );
+
+CREATE TABLE ch_cliente (
+    cod_cliente       NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome              VARCHAR2(50),
+    sobrenome         VARCHAR2(80),
+    data_nascimento   DATE,
+    telefone          VARCHAR2(14),
+    email_corporativo VARCHAR2(50),
+    nome_usuario      VARCHAR2(20),
+    senha             VARCHAR2(50)
+);
+
+ALTER TABLE ch_cliente ADD CONSTRAINT ch_cliente_pk PRIMARY KEY ( cod_cliente );
+
+CREATE TABLE ch_endereco (
+    cod_endereco           NUMBER GENERATED ALWAYS AS IDENTITY,
+    logradouro             VARCHAR2(250),
+    numero                 NUMBER,
+    complemento            VARCHAR2(50),
+    cep                    NUMBER,
+    ch_cliente_cod_cliente NUMBER NOT NULL,
+    ch_bairro_cod_bairro   NUMBER NOT NULL
+);
+
+CREATE UNIQUE INDEX ch_endereco__idx ON
+    ch_endereco (
+        ch_cliente_cod_cliente
+    ASC );
+
+ALTER TABLE ch_endereco ADD CONSTRAINT ch_endereco_pk PRIMARY KEY ( cod_endereco );
+
+CREATE TABLE ch_estado (
+    cod_estado       NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome             VARCHAR2(50),
+    ch_pais_cod_pais NUMBER NOT NULL
+);
+
+ALTER TABLE ch_estado ADD CONSTRAINT ch_estado_pk PRIMARY KEY ( cod_estado );
+
+CREATE TABLE ch_pais (
+    cod_pais NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome     VARCHAR2(50)
+);
+
+ALTER TABLE ch_pais ADD CONSTRAINT ch_pais_pk PRIMARY KEY ( cod_pais );
+
+CREATE TABLE ch_estoque (
+    cod_estoque            NUMBER GENERATED ALWAYS AS IDENTITY,
+    ch_cliente_cod_cliente NUMBER NOT NULL
+);
+
+ALTER TABLE ch_estoque ADD CONSTRAINT ch_estoque_pk PRIMARY KEY ( cod_estoque );
+
+CREATE TABLE ch_produto (
+    cod_produto            NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome                   VARCHAR2(100),
+    descricao              VARCHAR2(250),
+    preco                  NUMBER,
+    estoque                NUMBER,
+    ch_estoque_cod_estoque NUMBER NOT NULL
+);
+
+ALTER TABLE ch_produto ADD CONSTRAINT ch_produto_pk PRIMARY KEY ( cod_produto );
+
+
+
+
+-- ADIÇÃO DAS CONSTRAINTS E FOREIGN KEYS
+ALTER TABLE ch_bairro
+    ADD CONSTRAINT ch_bairro_ch_cidade_fk FOREIGN KEY ( ch_cidade_cod_cidade )
+        REFERENCES ch_cidade ( cod_cidade );
+
+ALTER TABLE ch_cidade
+    ADD CONSTRAINT ch_cidade_ch_estado_fk FOREIGN KEY ( ch_estado_cod_estado )
+        REFERENCES ch_estado ( cod_estado );
+
+ALTER TABLE ch_endereco
+    ADD CONSTRAINT ch_endereco_ch_bairro_fk FOREIGN KEY ( ch_bairro_cod_bairro )
+        REFERENCES ch_bairro ( cod_bairro );
+
+ALTER TABLE ch_endereco
+    ADD CONSTRAINT ch_endereco_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
+        REFERENCES ch_cliente ( cod_cliente );
+
+ALTER TABLE ch_estado
+    ADD CONSTRAINT ch_estado_ch_pais_fk FOREIGN KEY ( ch_pais_cod_pais )
+        REFERENCES ch_pais ( cod_pais );
+
+ALTER TABLE ch_estoque
+    ADD CONSTRAINT ch_estoque_ch_cliente_fk FOREIGN KEY (ch_cliente_cod_cliente)
+    REFERENCES ch_cliente (cod_cliente) ON DELETE CASCADE;
+
+ALTER TABLE ch_produto
+    ADD CONSTRAINT ch_produto_ch_estoque_fk FOREIGN KEY ( ch_estoque_cod_estoque )
+        REFERENCES ch_estoque ( cod_estoque );
+
+
+
 INSERT INTO CH_PAIS(NOME) VALUES('Brasil');
 
 --Inserir os estados do Brasil
@@ -77,7 +213,7 @@ WHERE ROWID IN (
     AND ROWNUM = 1
 );
 
-select * from ch_bairro where nome = 'Brooklin';
+
 -- Deletando um dos registros duplicados de 'Tatuapé'
 DELETE FROM ch_bairro
 WHERE ROWID IN (
@@ -96,22 +232,21 @@ WHERE ROWID IN (
     AND ROWNUM = 1
 );
 
-
--- Inserindo dois registros na tabela ch_estoque
-INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (1, NULL, 100, 1);
-INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (2, NULL, 200, 2);
-
 -- Inserindo dois registros na tabela ch_cliente
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
 VALUES ('João', 'Silva', TO_DATE('1985-05-15', 'YYYY-MM-DD'), '1198765-4321', 'joao.silva@empresa.com', 'joaosilva', 'senha123');
-select*from ch_cliente;
-
+commit;
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
 VALUES ('Maria', 'Oliveira', TO_DATE('1990-10-20', 'YYYY-MM-DD'), '1191234-5678', 'maria.oliveira@empresa.com', 'mariaoliveira', 'senha456');
 
 
+-- Inserindo dois registros na tabela ch_estoque
+INSERT INTO ch_estoque (cod_estoque, ch_cliente_cod_cliente) VALUES (1, 1);
+INSERT INTO ch_estoque (cod_estoque, ch_cliente_cod_cliente) VALUES (2, 2);
 
--- Inserindo quinze registros na tabela ch_produto, associando a cada um um dos estoques criados
+
+
+-- Inserindo trinta registros na tabela ch_produto, associando a cada um um dos estoques criados
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 1', 'Descrição do Produto 1', 10.00, 50, 2);
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 2', 'Descrição do Produto 2', 15.00, 30, 2);
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 3', 'Descrição do Produto 3', 20.00, 20, 2);
@@ -127,18 +262,70 @@ INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque)
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 13', 'Descrição do Produto 13', 70.00, 140, 2);
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 14', 'Descrição do Produto 14', 75.00, 150, 2);
 INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 15', 'Descrição do Produto 15', 80.00, 160, 2);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 16', 'Descrição do Produto 16', 85.00, 170, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 17', 'Descrição do Produto 17', 90.00, 180, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 18', 'Descrição do Produto 18', 95.00, 190, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 19', 'Descrição do Produto 19', 100.00, 200, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 20', 'Descrição do Produto 20', 105.00, 210, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 21', 'Descrição do Produto 21', 110.00, 220, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 22', 'Descrição do Produto 22', 115.00, 230, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 23', 'Descrição do Produto 23', 120.00, 240, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 24', 'Descrição do Produto 24', 125.00, 250, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 25', 'Descrição do Produto 25', 130.00, 260, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 26', 'Descrição do Produto 26', 135.00, 270, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 27', 'Descrição do Produto 27', 140.00, 280, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 28', 'Descrição do Produto 28', 145.00, 290, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 29', 'Descrição do Produto 29', 150.00, 300, 1);
+INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 30', 'Descrição do Produto 30', 155.00, 310, 1);
+commit;
+
+--Listar clientes ordenados pelo sobrenome e nome
+--Relatório adicional utilizando classificação de dados
+SELECT nome, sobrenome, data_nascimento, telefone, email_corporativo 
+FROM ch_cliente 
+ORDER BY sobrenome, nome;
 
 
-SELECT 
-    p.cod_produto, 
-    p.nome, 
-    p.descricao, 
-    e.quantidade 
-FROM 
+--Mostrar todos os produtos agrupados pelo nome dos clientes que o possuem
+--Classificação de Dados e Junção de Tabelas
+select
+    c.nome || ' ' || c.sobrenome AS nome_completo,
+    p.cod_produto,
+    p.nome as Nome_Produto,
+    p.preco,
+    p.estoque
+FROM
     ch_produto p
 JOIN 
     ch_estoque e ON p.ch_estoque_cod_estoque = e.cod_estoque
-ORDER BY 
+JOIN
+    ch_cliente c ON e.ch_cliente_cod_cliente = c.cod_cliente
+ORDER BY
     p.cod_produto;
 
-select* from ch_estoque;
+
+--Mostrar a quantidade total de itens em estoque por pessoa e o valor total dos itens em estoque   
+--Função Numérica Simples, Função de Grupo e Junção de Tabelas
+SELECT 
+    c.nome || ' ' || c.sobrenome AS nome_completo,
+    SUM(p.estoque) AS quantidade_total_itens,
+    TO_CHAR(SUM(p.preco * p.estoque), 'L9G999G999D99') AS valor_total_estoque
+FROM 
+    ch_cliente c
+JOIN 
+    ch_estoque e ON c.cod_cliente = e.ch_cliente_cod_cliente
+JOIN 
+    ch_produto p ON e.cod_estoque = p.ch_estoque_cod_estoque
+GROUP BY 
+    c.nome, c.sobrenome
+ORDER BY 
+    c.nome, c.sobrenome;
+
+
+--Relatório que mostra os bairros na cidade de São Paulo.    
+--Relatório utilizando sub consulta
+SELECT nome 
+FROM ch_bairro 
+WHERE ch_cidade_cod_cidade = (SELECT cod_cidade FROM ch_cidade WHERE nome = 'São Paulo');
+
+

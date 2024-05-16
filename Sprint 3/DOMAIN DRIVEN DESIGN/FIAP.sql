@@ -97,7 +97,7 @@ CREATE TABLE ch_produto (
     descricao              VARCHAR2(250),
     preco                  NUMBER,
     estoque                NUMBER,
-    ch_cliente_cod_cliente NUMBER NOT NULL
+    ch_estoque_cod_estoque NUMBER NOT NULL
 );
 
 ALTER TABLE ch_produto ADD CONSTRAINT ch_produto_pk PRIMARY KEY ( cod_produto );

@@ -17,6 +17,7 @@ DROP TABLE ch_estado CASCADE CONSTRAINTS;
 DROP TABLE ch_pais CASCADE CONSTRAINTS;
 
 DROP TABLE ch_produto CASCADE CONSTRAINTS;
+
 DROP TABLE ch_estoque CASCADE CONSTRAINTS;
 
 
@@ -232,17 +233,42 @@ WHERE ROWID IN (
     AND ROWNUM = 1
 );
 
--- Inserindo dois registros na tabela ch_cliente
+-- Inserindo 10 registros na tabela ch_cliente
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
 VALUES ('João', 'Silva', TO_DATE('1985-05-15', 'YYYY-MM-DD'), '1198765-4321', 'joao.silva@empresa.com', 'joaosilva', 'senha123');
+
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
 VALUES ('Maria', 'Oliveira', TO_DATE('1990-10-20', 'YYYY-MM-DD'), '1191234-5678', 'maria.oliveira@empresa.com', 'mariaoliveira', 'senha456');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Carlos', 'Pereira', TO_DATE('1982-03-10', 'YYYY-MM-DD'), '1196543-2109', 'carlos.pereira@empresa.com', 'carlospereira', 'senha789');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Ana', 'Costa', TO_DATE('1975-08-25', 'YYYY-MM-DD'), '1193456-7890', 'ana.costa@empresa.com', 'anacosta', 'senha101');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Bruno', 'Martins', TO_DATE('1988-12-30', 'YYYY-MM-DD'), '1198765-1234', 'bruno.martins@empresa.com', 'brunomartins', 'senha102');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Fernanda', 'Souza', TO_DATE('1995-07-14', 'YYYY-MM-DD'), '1194321-8765', 'fernanda.souza@empresa.com', 'fernandasouza', 'senha103');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Ricardo', 'Almeida', TO_DATE('1983-11-22', 'YYYY-MM-DD'), '1195678-1234', 'ricardo.almeida@empresa.com', 'ricardoalmeida', 'senha104');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Patricia', 'Lima', TO_DATE('1992-06-05', 'YYYY-MM-DD'), '1193456-4321', 'patricia.lima@empresa.com', 'patricialima', 'senha105');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Thiago', 'Fernandes', TO_DATE('1989-09-17', 'YYYY-MM-DD'), '1199876-5432', 'thiago.fernandes@empresa.com', 'thiagofernandes', 'senha106');
+
+INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
+VALUES ('Juliana', 'Gomes', TO_DATE('1987-04-19', 'YYYY-MM-DD'), '1196543-0987', 'juliana.gomes@empresa.com', 'julianagomes', 'senha107');
 commit;
 
 
 -- Inserindo dois registros na tabela ch_estoque
-INSERT INTO ch_estoque (cod_estoque, ch_cliente_cod_cliente) VALUES (1, 1);
-INSERT INTO ch_estoque (cod_estoque, ch_cliente_cod_cliente) VALUES (2, 2);
+INSERT INTO ch_estoque (ch_cliente_cod_cliente) VALUES (1);
+INSERT INTO ch_estoque (ch_cliente_cod_cliente) VALUES (2);
 
 
 
@@ -280,7 +306,7 @@ INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque)
 commit;
 
 --Listar clientes ordenados pelo sobrenome e nome
---Relatório adicional utilizando classificação de dados
+--Relatório utilizando classificação de dados
 SELECT nome, sobrenome, data_nascimento, telefone, email_corporativo 
 FROM ch_cliente 
 ORDER BY sobrenome, nome;
@@ -328,4 +354,21 @@ SELECT nome
 FROM ch_bairro 
 WHERE ch_cidade_cod_cidade = (SELECT cod_cidade FROM ch_cidade WHERE nome = 'São Paulo');
 
+--Relatório que mostra todos os clientes que nãp possuem itens em estoque
+--Classificação de Dados e Junção de Tabelas
+SELECT 
+    c.nome || ' ' || c.sobrenome AS nome_completo,
+    c.telefone,
+    c.email_corporativo,
+    c.nome_usuario
+FROM 
+    ch_cliente c
+LEFT JOIN 
+    ch_estoque e ON c.cod_cliente = e.ch_cliente_cod_cliente
+LEFT JOIN 
+    ch_produto p ON e.cod_estoque = p.ch_estoque_cod_estoque
+WHERE 
+    p.cod_produto IS NULL
+ORDER BY 
+    nome_completo;
 

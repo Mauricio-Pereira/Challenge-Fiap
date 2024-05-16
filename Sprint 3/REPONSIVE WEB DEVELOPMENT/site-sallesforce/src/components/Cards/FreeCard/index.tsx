@@ -5,12 +5,10 @@ import '../styles.css'
 const FreeCard = (props: Props) => {
     return(
         <>
-        <section className="flex">
+        <section className="flex cartao">
             <div className={props.style}>
              <img src={props.img} alt={props.img} title={props.description}/>
-             <FreeForms
-             text={props.text}
-             />
+             <FreeForms text={props.text}/>
             </div>
         </section>
         </>

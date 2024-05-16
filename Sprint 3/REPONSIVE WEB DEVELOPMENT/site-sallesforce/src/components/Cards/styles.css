@@ -17,6 +17,7 @@ section > div{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: row;
 }
 
 section > div > p{
@@ -30,11 +31,6 @@ section div > img{
     max-width: 30rem;
 }
 
-@media (max-width: 675px){
-    .home-page h1{
-        font-size: 5vw;
-    }
-}
 
 .member_section{
     display: flex;
@@ -58,6 +54,7 @@ section div > img{
     height: 10rem;
     border-radius: 0.5rem;
 }
+
 
 .login_card{
     flex-direction: column;
@@ -89,4 +86,29 @@ section div > img{
 
 .reverse{
     flex-direction: row-reverse;
+}
+
+@media (max-width: 1161px){
+    .cartao > div{
+        flex-direction: column;
+    }
+
+    .cartao > div > p{
+        width: 70vw;
+        margin: 2rem 0;
+    }
+
+    .freeforms > img{
+        margin-bottom: 5rem;
+    }
+}
+
+@media (max-width: 675px){
+    .cartao > h1{
+        font-size: 5vw;
+    }
+
+    .cartao > div > p{
+        font-size: 3vw;   
+    }
 }

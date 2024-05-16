@@ -77,6 +77,7 @@ WHERE ROWID IN (
     AND ROWNUM = 1
 );
 
+select * from ch_bairro where nome = 'Brooklin';
 -- Deletando um dos registros duplicados de 'Tatuapé'
 DELETE FROM ch_bairro
 WHERE ROWID IN (
@@ -97,8 +98,8 @@ WHERE ROWID IN (
 
 
 -- Inserindo dois registros na tabela ch_estoque
-INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (1, NULL, 100, 2);
-INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (2, NULL, 200, 3);
+INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (1, NULL, 100, 1);
+INSERT INTO ch_estoque (cod_estoque, cod_produto, quantidade, ch_cliente_cod_cliente) VALUES (2, NULL, 200, 2);
 
 -- Inserindo dois registros na tabela ch_cliente
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)

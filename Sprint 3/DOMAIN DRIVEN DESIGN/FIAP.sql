@@ -17,6 +17,7 @@ DROP TABLE ch_estado CASCADE CONSTRAINTS;
 DROP TABLE ch_pais CASCADE CONSTRAINTS;
 
 DROP TABLE ch_produto CASCADE CONSTRAINTS;
+DROP TABLE ch_estoque CASCADE CONSTRAINTS;
 
 
 -- CRIAÇÃO DAS TABELAS E CONFIGURAÇÃO DAS PRIMARY KEYS
@@ -81,6 +82,15 @@ CREATE TABLE ch_pais (
 
 ALTER TABLE ch_pais ADD CONSTRAINT ch_pais_pk PRIMARY KEY ( cod_pais );
 
+CREATE TABLE ch_estoque (
+    cod_estoque            NUMBER NOT NULL,
+    cod_produto            NUMBER,
+    quantidade             NUMBER,
+    ch_cliente_cod_cliente NUMBER NOT NULL
+);
+
+ALTER TABLE ch_estoque ADD CONSTRAINT ch_estoque_pk PRIMARY KEY ( cod_estoque );
+
 CREATE TABLE ch_produto (
     cod_produto            NUMBER GENERATED ALWAYS AS IDENTITY,
     nome                   VARCHAR2(100),
@@ -91,6 +101,8 @@ CREATE TABLE ch_produto (
 );
 
 ALTER TABLE ch_produto ADD CONSTRAINT ch_produto_pk PRIMARY KEY ( cod_produto );
+
+
 
 -- ADIÇÃO DAS CONSTRAINTS E FOREIGN KEYS
 ALTER TABLE ch_bairro
@@ -113,9 +125,13 @@ ALTER TABLE ch_estado
     ADD CONSTRAINT ch_estado_ch_pais_fk FOREIGN KEY ( ch_pais_cod_pais )
         REFERENCES ch_pais ( cod_pais );
 
-ALTER TABLE ch_produto
-    ADD CONSTRAINT ch_produto_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
+ALTER TABLE ch_estoque
+    ADD CONSTRAINT ch_estoque_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
         REFERENCES ch_cliente ( cod_cliente );
+
+ALTER TABLE ch_produto
+    ADD CONSTRAINT ch_produto_ch_estoque_fk FOREIGN KEY ( ch_estoque_cod_estoque )
+        REFERENCES ch_estoque ( cod_estoque );
 
 
 INSERT INTO CH_PAIS(NOME) VALUES('Brasil');

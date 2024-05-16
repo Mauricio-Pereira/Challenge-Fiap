@@ -4,7 +4,7 @@ import '../styles.css'
 const Card = (props: Props) => {
     return(
         <>
-        <section className="flex home-page">
+        <section className="flex cartao">
             <h1>{props.title}</h1>
             <div className={props.style}>
              <p>{props.text}</p>

@@ -3,6 +3,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2%;
+    width: 100%;
 }
 
 header > a:first-child {

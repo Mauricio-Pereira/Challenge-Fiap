@@ -64,5 +64,6 @@
 @media (max-width: 751px){
     .free-trial-btn{
         font-size: 2vw;
+        padding: 2vw 0;
     }
 }

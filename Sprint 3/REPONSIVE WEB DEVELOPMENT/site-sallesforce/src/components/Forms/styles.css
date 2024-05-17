@@ -4,7 +4,7 @@
     border-radius: 0.5rem;
     padding: 1rem;
     width: 30rem;
-    min-height: 50%;
+    height: 50%;
 }
 
 .form > p{
@@ -46,4 +46,7 @@
 
 .form > form > div > .none{
     display: none;
+}
+
+@media (max-width: 499px) {
 }

@@ -28,7 +28,7 @@ section > div > p{
 }
 
 section div > img{
-    max-width: 30rem;
+    width: 30rem;
 }
 
 
@@ -51,8 +51,8 @@ section div > img{
 }
 
 .member_section > div > .member_profile_img{
-    height: 10rem;
     border-radius: 0.5rem;
+    width: 100%;
 }
 
 
@@ -61,13 +61,13 @@ section div > img{
 }
 
 .login_card > img{
-    height: 15rem;
     margin-bottom: 4rem;
+    width: 50%;
 }
 
 .login_card > :last-child{
     min-height: 20rem;
-    min-width: 30rem;
+    width: 30rem;
 }
 
 .login_card > :last-child input{
@@ -106,9 +106,29 @@ section div > img{
 @media (max-width: 675px){
     .cartao > h1{
         font-size: 5vw;
+        width: 70vw;
+        align-self: center;
     }
 
     .cartao > div > p{
         font-size: 3vw;   
     }
 }
+
+@media (max-width: 489px){
+    .login_card > :last-child,
+    .product_card > .form,
+    .freeforms > .form{
+        width: 15rem;
+    }
+
+    .login_card > img{
+        display: none;
+    }
+
+    .product_card > .form > form > div,
+    .freeforms > .form > form > div{
+        flex-direction: column;
+    }
+}
+

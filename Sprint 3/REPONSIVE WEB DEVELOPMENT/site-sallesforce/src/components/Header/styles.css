@@ -60,3 +60,10 @@ header .links:hover {
         font-size: 1.7vw;
     }
 }
+
+
+@media (max-width: 489px){
+    header{
+        flex-direction: column;
+    }
+}

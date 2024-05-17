@@ -1,0 +1,155 @@
+section{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 0 7rem 3rem;
+}
+
+section > h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #032D60;
+}
+
+section > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+section > div > p{
+    flex: 0.9;
+    width: 10rem;
+    font-size: 1.2rem;
+    margin: 3rem;
+}
+
+section div > img{
+    width: 30rem;
+}
+
+
+.member_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.member_section > div{
+    flex-direction: column;
+}
+
+.member_section > :last-child{
+    flex: 2;
+}
+
+.member_section > div > p{
+    text-align: center;
+    margin: 0;
+}
+
+.member_section > div > .member_profile_img{
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+
+.login_card{
+    flex-direction: column;
+}
+
+.login_card > img{
+    margin-bottom: 4rem;
+    width: 50%;
+}
+
+.login_card > :last-child{
+    min-height: 20rem;
+    width: 30rem;
+}
+
+.login_card > :last-child input{
+    padding: 1rem 0 1rem 0.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.product_card{
+    flex-direction: column;
+}
+
+.product_card > h1{
+    display: block;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 1161px){
+    .cartao > div{
+        flex-direction: column;
+    }
+
+    .cartao > div > p{
+        width: 70vw;
+        margin: 2rem 0;
+    }
+
+    .freeforms > img{
+        margin-bottom: 5rem;
+    }
+}
+
+@media (max-width: 829px){
+    .member_section{
+        flex-direction: column;
+    }
+
+    .member_section div{
+        margin-bottom: 3rem;
+        white-space: nowrap;
+    }
+
+    .member_section div p{
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 675px){
+    .cartao > h1{
+        font-size: 5vw;
+        width: 70vw;
+        align-self: center;
+    }
+
+    .cartao > div > p{
+        font-size: 3vw;   
+    }
+}
+
+@media (max-width: 525px){
+    .member_section div p{
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 489px){
+    .login_card > :last-child,
+    .product_card > .form,
+    .freeforms > .form{
+        width: 15rem;
+    }
+
+    .login_card > img{
+        display: none;
+    }
+
+    .product_card > .form > form > div,
+    .freeforms > .form > form > div{
+        flex-direction: column;
+    }
+}
+

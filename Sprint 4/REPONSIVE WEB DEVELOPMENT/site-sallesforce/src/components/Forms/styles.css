@@ -1,0 +1,52 @@
+.form{
+    background-color: #8bbaff;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 30rem;
+    height: 50%;
+}
+
+.form > p{
+    margin-bottom: 0.5rem;
+}
+
+.form > form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form > form > :last-child{
+    display: flex;
+    align-self: center;
+}
+
+.form > form input{
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+}
+
+.form > form > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form > .product-form > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form > .product-form > .description {
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
+
+.form > form > div > .none{
+    display: none;
+}
+
+@media (max-width: 499px) {
+}

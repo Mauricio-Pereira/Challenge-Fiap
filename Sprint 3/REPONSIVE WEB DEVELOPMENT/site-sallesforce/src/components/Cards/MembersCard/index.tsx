@@ -11,8 +11,8 @@ const MembersCard = (member: Member) => {
                 <img className="member_profile_img" src={member.img} alt={member.name}/>
             </div>
             <div>
-                <Link className="git_links" href={member.git_link}>{member.git_link}</Link>
-                <Link className="links" href={member.lin_link}>{member.lin_link}</Link>
+                <Link className="git_links" href={member.git_link}><p>{member.git_link}</p></Link>
+                <Link className="lin_links" href={member.lin_link}><p>{member.lin_link}</p></Link>
             </div>
         </section>
         </>

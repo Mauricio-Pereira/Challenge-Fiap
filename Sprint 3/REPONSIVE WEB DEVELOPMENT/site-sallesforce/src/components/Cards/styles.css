@@ -103,6 +103,21 @@ section div > img{
     }
 }
 
+@media (max-width: 829px){
+    .member_section{
+        flex-direction: column;
+    }
+
+    .member_section div{
+        margin-bottom: 3rem;
+        white-space: nowrap;
+    }
+
+    .member_section div p{
+        margin-bottom: 1rem;
+    }
+}
+
 @media (max-width: 675px){
     .cartao > h1{
         font-size: 5vw;
@@ -112,6 +127,12 @@ section div > img{
 
     .cartao > div > p{
         font-size: 3vw;   
+    }
+}
+
+@media (max-width: 525px){
+    .member_section div p{
+        font-size: 3vw;
     }
 }
 

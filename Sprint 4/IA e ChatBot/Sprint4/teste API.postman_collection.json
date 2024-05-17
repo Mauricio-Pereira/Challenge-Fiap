@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "57c0536d-6005-40be-8a02-530d2b6972d1",
+		"name": "teste API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34100956"
+	},
+	"item": [
+		{
+			"name": "Sentimento",
+			"item": [
+				{
+					"name": "Get Sentimento",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/sentimento/Python é péssimo para Machine Learning",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sentimento",
+								"Python é péssimo para Machine Learning"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HousePrice",
+			"item": [
+				{
+					"name": "Get HousePrice",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tamanho\": 100,\r\n    \"ano\": 2001,\r\n    \"garagem\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/cotacao",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"cotacao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

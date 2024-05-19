@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "1dd01be7-d83e-4b14-a3a2-45902ead5e31",
+		"name": "Challenge Salesforce - Sprint 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25468191",
+		"_collection_link": "https://bold-moon-219840.postman.co/workspace/Challenge-FIap-Salesforce~62369d8b-f131-44c5-ae3d-9aff1c77e0f1/collection/25468191-1dd01be7-d83e-4b14-a3a2-45902ead5e31?action=share&source=collection_link&creator=25468191"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "CREATE NEW CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luiz Teste45\",\r\n    \"sobrenome\": \"Luiz Teste\",\r\n    \"dataNascimento\": \"01/01/2000\",\r\n    \"telefone\": \"11999999999\",\r\n    \"email\": \"Luiz_teste@email.com\",\r\n    \"usuario\": \"usuario_teste\",\r\n    \"senha\": \"Senha@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ ALL CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENTE BY ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luiz 2\", \r\n    \"sobrenome\": \"Luiz2 Teste\",\r\n    \"dataNascimento\": \"01/01/2000\",\r\n    \"telefone\": \"11999999999\",\r\n    \"email\": \"Luiz2@email.com\",\r\n    \"usuario\": \"usuario_teste\",\r\n    \"senha\": \"Senha@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE  CLIENTE BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ CLIENTE BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ ALL CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "READ ALL PRODUTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW PRODUTO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Carne\",\r\n    \"descricao\": \"Coxão mole\",\r\n    \"preco\": 25.30,\r\n    \"estoque\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/produto/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"produto",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PRODUTO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Carne\",\r\n    \"descricao\": \"Coxão mole\",\r\n    \"preco\": 22.30,\r\n    \"estoque\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/produto/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"produto",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/produto/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"produto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/produto/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"produto",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereço",
+			"item": [
+				{
+					"name": "GET ALL ENDERECO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW ENDERECO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\": \"12345678\",\r\n    \"logradouro\": \"Rua Exemplo\",\r\n    \"numero\": \"100\",\r\n    \"complemento\": \"Apto 101\",\r\n    \"bairro\": \"Casa Verde\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"São Paulo\",\r\n    \"pais\": \"Brasil\",\r\n    \"cliente\": {\r\n        \"id\": 4\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ENDERECO BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/endereco/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"endereco",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ENDERECO BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/endereco/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"endereco",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE ENDERECO BY ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\": \"12345678\",\r\n    \"logradouro\": \"Rua Exemplo\",\r\n    \"numero\": \"100\",\r\n    \"complemento\": \"Apto 101\",\r\n    \"bairro\": \"Tatuapé\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"São Paulo\",\r\n    \"pais\": \"Brasil\",\r\n    \"cliente\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/endereco/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"endereco",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

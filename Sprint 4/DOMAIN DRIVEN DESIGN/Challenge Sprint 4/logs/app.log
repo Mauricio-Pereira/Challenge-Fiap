@@ -524,3 +524,83 @@
 	País: 'Brasil'
 }
 15:19:01.531 [grizzly-http-server-11] INFO  org.fiap.entities.Endereco - Update: null
+16:29:30.522 [grizzly-http-server-0] INFO  org.fiap.entities.Cliente - Create: Cliente {
+	Nome: 'Luiz Teste45',
+	Sobrenome: 'Luiz Teste',
+	Data de Nascimento: 2000-01-01,
+	Telefone: '11999999999',
+	Email: 'Luiz_teste@email.com',
+	Endereço: null,
+	Usuário: 'usuario_teste',
+	Senha: 'Senha@123',
+	_BaseEntity{id=4}
+}
+16:29:31.688 [grizzly-http-server-1] INFO  org.fiap.entities.Cliente - ReadAll: 
+16:29:33.584 [grizzly-http-server-2] INFO  org.fiap.entities.Cliente - Update: Cliente {
+	Nome: 'Luiz 2',
+	Sobrenome: 'Luiz2 Teste',
+	Data de Nascimento: 2000-01-01,
+	Telefone: '11999999999',
+	Email: 'Luiz2@email.com',
+	Endereço: null,
+	Usuário: 'usuario_teste',
+	Senha: 'Senha@123',
+	_BaseEntity{id=4}
+}
+16:29:35.226 [grizzly-http-server-3] INFO  org.fiap.entities.Cliente - Delete: Cliente {
+	Nome: 'Maria',
+	Sobrenome: 'Silva',
+	Data de Nascimento: 1990-10-29,
+	Telefone: '35999997777',
+	Email: 'maria@email.com',
+	Endereço: null,
+	Usuário: 'maria',
+	Senha: 'Senha@123',
+	_BaseEntity{id=2}
+}
+16:29:36.893 [grizzly-http-server-4] INFO  org.fiap.entities.Cliente - Read: 
+16:29:38.007 [grizzly-http-server-5] INFO  org.fiap.entities.Cliente - ReadAll: 
+16:29:40.270 [grizzly-http-server-6] INFO  org.fiap.entities.Produto - ReadAll: 
+16:29:45.159 [grizzly-http-server-7] INFO  org.fiap.entities.Produto - Create: Produto {
+	Cliente: Jonas,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 25.3,
+	Estoque: 150,
+	_BaseEntity{id=3}
+}
+16:29:48.063 [grizzly-http-server-8] INFO  org.fiap.entities.Produto - Update: Produto {
+	Cliente: Jonas,
+	Cliente ID: 3,
+	Nome: 'Carne',
+	Descrição: 'Coxão mole',
+	Preço: 22.3,
+	Estoque: 150,
+	_BaseEntity{id=3}
+}
+16:29:51.271 [grizzly-http-server-9] INFO  org.fiap.entities.Produto - Delete: Produto {
+	Cliente: João,
+	Cliente ID: 1,
+	Nome: 'Produto 2',
+	Descrição: 'Descrição do Produto 2',
+	Preço: 200.0,
+	Estoque: 30,
+	_BaseEntity{id=2}
+}
+16:29:54.367 [grizzly-http-server-10] INFO  org.fiap.entities.Produto - Read: 
+16:29:55.478 [grizzly-http-server-11] INFO  org.fiap.entities.Endereco - ReadAll: 
+16:29:57.686 [grizzly-http-server-12] INFO  org.fiap.entities.Endereco - Create: null
+16:29:59.026 [grizzly-http-server-13] INFO  org.fiap.entities.Endereco - Read: 
+16:30:00.621 [grizzly-http-server-14] INFO  org.fiap.entities.Endereco - Delete: Endereco {
+	COD_ENDERECO: '2,
+	CEP: '87654321',
+	Logradouro: 'Rua 2',
+	Número: '123',
+	Complemento: 'Ap 31',
+	Bairro: 'Tatuapé',
+	Cidade: 'São Paulo',
+	Estado: 'São Paulo',
+	País: 'Brasil'
+}
+16:30:02.978 [grizzly-http-server-15] INFO  org.fiap.entities.Endereco - Update: null

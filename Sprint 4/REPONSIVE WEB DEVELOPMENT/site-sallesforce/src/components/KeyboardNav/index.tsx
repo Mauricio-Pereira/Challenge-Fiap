@@ -2,6 +2,9 @@
 
 import React, { useEffect, useRef } from 'react';
 
+// Definindo um tipo unificado para os elementos focáveis
+type FocusableElement = HTMLAnchorElement | HTMLButtonElement | HTMLInputElement;
+
 interface NavigationProps {
   children: React.ReactNode;
 }
@@ -11,9 +14,20 @@ const KeyboardNav: React.FC<NavigationProps> = ({ children }) => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      const activeElement = document.activeElement;
-      const elements = Array.from(refContainer.current?.querySelectorAll('a, button, input') || []);
+      // Verifica se activeElement é uma instância de FocusableElement
+      const activeElement = document.activeElement as FocusableElement | null;
+
+      const elements = Array.from(refContainer.current?.querySelectorAll('a, button, input') || []) as FocusableElement[];
       const focusableElements = elements.filter(el => el.focus!== undefined);
+      
+      if (!activeElement) {
+        // Se activeElement é null, você pode decidir qual elemento focar primeiro,
+        // ou simplesmente ignorar a lógica de navegação neste caso específico.
+        // Por exemplo, focar no primeiro elemento focável:
+        focusableElements[0]?.focus();
+        return;
+      }
+
       const currentIndex = focusableElements.indexOf(activeElement);
 
       switch (event.key) {

@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2514815-37C7-4B9C-1AF4-B908FAE290B5" name="CH_ARMAZEM">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>BCC28C72-6D5C-715E-052D-A139D9DFB32B</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_ARMAZEM" id="AC63EB65-F10C-20ED-B12A-1BF31B86EFE1">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>488946E7-8B82-AC39-8E6D-9CFEC3544ADD</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QTD_TOTAL" id="26DE5B22-F084-7373-4E9F-19C669CB0D13">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>85A2E1A5-EAF5-6485-4BC6-97B434B760FF</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CH_CLIENTE_COD_CLIENTE" id="E2A13583-64E0-9683-627F-A91A05042D2C">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>54EC4648-003E-89BE-DDDF-A4ED04E3F28F</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD12A323-4DFF-1ADE-DAE7-9D576D8B205B" referredColumn="9163A37D-A9A0-96B7-4DC7-2819562E5947"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="505CA38B-DA62-3192-2FB2-59973D1AFBC7" name="CH_ARMAZEM_PK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>4400DBC1-149D-3203-2CD8-47F673CD7A3A</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC63EB65-F10C-20ED-B12A-1BF31B86EFE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43D9CAB8-7EA0-4AC1-4834-8F88EEE7E248" name="CH_ARMAZEM__IDX">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>23117DD9-2F76-D552-18B4-A55FD0A0DAEA</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E2A13583-64E0-9683-627F-A91A05042D2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16EEC665-7548-0252-7139-987EB8ADE345" name="CH_ARMAZEM_CH_CLIENTE_FK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>23117DD9-2F76-D552-18B4-A55FD0A0DAEA</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2A13583-64E0-9683-627F-A91A05042D2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

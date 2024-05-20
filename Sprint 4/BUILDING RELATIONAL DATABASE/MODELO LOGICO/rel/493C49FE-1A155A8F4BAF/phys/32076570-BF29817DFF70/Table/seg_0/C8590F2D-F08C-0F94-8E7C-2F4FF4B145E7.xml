@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CH_BAIRRO" directorySegmentName="seg_0" id="C8590F2D-F08C-0F94-8E7C-2F4FF4B145E7">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOME" id="0F354051-56AD-1B0B-608C-D809A1F417D7">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COD_BAIRRO" id="D6AE0280-7224-22FE-B481-A0681BE1C8B0">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CH_CIDADE_COD_CIDADE" id="E5664B1E-68A3-8A09-3106-07DB3B694A42">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="CH_BAIRRO_CH_CIDADE_FK" id="5BEA69C1-52F5-C9FB-499E-4703C2E96072">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CH_BAIRRO_PK" id="F1912608-6B8E-9ABC-DA29-003F58C9A055">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

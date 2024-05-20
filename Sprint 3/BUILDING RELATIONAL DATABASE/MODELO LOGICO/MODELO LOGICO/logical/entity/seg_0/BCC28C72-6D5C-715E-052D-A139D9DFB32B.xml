@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BCC28C72-6D5C-715E-052D-A139D9DFB32B" name="CH_ARMAZEM">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:07:55 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD_ARMAZEM" id="488946E7-8B82-AC39-8E6D-9CFEC3544ADD">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:08:06 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="QTD_TOTAL" id="85A2E1A5-EAF5-6485-4BC6-97B434B760FF">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:08:20 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CLIENTE" id="54EC4648-003E-89BE-DDDF-A4ED04E3F28F">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:09:09 UTC</createdTime>
+<generatorID>23117DD9-2F76-D552-18B4-A55FD0A0DAEA</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<referedAttribute>210E9919-A989-9E1B-50C1-C211B69AA94D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4400DBC1-149D-3203-2CD8-47F673CD7A3A" name="CH_ESTOQUE PK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:08:17 UTC</createdTime>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<engineerTo>
+<item key="493C49FE-97C4-F810-716F-1A155A8F4BAF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>488946E7-8B82-AC39-8E6D-9CFEC3544ADD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8590F2D-F08C-0F94-8E7C-2F4FF4B145E7" name="CH_BAIRRO">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>E80BDFA7-E97B-C4ED-60C0-6A9D7CE94588</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_BAIRRO" id="D6AE0280-7224-22FE-B481-A0681BE1C8B0">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>EAAA3811-CA7E-CDAA-2620-1804095C1DC3</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="0F354051-56AD-1B0B-608C-D809A1F417D7">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>622BE7FF-114E-1CF4-BF6F-0CA965B524F3</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CH_CIDADE_COD_CIDADE" id="E5664B1E-68A3-8A09-3106-07DB3B694A42">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>5D1AB71C-9B69-B617-03F1-A947DF5CBAAA</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14543B09-9B64-7988-750E-5774C972C867" referredColumn="745E1E80-790F-2998-0382-74211909ABF1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1912608-6B8E-9ABC-DA29-003F58C9A055" name="CH_BAIRRO_PK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>516D10B6-CEB9-B7EB-7204-73308FEB6C41</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6AE0280-7224-22FE-B481-A0681BE1C8B0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5BEA69C1-52F5-C9FB-499E-4703C2E96072" name="CH_BAIRRO_CH_CIDADE_FK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>C7A71DAA-4A36-92CF-0213-9EC6847FEF8C</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5664B1E-68A3-8A09-3106-07DB3B694A42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

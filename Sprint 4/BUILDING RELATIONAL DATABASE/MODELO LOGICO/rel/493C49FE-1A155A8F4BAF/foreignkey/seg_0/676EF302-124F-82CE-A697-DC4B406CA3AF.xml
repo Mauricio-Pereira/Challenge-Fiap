@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="676EF302-124F-82CE-A697-DC4B406CA3AF" containerWithKeyObject="6CEB288F-E0E5-1509-FC2E-6815025BC2B9" localFKIndex="0CFD8FAA-E788-9C9F-6D4F-D09BC985F777" name="CH_CIDADE_CH_ESTADO_FK">
+<createdBy>Mauricio.Pereira</createdBy>
+<createdTime>2024-05-20 11:17:49 UTC</createdTime>
+<generatorID>34B1F5FC-F6CF-91C0-68A9-713B27A4AC57</generatorID>
+<ownerDesignName>MODELO LOGICO</ownerDesignName>
+<referredTableLongName>CH_ESTADO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>21485348-4947-DCCC-BAB1-8DE355995ACD</referredTableID>
+<keyObject>ED45B28E-E1B3-2958-6619-2DB8CA301D83</keyObject>
+<referredKeyID>ED45B28E-E1B3-2958-6619-2DB8CA301D83</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>COD_ESTADO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -4,42 +4,40 @@
 
 
 -- DROP TABLES PARA ELIMINAR POSSIVEIS TABELAS JA EXISTENTES
+DROP TABLE ch_armazem CASCADE CONSTRAINTS;
 DROP TABLE ch_bairro CASCADE CONSTRAINTS;
-
 DROP TABLE ch_cidade CASCADE CONSTRAINTS;
-
 DROP TABLE ch_cliente CASCADE CONSTRAINTS;
-
 DROP TABLE ch_endereco CASCADE CONSTRAINTS;
-
 DROP TABLE ch_estado CASCADE CONSTRAINTS;
-
 DROP TABLE ch_pais CASCADE CONSTRAINTS;
-
 DROP TABLE ch_produto CASCADE CONSTRAINTS;
 
-DROP TABLE ch_estoque CASCADE CONSTRAINTS;
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+-- predefined type, no DDL - XMLTYPE
 
+CREATE TABLE ch_armazem (
+    cod_armazem            NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    qtd_total              NUMBER,
+    ch_cliente_cod_cliente NUMBER NOT NULL
+);
 
--- CRIAÇÃO DAS TABELAS E CONFIGURAÇÃO DAS PRIMARY KEYS
+CREATE UNIQUE INDEX ch_armazem__idx ON ch_armazem (ch_cliente_cod_cliente);
+
 CREATE TABLE ch_bairro (
-    cod_bairro           NUMBER GENERATED AS IDENTITY,
+    cod_bairro           NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome                 VARCHAR2(50),
     ch_cidade_cod_cidade NUMBER NOT NULL
 );
 
-ALTER TABLE ch_bairro ADD CONSTRAINT ch_bairro_pk PRIMARY KEY ( cod_bairro );
-
 CREATE TABLE ch_cidade (
-    cod_cidade           NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_cidade           NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome                 VARCHAR2(50),
     ch_estado_cod_estado NUMBER NOT NULL
 );
 
-ALTER TABLE ch_cidade ADD CONSTRAINT ch_cidade_pk PRIMARY KEY ( cod_cidade );
-
 CREATE TABLE ch_cliente (
-    cod_cliente       NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_cliente       NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome              VARCHAR2(50),
     sobrenome         VARCHAR2(80),
     data_nascimento   DATE,
@@ -49,10 +47,8 @@ CREATE TABLE ch_cliente (
     senha             VARCHAR2(50)
 );
 
-ALTER TABLE ch_cliente ADD CONSTRAINT ch_cliente_pk PRIMARY KEY ( cod_cliente );
-
 CREATE TABLE ch_endereco (
-    cod_endereco           NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_endereco           NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     logradouro             VARCHAR2(250),
     numero                 NUMBER,
     complemento            VARCHAR2(50),
@@ -61,79 +57,94 @@ CREATE TABLE ch_endereco (
     ch_bairro_cod_bairro   NUMBER NOT NULL
 );
 
-CREATE UNIQUE INDEX ch_endereco__idx ON
-    ch_endereco (
-        ch_cliente_cod_cliente
-    ASC );
-
-ALTER TABLE ch_endereco ADD CONSTRAINT ch_endereco_pk PRIMARY KEY ( cod_endereco );
+CREATE UNIQUE INDEX ch_endereco__idx ON ch_endereco (ch_cliente_cod_cliente);
 
 CREATE TABLE ch_estado (
-    cod_estado       NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_estado       NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome             VARCHAR2(50),
     ch_pais_cod_pais NUMBER NOT NULL
 );
 
-ALTER TABLE ch_estado ADD CONSTRAINT ch_estado_pk PRIMARY KEY ( cod_estado );
-
 CREATE TABLE ch_pais (
-    cod_pais NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_pais NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome     VARCHAR2(50)
 );
 
-ALTER TABLE ch_pais ADD CONSTRAINT ch_pais_pk PRIMARY KEY ( cod_pais );
-
-CREATE TABLE ch_estoque (
-    cod_estoque            NUMBER GENERATED ALWAYS AS IDENTITY,
-    ch_cliente_cod_cliente NUMBER NOT NULL
-);
-
-ALTER TABLE ch_estoque ADD CONSTRAINT ch_estoque_pk PRIMARY KEY ( cod_estoque );
-
 CREATE TABLE ch_produto (
-    cod_produto            NUMBER GENERATED ALWAYS AS IDENTITY,
+    cod_produto            NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome                   VARCHAR2(100),
     descricao              VARCHAR2(250),
     preco                  NUMBER,
-    estoque                NUMBER,
-    ch_estoque_cod_estoque NUMBER NOT NULL
+    ch_armazem_cod_armazem NUMBER NOT NULL,
+    quantidade             NUMBER
 );
 
-ALTER TABLE ch_produto ADD CONSTRAINT ch_produto_pk PRIMARY KEY ( cod_produto );
+ALTER TABLE ch_armazem
+    ADD CONSTRAINT ch_armazem_ch_cliente_fk FOREIGN KEY (ch_cliente_cod_cliente)
+        REFERENCES ch_cliente (cod_cliente)
+    NOT DEFERRABLE;
 
-
-
-
--- ADIÇÃO DAS CONSTRAINTS E FOREIGN KEYS
 ALTER TABLE ch_bairro
-    ADD CONSTRAINT ch_bairro_ch_cidade_fk FOREIGN KEY ( ch_cidade_cod_cidade )
-        REFERENCES ch_cidade ( cod_cidade );
+    ADD CONSTRAINT ch_bairro_ch_cidade_fk FOREIGN KEY (ch_cidade_cod_cidade)
+        REFERENCES ch_cidade (cod_cidade)
+    NOT DEFERRABLE;
 
 ALTER TABLE ch_cidade
-    ADD CONSTRAINT ch_cidade_ch_estado_fk FOREIGN KEY ( ch_estado_cod_estado )
-        REFERENCES ch_estado ( cod_estado );
+    ADD CONSTRAINT ch_cidade_ch_estado_fk FOREIGN KEY (ch_estado_cod_estado)
+        REFERENCES ch_estado (cod_estado)
+    NOT DEFERRABLE;
 
 ALTER TABLE ch_endereco
-    ADD CONSTRAINT ch_endereco_ch_bairro_fk FOREIGN KEY ( ch_bairro_cod_bairro )
-        REFERENCES ch_bairro ( cod_bairro );
+    ADD CONSTRAINT ch_endereco_ch_bairro_fk FOREIGN KEY (ch_bairro_cod_bairro)
+        REFERENCES ch_bairro (cod_bairro)
+    NOT DEFERRABLE;
 
 ALTER TABLE ch_endereco
-    ADD CONSTRAINT ch_endereco_ch_cliente_fk FOREIGN KEY ( ch_cliente_cod_cliente )
-        REFERENCES ch_cliente ( cod_cliente );
+    ADD CONSTRAINT ch_endereco_ch_cliente_fk FOREIGN KEY (ch_cliente_cod_cliente)
+        REFERENCES ch_cliente (cod_cliente)
+    NOT DEFERRABLE;
 
 ALTER TABLE ch_estado
-    ADD CONSTRAINT ch_estado_ch_pais_fk FOREIGN KEY ( ch_pais_cod_pais )
-        REFERENCES ch_pais ( cod_pais );
-
-ALTER TABLE ch_estoque
-    ADD CONSTRAINT ch_estoque_ch_cliente_fk FOREIGN KEY (ch_cliente_cod_cliente)
-    REFERENCES ch_cliente (cod_cliente) ON DELETE CASCADE;
+    ADD CONSTRAINT ch_estado_ch_pais_fk FOREIGN KEY (ch_pais_cod_pais)
+        REFERENCES ch_pais (cod_pais)
+    NOT DEFERRABLE;
 
 ALTER TABLE ch_produto
-    ADD CONSTRAINT ch_produto_ch_estoque_fk FOREIGN KEY ( ch_estoque_cod_estoque )
-        REFERENCES ch_estoque ( cod_estoque );
+    ADD CONSTRAINT ch_produto_ch_armazem_fk FOREIGN KEY (ch_armazem_cod_armazem)
+        REFERENCES ch_armazem (cod_armazem)
+    NOT DEFERRABLE;
+    
 
+--Trigger para alterar o a quantidade total de produtos baseado nos itens cadastrados
+CREATE OR REPLACE TRIGGER trg_update_qtd_total
+AFTER INSERT OR UPDATE OR DELETE ON ch_produto
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        UPDATE ch_armazem
+        SET qtd_total = NVL(qtd_total, 0) + :NEW.quantidade
+        WHERE cod_armazem = :NEW.ch_armazem_cod_armazem;
+    ELSIF UPDATING THEN
+        IF :OLD.ch_armazem_cod_armazem != :NEW.ch_armazem_cod_armazem THEN
+            UPDATE ch_armazem
+            SET qtd_total = NVL(qtd_total, 0) - NVL(:OLD.quantidade, 0)
+            WHERE cod_armazem = :OLD.ch_armazem_cod_armazem;
 
+            UPDATE ch_armazem
+            SET qtd_total = NVL(qtd_total, 0) + NVL(:NEW.quantidade, 0)
+            WHERE cod_armazem = :NEW.ch_armazem_cod_armazem;
+        ELSE
+            UPDATE ch_armazem
+            SET qtd_total = NVL(qtd_total, 0) - NVL(:OLD.quantidade, 0) + NVL(:NEW.quantidade, 0)
+            WHERE cod_armazem = :NEW.ch_armazem_cod_armazem;
+        END IF;
+    ELSIF DELETING THEN
+        UPDATE ch_armazem
+        SET qtd_total = NVL(qtd_total, 0) - NVL(:OLD.quantidade, 0)
+        WHERE cod_armazem = :OLD.ch_armazem_cod_armazem;
+    END IF;
+END;
+/
 
 INSERT INTO CH_PAIS(NOME) VALUES('Brasil');
 
@@ -232,6 +243,10 @@ WHERE ROWID IN (
     WHERE nome = 'Casa Verde' AND ch_cidade_cod_cidade = 1
     AND ROWNUM = 1
 );
+SELECT object_name, status
+FROM user_objects
+WHERE object_type = 'TRIGGER' AND object_name = 'TRG_UPDATE_QTD_TOTAL';
+
 
 -- Inserindo 10 registros na tabela ch_cliente
 INSERT INTO ch_cliente (nome, sobrenome, data_nascimento, telefone, email_corporativo, nome_usuario, senha)
@@ -266,43 +281,44 @@ VALUES ('Juliana', 'Gomes', TO_DATE('1987-04-19', 'YYYY-MM-DD'), '1196543-0987',
 commit;
 
 
--- Inserindo dois registros na tabela ch_estoque
-INSERT INTO ch_estoque (ch_cliente_cod_cliente) VALUES (1);
-INSERT INTO ch_estoque (ch_cliente_cod_cliente) VALUES (2);
+-- Inserindo dois registros na tabela ch_Armazem
+-- Inserindo dois registros na tabela ch_armazem com clientes únicos
+INSERT INTO ch_armazem (ch_cliente_cod_cliente) VALUES (1);
+INSERT INTO ch_armazem (ch_cliente_cod_cliente) VALUES (2);
 
 
 
--- Inserindo trinta registros na tabela ch_produto, associando a cada um um dos estoques criados
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 1', 'Descrição do Produto 1', 10.00, 50, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 2', 'Descrição do Produto 2', 15.00, 30, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 3', 'Descrição do Produto 3', 20.00, 20, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 4', 'Descrição do Produto 4', 25.00, 40, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 5', 'Descrição do Produto 5', 30.00, 60, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 6', 'Descrição do Produto 6', 35.00, 70, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 7', 'Descrição do Produto 7', 40.00, 80, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 8', 'Descrição do Produto 8', 45.00, 90, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 9', 'Descrição do Produto 9', 50.00, 100, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 10', 'Descrição do Produto 10', 55.00, 110, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 11', 'Descrição do Produto 11', 60.00, 120, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 12', 'Descrição do Produto 12', 65.00, 130, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 13', 'Descrição do Produto 13', 70.00, 140, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 14', 'Descrição do Produto 14', 75.00, 150, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 15', 'Descrição do Produto 15', 80.00, 160, 2);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 16', 'Descrição do Produto 16', 85.00, 170, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 17', 'Descrição do Produto 17', 90.00, 180, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 18', 'Descrição do Produto 18', 95.00, 190, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 19', 'Descrição do Produto 19', 100.00, 200, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 20', 'Descrição do Produto 20', 105.00, 210, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 21', 'Descrição do Produto 21', 110.00, 220, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 22', 'Descrição do Produto 22', 115.00, 230, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 23', 'Descrição do Produto 23', 120.00, 240, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 24', 'Descrição do Produto 24', 125.00, 250, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 25', 'Descrição do Produto 25', 130.00, 260, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 26', 'Descrição do Produto 26', 135.00, 270, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 27', 'Descrição do Produto 27', 140.00, 280, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 28', 'Descrição do Produto 28', 145.00, 290, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 29', 'Descrição do Produto 29', 150.00, 300, 1);
-INSERT INTO ch_produto (nome, descricao, preco, estoque, ch_estoque_cod_estoque) VALUES ('Produto 30', 'Descrição do Produto 30', 155.00, 310, 1);
+-- Inserindo trinta registros na tabela ch_produto, associando a cada um um dos quantidades criados
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 1', 'Descrição do Produto 1', 10.00, 50, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 2', 'Descrição do Produto 2', 15.00, 30, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 3', 'Descrição do Produto 3', 20.00, 20, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 4', 'Descrição do Produto 4', 25.00, 40, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 5', 'Descrição do Produto 5', 30.00, 60, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 6', 'Descrição do Produto 6', 35.00, 70, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 7', 'Descrição do Produto 7', 40.00, 80, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 8', 'Descrição do Produto 8', 45.00, 90, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 9', 'Descrição do Produto 9', 50.00, 100, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 10', 'Descrição do Produto 10', 55.00, 110, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 11', 'Descrição do Produto 11', 60.00, 120, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 12', 'Descrição do Produto 12', 65.00, 130, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 13', 'Descrição do Produto 13', 70.00, 140, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 14', 'Descrição do Produto 14', 75.00, 150, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 15', 'Descrição do Produto 15', 80.00, 160, 2);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 16', 'Descrição do Produto 16', 85.00, 170, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 17', 'Descrição do Produto 17', 90.00, 180, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 18', 'Descrição do Produto 18', 95.00, 190, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 19', 'Descrição do Produto 19', 100.00, 200, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 20', 'Descrição do Produto 20', 105.00, 210, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 21', 'Descrição do Produto 21', 110.00, 220, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 22', 'Descrição do Produto 22', 115.00, 230, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 23', 'Descrição do Produto 23', 120.00, 240, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 24', 'Descrição do Produto 24', 125.00, 250, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 25', 'Descrição do Produto 25', 130.00, 260, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 26', 'Descrição do Produto 26', 135.00, 270, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 27', 'Descrição do Produto 27', 140.00, 280, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 28', 'Descrição do Produto 28', 145.00, 290, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 29', 'Descrição do Produto 29', 150.00, 300, 1);
+INSERT INTO ch_produto (nome, descricao, preco, quantidade, ch_armazem_cod_armazem) VALUES ('Produto 30', 'Descrição do Produto 30', 155.00, 310, 1);
 commit;
 
 --Listar clientes ordenados pelo sobrenome e nome
@@ -319,29 +335,29 @@ select
     p.cod_produto,
     p.nome as Nome_Produto,
     p.preco,
-    p.estoque
+    p.quantidade
 FROM
     ch_produto p
 JOIN 
-    ch_estoque e ON p.ch_estoque_cod_estoque = e.cod_estoque
+    ch_armazem e ON p.ch_armazem_cod_armazem = e.cod_armazem
 JOIN
     ch_cliente c ON e.ch_cliente_cod_cliente = c.cod_cliente
 ORDER BY
     p.cod_produto;
 
 
---Mostrar a quantidade total de itens em estoque por pessoa e o valor total dos itens em estoque   
+--Mostrar a quantidade total de itens em quantidade por pessoa e o valor total dos itens em quantidade   
 --Função Numérica Simples, Função de Grupo e Junção de Tabelas
 SELECT 
     c.nome || ' ' || c.sobrenome AS nome_completo,
-    SUM(p.estoque) AS quantidade_total_itens,
-    TO_CHAR(SUM(p.preco * p.estoque), 'L9G999G999D99') AS valor_total_estoque
+    SUM(p.quantidade) AS quantidade_total_itens,
+    TO_CHAR(SUM(p.preco * p.quantidade), 'L9G999G999D99') AS valor_total_quantidade
 FROM 
     ch_cliente c
 JOIN 
-    ch_estoque e ON c.cod_cliente = e.ch_cliente_cod_cliente
+    ch_armazem e ON c.cod_cliente = e.ch_cliente_cod_cliente
 JOIN 
-    ch_produto p ON e.cod_estoque = p.ch_estoque_cod_estoque
+    ch_produto p ON e.cod_armazem = p.ch_armazem_cod_armazem
 GROUP BY 
     c.nome, c.sobrenome
 ORDER BY 
@@ -354,7 +370,7 @@ SELECT nome
 FROM ch_bairro 
 WHERE ch_cidade_cod_cidade = (SELECT cod_cidade FROM ch_cidade WHERE nome = 'São Paulo');
 
---Relatório que mostra todos os clientes que nãp possuem itens em estoque
+--Relatório que mostra todos os clientes que nãp possuem itens em quantidade
 --Classificação de Dados e Junção de Tabelas
 SELECT 
     c.nome || ' ' || c.sobrenome AS nome_completo,
@@ -364,9 +380,9 @@ SELECT
 FROM 
     ch_cliente c
 LEFT JOIN 
-    ch_estoque e ON c.cod_cliente = e.ch_cliente_cod_cliente
+    ch_armazem e ON c.cod_cliente = e.ch_cliente_cod_cliente
 LEFT JOIN 
-    ch_produto p ON e.cod_estoque = p.ch_estoque_cod_estoque
+    ch_produto p ON e.cod_armazem = p.ch_armazem_cod_armazem
 WHERE 
     p.cod_produto IS NULL
 ORDER BY 

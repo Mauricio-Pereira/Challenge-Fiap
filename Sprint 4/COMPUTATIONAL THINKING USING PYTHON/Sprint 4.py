@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 # Configurações de conexão
 connection = oracledb.connect(
     #mude o user e o password para os dados de acessoa o seu banco de dados oracle
-    user="user",
-    password="password",
+    user="rm553748",
+    password="291096",
     dsn="oracle.fiap.com.br:1521/orcl"
 )
 cursor = connection.cursor()

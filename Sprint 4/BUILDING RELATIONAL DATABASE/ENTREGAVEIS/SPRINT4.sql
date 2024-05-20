@@ -387,4 +387,6 @@ WHERE
     p.cod_produto IS NULL
 ORDER BY 
     nome_completo;
+    
+    select * from ch_cliente;
 

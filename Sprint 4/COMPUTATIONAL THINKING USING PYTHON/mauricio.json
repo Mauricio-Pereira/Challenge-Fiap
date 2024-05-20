@@ -1,0 +1,12 @@
+[
+    {
+        "COD_CLIENTE": 12,
+        "NOME": "Mauricio",
+        "SOBRENOME": "Pereira",
+        "DATA_NASCIMENTO": "1996-10-29 00:00:00",
+        "TELEFONE": "3213213211",
+        "EMAIL_CORPORATIVO": "asdasd@asm.com",
+        "NOME_USUARIO": "mauricio",
+        "SENHA": "Senh@123"
+    }
+]

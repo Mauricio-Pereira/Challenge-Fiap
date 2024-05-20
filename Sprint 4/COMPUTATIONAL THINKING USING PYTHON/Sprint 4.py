@@ -148,9 +148,17 @@ def delete_cliente():
     connection.commit()
     print("Cliente deletado com sucesso.")
 
+
 def export_to_json(data, filename):
+    # Cria uma lista de dicionários para representar cada registro
+    json_data = [dict(zip([column[0] for column in cursor.description], row)) for row in data]
+
+    # Exporta os dados para um arquivo JSON
     with open(filename, 'w') as f:
-        json.dump(data, f, default=str)
+        json.dump(json_data, f, indent=4, default=str)
+
+    print(f"Dados exportados para {filename} com sucesso.")
+
 
 def read_with_filter(table, where_condition=None):
     query = f"SELECT * FROM {table}"

@@ -693,3 +693,16 @@
 	Senha: 'Senha@123',
 	_BaseEntity{id=6}
 }
+22:53:32.071 [grizzly-http-server-0] INFO  org.fiap.entities.Cliente - Create: Cliente {
+	Nome: 'João',
+	Sobrenome: 'Silva',
+	Data de Nascimento: 1990-05-10,
+	Telefone: '11987654321',
+	Email: 'marina.silva@example.com',
+	Endereço: null,
+	Usuário: 'marinasilva',
+	Senha: 'Senha@123',
+	_BaseEntity{id=7}
+}
+22:53:41.676 [grizzly-http-server-1] INFO  org.fiap.entities.Cliente - ReadAll: 
+22:53:53.924 [grizzly-http-server-2] INFO  org.fiap.entities.Endereco - ReadAll: 

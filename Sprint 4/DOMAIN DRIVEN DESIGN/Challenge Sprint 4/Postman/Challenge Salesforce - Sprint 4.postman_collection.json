@@ -40,6 +40,35 @@
 					"response": []
 				},
 				{
+					"name": "CREATE NEW CLIENTE COM ENDEREÇO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João\",\r\n  \"sobrenome\": \"Silva\",\r\n  \"dataNascimento\": \"10/05/1990\",\r\n  \"telefone\": \"11987654321\",\r\n  \"email\": \"marina.silva@example.com\",\r\n  \"usuario\": \"marinasilva\",\r\n  \"senha\": \"Senha@123\",\r\n  \"cep\": \"01234567\",\r\n  \"rua\": \"Rua Exemplo\",\r\n  \"numero\": \"123\",\r\n  \"complemento\": \"Apt 101\",\r\n  \"bairro\": \"Casa Verde\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"estado\": \"São Paulo\",\r\n  \"pais\": \"Brasil\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/salesforcedirections/cliente-endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"salesforcedirections",
+								"cliente-endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "READ ALL CLIENTES",
 					"request": {
 						"method": "GET",

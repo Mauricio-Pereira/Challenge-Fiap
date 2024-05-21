@@ -21,10 +21,12 @@ public class ProdutoResource {
     private Log4jLogger<Produto> logger = new Log4jLogger<>(Produto.class);
     private ProdutoRepository produtoRepository;
     private ProdutoService produtoService;
+    private ClienteRepository clienteRepository = new ClienteRepository();
 
     public ProdutoResource() {
         this.produtoRepository = new ProdutoRepository();
         this.produtoService = new ProdutoService();
+        this.clienteRepository = new ClienteRepository();
     }
 
     /**
@@ -47,13 +49,21 @@ public class ProdutoResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createProduto(@PathParam("clienteId") int clienteId, Produto produto) {
         try {
+            Cliente cliente = clienteRepository.ReadById(clienteId);
+            if (cliente == null) {
+                return Response.status(Response.Status.NOT_FOUND).entity("Cliente não encontrado").build();
+            }
+            produto.setCliente(cliente);
             produtoService.Create(produto, clienteId);
             logger.logCreate(produtoRepository.ReadById(produto.getId()));
             return Response.status(Response.Status.CREATED).build();
         } catch (Exception e) {
+            e.printStackTrace();
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
         }
     }
+
+
 
     @PUT
     @Path("produto/{id}")

@@ -1,3 +1,4 @@
+import React from "react";
 import LoginCard from "../../components/Cards/LoginCard";
 
 export default function LoginPage() {

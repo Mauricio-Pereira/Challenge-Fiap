@@ -1,4 +1,4 @@
-import { Props } from "../interface";
+import { Props } from '../../Cards/interface';
 import ProductForms from "../../Forms/ProductForms";
 import '../styles.css'
 

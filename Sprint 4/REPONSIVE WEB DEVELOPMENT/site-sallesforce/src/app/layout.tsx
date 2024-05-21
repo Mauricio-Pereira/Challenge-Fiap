@@ -1,5 +1,5 @@
 //import ClickerCounter from "../components/ClickerCounter";
-import KeyboardNav from "@/components/KeyboardNav";
+import KeyboardNav from "../components/KeyboardNav"; // Import the missing module from the correct file path
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";

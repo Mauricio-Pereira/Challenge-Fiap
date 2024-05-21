@@ -37,4 +37,12 @@ public class ClienteService {
         }
 
     }
+
+    public Cliente authenticate(String email, String senha) {
+        Cliente cliente = clienteRepository.findByEmail(email);
+        if (cliente != null && cliente.getSenha().equals(senha)) {
+            return cliente;
+        }
+        throw new IllegalArgumentException("Credenciais inválidas");
+    }
 }

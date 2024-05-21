@@ -82,7 +82,8 @@ public class Cliente extends _BaseEntity{
             if (dataNascimento == null || !isDateValid(dataNascimento)) {
                 throw new IllegalArgumentException("Data de nascimento inválida");
             } else {
-                this.dataNascimento = LocalDate.parse(dataNascimento, dataFormat);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                this.dataNascimento = LocalDate.parse(dataNascimento, formatter);
                 if (!isMaiorDeIdade()) {
                     this.dataNascimento = null;
                     throw new IllegalArgumentException("Cliente menor de idade");
@@ -159,7 +160,6 @@ public class Cliente extends _BaseEntity{
 
     public static boolean isDateValid(String strDate) {
         String dateFormat = "dd/MM/uuuu";
-
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter
                 .ofPattern(dateFormat)
                 .withResolverStyle(ResolverStyle.STRICT);

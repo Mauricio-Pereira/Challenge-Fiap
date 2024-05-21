@@ -73,7 +73,7 @@ public class Test {
         produto2.setPreco(200.0);
         produto2.setEstoque(20);
         produto2.setCliente(cliente1);
-        produtoRepository.Create(produto2, 1);
+        produtoRepository.Create(produto2, 2);
         System.out.println(produtoRepository.ReadById(2));
 
         // Atualizando e listando Produtos
@@ -110,7 +110,6 @@ public class Test {
         enderecoRepository.Create(endereco2);
         System.out.println(enderecoRepository.ReadById(2));
 
-        // Atualizando e listando Endereços
         endereco1.setNumero("321");
         endereco2.setNumero("123");
         enderecoRepository.UpdateById(endereco1, 1);

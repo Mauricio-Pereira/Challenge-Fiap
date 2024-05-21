@@ -187,6 +187,29 @@ public class ClienteRepository extends _BaseRepositoryImpl<Cliente> {
         }
     }
 
+    public Cliente findByEmail(String email) {
+        String sql = "SELECT * FROM " + TB_NAME + " WHERE " + TB_COLUMNS.get("EMAIL_CORPORATIVO") + " = ?";
+        try (var conn = connection.getConnection(); var stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            try (var rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Cliente(
+                            rs.getInt(TB_COLUMNS.get("COD_CLIENTE")),
+                            rs.getString(TB_COLUMNS.get("NOME")),
+                            rs.getString(TB_COLUMNS.get("SOBRENOME")),
+                            rs.getDate(TB_COLUMNS.get("DATA_NASCIMENTO")).toLocalDate(),
+                            rs.getString(TB_COLUMNS.get("TELEFONE")),
+                            rs.getString(TB_COLUMNS.get("EMAIL_CORPORATIVO")),
+                            rs.getString(TB_COLUMNS.get("NOME_USUARIO")),
+                            rs.getString(TB_COLUMNS.get("SENHA"))
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 

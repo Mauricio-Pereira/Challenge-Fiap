@@ -1,0 +1,9 @@
+Integrantes:
+	Vitor Onofre Ramos	|RM553241	|Github: https://github.com/VitorOnofreRamos
+	Luis Otávio Leitão	|RM553542	|Github: https://github.com/Luiz1614
+	Maurício Pereira	|RM553748	|Github: https://github.com/Mauricio-Pereira
+
+Vídeo no Youtube: https://youtu.be/XTVzFY1PqMQ
+
+Repositorio GitHub: https://github.com/VitorOnofreRamos/Challenge-Saleforce-Sprint-4---REPONSIVE-WEB-DEVELOPMENT
+Vercel do Projeto: https://challenge-saleforce-sprint-4-reponsive-web-development.vercel.app/
